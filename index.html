@@ -16,7 +16,6 @@
       --accent:#7aa2ff;
       --accent2:#76e4f7;
       --good:#63e6be;
-      --warn:#ffd166;
       --shadow: 0 14px 40px rgba(0,0,0,.35);
       --radius:18px;
       --radius2:22px;
@@ -318,7 +317,7 @@
         <div class="quick">
           <a class="qbtn" href="mailto:amanlokhande247@gmail.com"><span class="dot"></span>Email</a>
           <a class="qbtn" href="https://www.linkedin.com/in/aman-lokhande" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="qbtn" href="#resumes" onclick="openTab('resumes')">Resumes</a>
+          <a class="qbtn" href="#resumes" onclick="openTab('resumes'); return false;">Resumes</a>
         </div>
       </div>
 
@@ -357,9 +356,9 @@
             <div class="tab" data-tab="projects" onclick="openTab('projects')">
               <div class="left">
                 <div class="ico">🧩</div>
-                <div class="name"><b>Projects</b><span>Lean, MVP, SubTrack, Streamlit</span></div>
+                <div class="name"><b>Projects</b><span>Lean, MVP, SubTrack, Streamlit, Study Buddy</span></div>
               </div>
-              <div class="badge">4</div>
+              <div class="badge">5</div>
             </div>
 
             <div class="tab" data-tab="skills" onclick="openTab('skills')">
@@ -389,7 +388,7 @@
 
           <div class="foot" style="margin-top:12px">
             Tip: click tabs like an app. <br/>
-            <span style="opacity:.7">Search filters your content.</span>
+            <span style="opacity:.7">Search dims non-matching cards.</span>
           </div>
         </aside>
 
@@ -438,14 +437,14 @@
                       <button class="btn" onclick="openTab('experience')">Show relevant work</button>
                     </div>
                     <div class="card">
-                      <h3>Program / Ops Execution</h3>
-                      <p>Milestones, dependencies, RAID, status cadence, escalations, Lean improvement.</p>
-                      <button class="btn" onclick="openTab('projects')">See execution projects</button>
+                      <h3>Solutions / Pre-Sales</h3>
+                      <p>Discovery + demos/walkthroughs, value messaging, scoping, customer-to-engineering bridge.</p>
+                      <button class="btn" onclick="openTab('projects')">See demoable work</button>
                     </div>
                   </div>
 
-                  <div class="note" style="color:var(--muted); font-size:12px; margin-top:10px">
-                    Want this even more “app-like”? Upload a photo named <b>profile.jpg</b> and I’ll switch the avatar.
+                  <div style="color:var(--muted); font-size:12px; margin-top:10px">
+                    Optional: upload a photo named <b>profile.jpg</b> to replace the “AL” avatar automatically.
                   </div>
                 </div>
               </div>
@@ -459,7 +458,7 @@
                 </div>
                 <div class="card">
                   <h3>Projects</h3>
-                  <p>Lean time study & PDCA pilot, MVP planning, SubTrack prototype demo, Streamlit dashboard.</p>
+                  <p>Lean PDCA pilot, MVP planning, SubTrack prototype demo, Streamlit dashboard, Study Buddy prototype.</p>
                   <button class="btn primary" onclick="openTab('projects')">Open Projects</button>
                 </div>
               </div>
@@ -551,7 +550,9 @@
             <div class="panel">
               <div class="sectionTitle" style="margin-top:0">Projects</div>
 
+              <!-- IMPORTANT: All project cards must live inside this .cards grid -->
               <div class="cards">
+
                 <div class="card">
                   <h3>Lean time study + PDCA pilot — Checkout delays</h3>
                   <p>Time study during rush hours; identified payment as bottleneck; piloted countermeasures.</p>
@@ -588,33 +589,37 @@
                     <li>4 interactive views + saved presets</li>
                   </ul>
                 </div>
-              </div>
+
+                <!-- FIXED: Study Buddy card is now INSIDE the grid -->
+                <div class="card">
+                  <h3>Study Buddy Finder — Northeastern Edition (PRD + Prototype)</h3>
+                  <p>
+                    NU-only study partner matching + scheduling concept designed to create consistent study routines with trust &amp;
+                    safety and explainable AI matching.
+                  </p>
+                  <ul class="list">
+                    <li><b>Problem:</b> schedule mismatch, low-signal matching, and trust/safety concerns prevent repeatable routines.</li>
+                    <li><b>MVP flow:</b> verification → onboarding → match feed (“why this match?”) → chat + Study Coach → overlap scheduling → sessions + check-in.</li>
+                    <li><b>AI:</b> match ranking + explainability, overlap-based time suggestions, in-chat Study Coach (with disclaimers).</li>
+                    <li><b>Metrics:</b> North Star = Weekly Study Sessions Completed; time-to-first-session + match→chat→schedule conversion.</li>
+                  </ul>
+                  <div class="actions">
+                    <a class="btn primary" href="https://aman-studybuddy.netlify.app/" target="_blank" rel="noreferrer">Live Prototype</a>
+                    <!-- If you upload a PRD PDF later, uncomment this button and upload the file -->
+                    <!-- <a class="btn" href="Study_Buddy_Finder_PRD.pdf" target="_blank" rel="noreferrer">Open PRD</a> -->
+                  </div>
+                </div>
+
+              </div><!-- end .cards -->
 
               <div class="sectionTitle">Want to add demo links?</div>
               <div class="card">
                 <p style="margin:0; color:var(--muted); font-size:13px; line-height:1.6">
-                  If you later upload a demo video (Loom/YouTube) or screenshots, I can add “Watch demo” buttons here.
+                  If you upload demo videos (Loom/YouTube) or screenshots, I can add “Watch demo” buttons for each project.
                 </p>
               </div>
             </div>
-            <h3>Study Buddy Finder — Northeastern Edition (PRD)</h3>
-  <p>
-    NU-only study partner matching + scheduling concept designed to create consistent study routines with trust & safety
-    and explainable AI matching.
-  </p>
-  <ul class="list">
-    <li><b>Problem:</b> schedule mismatch, low-signal matching, and trust/safety concerns prevent repeatable routines.</li>
-    <li><b>MVP flow:</b> NU verification → 6-step onboarding → match feed (“Why this match?”) → chat + Study Coach → overlap-based scheduling → sessions + check-in.</li>
-    <li><b>AI features:</b> match ranking + explainability, overlap-based time suggestions, in-chat Study Coach (with disclaimers).</li>
-    <li><b>Trust & safety:</b> report/block in 2 taps, privacy controls, safety guidance embedded in chat/profile.</li>
-    <li><b>Success metrics:</b> North Star = Weekly Study Sessions Completed; supporting = time-to-first-session, match→chat→schedule conversion, “study again.”</li>
-  </ul>
-
-  <div class="actions">
-  <a class="btn primary" href="https://aman-studybuddy.netlify.app/" target="_blank" rel="noreferrer">Live Prototype</a>
-</div>
           </section>
-          <div class="card">
 
           <!-- SKILLS -->
           <section id="view-skills" class="view fadeIn">
@@ -680,8 +685,7 @@
               <div class="sectionTitle" style="margin-top:0">Resumes</div>
               <div class="card">
                 <p style="margin-top:0; color:var(--muted); font-size:13px; line-height:1.6">
-                  Upload your PDFs to the repo root, then these buttons will download them.
-                  (If your file names differ, update the links in the HTML.)
+                  Upload your PDFs to the repo root and keep these exact names (or update the links below).
                 </p>
 
                 <div class="actions">
@@ -712,7 +716,7 @@
               <div class="sectionTitle">Optional next upgrade</div>
               <div class="card">
                 <p style="margin:0; color:var(--muted); font-size:13px; line-height:1.6">
-                  If you want, we can add a “Demos” area (buttons to a Streamlit app / Loom videos) and a “Download one-pager” section.
+                  Want a “Demos” area with thumbnails, or a “Download 1-pagers” section? Tell me and I’ll add it.
                 </p>
               </div>
             </div>
@@ -746,7 +750,7 @@
       history.replaceState(null, "", "#" + tab);
     }
 
-    // Simple search: highlights matching cards (filters by text)
+    // Simple search: dims non-matching cards
     const searchInput = document.getElementById("search");
     searchInput.addEventListener("input", () => {
       const q = searchInput.value.trim().toLowerCase();
@@ -765,7 +769,6 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // Optional: if you upload profile.jpg, swap avatar
-    // (No need to edit anything else)
     const img = new Image();
     img.onload = () => {
       const av = document.querySelector(".avatar");

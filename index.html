@@ -4,303 +4,67 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Aman Lokhande | Portfolio</title>
-  <meta name="description" content="App-style portfolio: About, Experience, Projects, Skills, Resumes, Contact." />
+  <meta name="description" content="Multi-page app-style portfolio." />
   <style>
     :root{
-      --bg:#0b1020;
-      --panel:#0f1730;
-      --panel2:#111a33;
-      --text:#eaf0ff;
-      --muted:#a9b5d6;
-      --line:#1f2a4a;
-      --accent:#7aa2ff;
-      --accent2:#76e4f7;
-      --good:#63e6be;
+      --bg:#0b1020; --panel:rgba(17,26,51,.45); --panel2:rgba(15,23,48,.62);
+      --text:#eaf0ff; --muted:#a9b5d6; --line:#1f2a4a;
+      --accent:#7aa2ff; --accent2:#76e4f7; --good:#63e6be;
       --shadow: 0 14px 40px rgba(0,0,0,.35);
-      --radius:18px;
-      --radius2:22px;
+      --r:18px; --r2:22px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      margin:0; color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       background:
         radial-gradient(1200px 800px at 12% 8%, rgba(122,162,255,.26), transparent 55%),
         radial-gradient(900px 700px at 86% 18%, rgba(118,228,247,.18), transparent 50%),
         radial-gradient(900px 700px at 60% 90%, rgba(99,230,190,.12), transparent 55%),
         var(--bg);
-      color:var(--text);
-      overflow-x:hidden;
     }
-    a{color:inherit}
-    .wrap{
-      max-width:1100px;
-      margin:0 auto;
-      padding:18px 16px 60px;
-    }
-
-    /* App shell */
-    .app{
-      border:1px solid var(--line);
-      border-radius: var(--radius2);
-      background: rgba(17,26,51,.45);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      backdrop-filter: blur(10px);
-    }
-
-    /* Top bar */
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:14px 14px;
-      border-bottom:1px solid var(--line);
-      background: rgba(15,23,48,.65);
-      position: sticky;
-      top: 0;
-      z-index: 20;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      min-width: 240px;
-    }
-    .avatar{
-      width:40px; height:40px; border-radius:14px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      display:grid; place-items:center;
-      color:#061024; font-weight:900;
-      letter-spacing:.04em;
-      flex: 0 0 auto;
-    }
-    .brand .t{
-      display:flex; flex-direction:column; line-height:1.1;
-    }
-    .brand .t b{font-size:14px}
-    .brand .t span{font-size:12px; color:var(--muted)}
-    .quick{
-      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
-    }
-    .qbtn{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:9px 12px;
-      border:1px solid var(--line);
-      background: rgba(17,26,51,.55);
-      color: var(--text);
-      border-radius: 999px;
-      font-size:13px;
-      text-decoration:none;
-      cursor:pointer;
-      transition: transform .12s ease, border-color .12s ease;
-    }
-    .qbtn:hover{transform: translateY(-1px); border-color: rgba(122,162,255,.55)}
-    .dot{
-      width:8px; height:8px; border-radius:99px; background: var(--good);
-      box-shadow: 0 0 0 4px rgba(99,230,190,.14);
-    }
-
-    /* Layout */
-    .main{
-      display:grid;
-      grid-template-columns: 300px 1fr;
-      min-height: 640px;
-    }
-    @media (max-width: 920px){
-      .main{grid-template-columns: 1fr}
-      .sidebar{border-right:none !important; border-bottom:1px solid var(--line)}
-      .brand{min-width:auto}
-    }
-
-    /* Sidebar */
-    .sidebar{
-      border-right:1px solid var(--line);
-      background: rgba(15,23,48,.42);
-      padding:14px;
-    }
-    .search{
-      display:flex; gap:10px; align-items:center;
-      border:1px solid var(--line);
-      background: rgba(17,26,51,.45);
-      border-radius: 14px;
-      padding:10px 12px;
-      margin-bottom:12px;
-    }
-    .search input{
-      width:100%;
-      background: transparent;
-      border:0;
-      outline:none;
-      color: var(--text);
-      font-size:13px;
-    }
-    .search input::placeholder{color: rgba(169,181,214,.7)}
-    .nav{
-      display:flex; flex-direction:column; gap:8px;
-    }
-    .tab{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:10px;
-      padding:12px 12px;
-      border:1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(17,26,51,.35);
-      cursor:pointer;
-      user-select:none;
-      transition: transform .12s ease, border-color .12s ease, background .12s ease;
-    }
-    .tab:hover{transform: translateY(-1px); border-color: rgba(122,162,255,.55)}
-    .tab.active{
-      background: linear-gradient(135deg, rgba(122,162,255,.20), rgba(118,228,247,.14));
-      border-color: rgba(122,162,255,.75);
-    }
-    .tab .left{
-      display:flex; align-items:center; gap:10px;
-      min-width:0;
-    }
-    .ico{
-      width:34px; height:34px; border-radius:12px;
-      border:1px solid var(--line);
-      background: rgba(15,23,48,.7);
-      display:grid; place-items:center;
-      font-size:14px;
-      flex: 0 0 auto;
-    }
-    .tab .name{
-      display:flex; flex-direction:column; min-width:0;
-    }
-    .tab .name b{
-      font-size:13px;
-      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-    }
-    .tab .name span{
-      font-size:12px; color:var(--muted);
-      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-    }
-    .badge{
-      font-size:12px; color: var(--muted);
-      border:1px solid var(--line);
-      padding:5px 9px;
-      border-radius: 999px;
-      background: rgba(15,23,48,.65);
-      flex: 0 0 auto;
-    }
-
-    /* Content */
-    .content{
-      padding:18px;
-    }
-    .panel{
-      border:1px solid var(--line);
-      border-radius: var(--radius2);
-      background: rgba(17,26,51,.45);
-      box-shadow: 0 10px 28px rgba(0,0,0,.25);
-      padding:18px;
-    }
-    .hero{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:14px;
-      align-items:stretch;
-    }
-    @media (max-width: 920px){ .hero{grid-template-columns:1fr} }
-    .hcard{
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(15,23,48,.55);
-      padding:16px;
-    }
-    .title{
-      font-size:26px;
-      margin:0 0 8px;
-      letter-spacing:-.3px;
-    }
-    .sub{
-      color:var(--muted);
-      margin:0 0 14px;
-      line-height:1.55;
-      font-size:14px;
-    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1100px; margin:0 auto; padding:18px 16px 60px}
+    .app{border:1px solid var(--line); border-radius:var(--r2); background:var(--panel); box-shadow:var(--shadow); overflow:hidden; backdrop-filter: blur(10px)}
+    .topbar{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:14px; border-bottom:1px solid var(--line); background:var(--panel2)}
+    .brand{display:flex; align-items:center; gap:12px}
+    .avatar{width:40px; height:40px; border-radius:14px; background:linear-gradient(135deg,var(--accent),var(--accent2)); display:grid; place-items:center; color:#061024; font-weight:900}
+    .brand b{display:block; font-size:14px}
+    .brand span{display:block; font-size:12px; color:var(--muted)}
+    .q{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .qbtn{display:inline-flex; align-items:center; gap:8px; padding:9px 12px; border:1px solid var(--line); background:rgba(17,26,51,.55); border-radius:999px; font-size:13px}
+    .qbtn:hover{border-color:rgba(122,162,255,.6)}
+    .dot{width:8px; height:8px; border-radius:99px; background:var(--good); box-shadow:0 0 0 4px rgba(99,230,190,.14)}
+    .main{display:grid; grid-template-columns:300px 1fr; min-height:640px}
+    @media (max-width:920px){.main{grid-template-columns:1fr} .sidebar{border-right:none!important; border-bottom:1px solid var(--line)}}
+    .sidebar{padding:14px; border-right:1px solid var(--line); background:rgba(15,23,48,.42)}
+    .nav{display:flex; flex-direction:column; gap:8px}
+    .tab{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:12px; border:1px solid var(--line); border-radius:14px; background:rgba(17,26,51,.35)}
+    .tab:hover{border-color:rgba(122,162,255,.6)}
+    .tab.active{background:linear-gradient(135deg, rgba(122,162,255,.20), rgba(118,228,247,.14)); border-color:rgba(122,162,255,.75)}
+    .left{display:flex; align-items:center; gap:10px; min-width:0}
+    .ico{width:34px; height:34px; border-radius:12px; border:1px solid var(--line); background:rgba(15,23,48,.7); display:grid; place-items:center}
+    .name b{display:block; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .name span{display:block; font-size:12px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .badge{font-size:12px; color:var(--muted); border:1px solid var(--line); padding:5px 9px; border-radius:999px; background:rgba(15,23,48,.65)}
+    .content{padding:18px}
+    .panel{border:1px solid var(--line); border-radius:var(--r2); background:rgba(17,26,51,.45); padding:18px; box-shadow:0 10px 28px rgba(0,0,0,.25)}
+    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:14px}
+    @media (max-width:920px){.hero{grid-template-columns:1fr}}
+    .card{border:1px solid var(--line); border-radius:var(--r); background:rgba(15,23,48,.55); padding:16px}
+    h1{margin:0 0 8px; font-size:26px; letter-spacing:-.3px}
+    p{margin:0 0 12px; color:var(--muted); line-height:1.55; font-size:14px}
     .chips{display:flex; gap:8px; flex-wrap:wrap}
-    .chip{
-      padding:7px 10px;
-      border-radius: 999px;
-      border:1px solid var(--line);
-      background: rgba(17,26,51,.35);
-      color:var(--muted);
-      font-size:12px;
-    }
+    .chip{padding:7px 10px; border-radius:999px; border:1px solid var(--line); background:rgba(17,26,51,.35); color:var(--muted); font-size:12px}
     .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
-    .btn{
-      padding:10px 13px;
-      border-radius: 14px;
-      border:1px solid var(--line);
-      background: rgba(17,26,51,.35);
-      color: var(--text);
-      font-weight:700;
-      font-size:13px;
-      cursor:pointer;
-      text-decoration:none;
-      transition: transform .12s ease, border-color .12s ease;
-      display:inline-flex; align-items:center; gap:8px;
-    }
-    .btn:hover{transform: translateY(-1px); border-color: rgba(122,162,255,.55)}
-    .btn.primary{
-      border:0;
-      color:#071023;
-      background: linear-gradient(135deg, rgba(122,162,255,.95), rgba(118,228,247,.85));
-    }
-
-    .sectionTitle{
-      margin:18px 0 10px;
-      font-size:12px;
-      color:var(--muted);
-      text-transform:uppercase;
-      letter-spacing:.16em;
-    }
-    .cards{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap:12px;
-    }
-    @media (max-width: 920px){ .cards{grid-template-columns:1fr} }
-
-    .card{
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(15,23,48,.55);
-      padding:14px;
-    }
-    .card h3{margin:0 0 8px; font-size:14px}
-    .card p{margin:0 0 10px; color:var(--muted); font-size:13px; line-height:1.55}
-    .list{
-      margin:0; padding-left:16px;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.65;
-    }
-
-    /* Views */
-    .view{display:none}
-    .view.active{display:block}
-
-    /* Footer */
-    .foot{
-      margin-top:14px;
-      text-align:center;
-      color: rgba(169,181,214,.75);
-      font-size:12px;
-    }
-
-    /* Small nice animation */
-    .fadeIn{
-      animation: fade .18s ease-out;
-    }
-    @keyframes fade{
-      from{opacity:.5; transform: translateY(4px)}
-      to{opacity:1; transform: translateY(0)}
-    }
+    .btn{padding:10px 13px; border-radius:14px; border:1px solid var(--line); background:rgba(17,26,51,.35); font-weight:700; font-size:13px}
+    .btn.primary{border:0; color:#071023; background:linear-gradient(135deg,rgba(122,162,255,.95),rgba(118,228,247,.85))}
+    .btn:hover{border-color:rgba(122,162,255,.6)}
+    .sectionTitle{margin:18px 0 10px; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.16em}
+    ul{margin:0; padding-left:16px; color:var(--muted); line-height:1.65; font-size:13px}
+    .grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px}
+    @media (max-width:920px){.grid{grid-template-columns:1fr}}
+    .foot{margin-top:14px; text-align:center; color:rgba(169,181,214,.75); font-size:12px}
   </style>
 </head>
 <body>
@@ -309,466 +73,118 @@
       <div class="topbar">
         <div class="brand">
           <div class="avatar">AL</div>
-          <div class="t">
+          <div>
             <b>Aman Lokhande</b>
             <span>Delivery • Program Ops • Solutions (B2B SaaS)</span>
           </div>
         </div>
-        <div class="quick">
+        <div class="q">
           <a class="qbtn" href="mailto:amanlokhande247@gmail.com"><span class="dot"></span>Email</a>
           <a class="qbtn" href="https://www.linkedin.com/in/aman-lokhande" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="qbtn" href="#resumes" onclick="openTab('resumes'); return false;">Resumes</a>
+          <a class="qbtn" href="resumes.html">Resumes</a>
         </div>
       </div>
 
       <div class="main">
         <aside class="sidebar">
-          <div class="search">
-            🔎
-            <input id="search" placeholder="Search (try: UAT, SQL, Lean, Streamlit)..." />
-          </div>
-
-          <div class="nav" id="nav">
-            <div class="tab active" data-tab="home" onclick="openTab('home')">
-              <div class="left">
-                <div class="ico">🏠</div>
-                <div class="name"><b>Home</b><span>Landing page</span></div>
-              </div>
+          <div class="nav">
+            <a class="tab active" href="index.html">
+              <div class="left"><div class="ico">🏠</div><div class="name"><b>Home</b><span>Landing page</span></div></div>
               <div class="badge">Start</div>
-            </div>
-
-            <div class="tab" data-tab="about" onclick="openTab('about')">
-              <div class="left">
-                <div class="ico">👤</div>
-                <div class="name"><b>About</b><span>Who I am</span></div>
-              </div>
+            </a>
+            <a class="tab" href="about.html">
+              <div class="left"><div class="ico">👤</div><div class="name"><b>About</b><span>Who I am</span></div></div>
               <div class="badge">Quick</div>
-            </div>
-
-            <div class="tab" data-tab="experience" onclick="openTab('experience')">
-              <div class="left">
-                <div class="ico">💼</div>
-                <div class="name"><b>Experience</b><span>Ipser + Vital</span></div>
-              </div>
+            </a>
+            <a class="tab" href="experience.html">
+              <div class="left"><div class="ico">💼</div><div class="name"><b>Experience</b><span>Ipser + Vital</span></div></div>
               <div class="badge">2</div>
-            </div>
-
-            <div class="tab" data-tab="projects" onclick="openTab('projects')">
-              <div class="left">
-                <div class="ico">🧩</div>
-                <div class="name"><b>Projects</b><span>Lean, MVP, SubTrack, Streamlit, Study Buddy</span></div>
-              </div>
+            </a>
+            <a class="tab" href="projects.html">
+              <div class="left"><div class="ico">🧩</div><div class="name"><b>Projects</b><span>All projects</span></div></div>
               <div class="badge">5</div>
-            </div>
-
-            <div class="tab" data-tab="skills" onclick="openTab('skills')">
-              <div class="left">
-                <div class="ico">🛠️</div>
-                <div class="name"><b>Skills</b><span>Tools + strengths</span></div>
-              </div>
+            </a>
+            <a class="tab" href="skills.html">
+              <div class="left"><div class="ico">🛠️</div><div class="name"><b>Skills</b><span>Tools + strengths</span></div></div>
               <div class="badge">Map</div>
-            </div>
-
-            <div class="tab" data-tab="resumes" onclick="openTab('resumes')">
-              <div class="left">
-                <div class="ico">📄</div>
-                <div class="name"><b>Resumes</b><span>Download PDFs</span></div>
-              </div>
+            </a>
+            <a class="tab" href="resumes.html">
+              <div class="left"><div class="ico">📄</div><div class="name"><b>Resumes</b><span>Download PDFs</span></div></div>
               <div class="badge">3</div>
-            </div>
-
-            <div class="tab" data-tab="contact" onclick="openTab('contact')">
-              <div class="left">
-                <div class="ico">📫</div>
-                <div class="name"><b>Contact</b><span>Let’s talk</span></div>
-              </div>
+            </a>
+            <a class="tab" href="contact.html">
+              <div class="left"><div class="ico">📫</div><div class="name"><b>Contact</b><span>Let’s talk</span></div></div>
               <div class="badge">Now</div>
-            </div>
+            </a>
           </div>
-
-          <div class="foot" style="margin-top:12px">
-            Tip: click tabs like an app. <br/>
-            <span style="opacity:.7">Search dims non-matching cards.</span>
-          </div>
+          <div class="foot">Multi-page app • Each tab is a page</div>
         </aside>
 
         <main class="content">
-          <!-- HOME -->
-          <section id="view-home" class="view active fadeIn">
-            <div class="panel">
-              <div class="hero">
-                <div class="hcard">
-                  <h2 class="title">I run customer-facing delivery from discovery to go-live.</h2>
-                  <p class="sub">
-                    Engineering Management graduate with B2B SaaS onboarding experience:
-                    requirements workshops, CSV data mapping/imports, UAT coordination, enablement docs/training,
-                    and KPI tracking with SQL + Excel to reduce onboarding friction.
-                  </p>
-                  <div class="chips">
-                    <span class="chip">Requirements workshops</span>
-                    <span class="chip">CSV mapping / imports</span>
-                    <span class="chip">UAT coordination</span>
-                    <span class="chip">Runbooks + training</span>
-                    <span class="chip">SQL / Excel KPIs</span>
-                    <span class="chip">RAID + status cadence</span>
-                  </div>
-                  <div class="actions">
-                    <button class="btn primary" onclick="openTab('experience')">Explore Experience →</button>
-                    <button class="btn" onclick="openTab('projects')">See Projects</button>
-                    <button class="btn" onclick="openTab('resumes')">Download Resumes</button>
-                  </div>
-                </div>
-
-                <div class="hcard">
-                  <div class="sectionTitle" style="margin-top:0">Highlights</div>
-                  <ul class="list">
-                    <li>Supported <b>5</b> B2B SaaS onboardings; contributed to <b>4</b> on-time go-lives.</li>
-                    <li>Led <b>6</b> requirements sessions; produced mapping sheets + acceptance criteria.</li>
-                    <li>Coordinated UAT (1–2 cycles/customer); triaged <b>20</b> Jira issues/requests.</li>
-                    <li>Enablement docs + trainings reduced repeat questions <b>5/week → 2/week</b>.</li>
-                    <li>SQL/Excel KPI tracking improved CS/Support handoff by ~<b>1 day</b>.</li>
-                  </ul>
-
-                  <div class="sectionTitle">Pick a track</div>
-                  <div class="cards">
-                    <div class="card">
-                      <h3>Implementation / Delivery</h3>
-                      <p>Kickoff → requirements → mapping → UAT → go-live readiness + enablement.</p>
-                      <button class="btn" onclick="openTab('experience')">Show relevant work</button>
-                    </div>
-                    <div class="card">
-                      <h3>Solutions / Pre-Sales</h3>
-                      <p>Discovery + demos/walkthroughs, value messaging, scoping, customer-to-engineering bridge.</p>
-                      <button class="btn" onclick="openTab('projects')">See demoable work</button>
-                    </div>
-                  </div>
-
-                  <div style="color:var(--muted); font-size:12px; margin-top:10px">
-                    Optional: upload a photo named <b>profile.jpg</b> to replace the “AL” avatar automatically.
-                  </div>
-                </div>
-              </div>
-
-              <div class="sectionTitle">Quick navigation</div>
-              <div class="cards">
-                <div class="card">
-                  <h3>Experience</h3>
-                  <p>Customer onboarding + delivery at Ipser Labs; execution + change control at Vital.</p>
-                  <button class="btn primary" onclick="openTab('experience')">Open Experience</button>
-                </div>
-                <div class="card">
-                  <h3>Projects</h3>
-                  <p>Lean PDCA pilot, MVP planning, SubTrack prototype demo, Streamlit dashboard, Study Buddy prototype.</p>
-                  <button class="btn primary" onclick="openTab('projects')">Open Projects</button>
-                </div>
-              </div>
-
-              <div class="foot">© <span id="year"></span> Aman Lokhande • Built with GitHub Pages</div>
-            </div>
-          </section>
-
-          <!-- ABOUT -->
-          <section id="view-about" class="view fadeIn">
-            <div class="panel">
-              <div class="sectionTitle" style="margin-top:0">About</div>
+          <div class="panel">
+            <div class="hero">
               <div class="card">
-                <h3>Who I am</h3>
+                <h1>Customer-facing execution from discovery to go-live.</h1>
                 <p>
-                  I’m an Engineering Management graduate focused on customer-facing delivery in B2B SaaS.
-                  I like structured execution (milestones, RAID, clear notes, clean handoffs) and I’m comfortable
-                  translating business needs into implementation-ready artifacts (requirements summaries, mapping sheets,
-                  UAT checklists, acceptance criteria).
+                  Engineering Management graduate with B2B SaaS onboarding experience: requirements workshops,
+                  CSV data mapping/imports, UAT coordination, enablement docs/training, and KPI tracking with SQL + Excel.
                 </p>
-                <p>
-                  I’m targeting roles in <b>Implementation/Delivery</b>, <b>Program/Ops Execution</b>, and <b>Solutions/Pre-Sales</b>.
-                </p>
-              </div>
-
-              <div class="sectionTitle">What you get with me</div>
-              <div class="cards">
-                <div class="card">
-                  <h3>Clarity + cadence</h3>
-                  <ul class="list">
-                    <li>Milestones, owners, and dependencies tracked weekly.</li>
-                    <li>Action items that don’t fall through.</li>
-                    <li>Fast escalation when timelines risk slipping.</li>
-                  </ul>
+                <div class="chips">
+                  <span class="chip">Requirements</span>
+                  <span class="chip">CSV mapping</span>
+                  <span class="chip">UAT</span>
+                  <span class="chip">Enablement</span>
+                  <span class="chip">RAID</span>
+                  <span class="chip">SQL/Excel</span>
                 </div>
-                <div class="card">
-                  <h3>Customer-ready delivery</h3>
-                  <ul class="list">
-                    <li>Clean docs: runbooks, FAQs, release notes.</li>
-                    <li>Trainings + walkthroughs for admins/users.</li>
-                    <li>Go-live readiness + support handoff.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- EXPERIENCE -->
-          <section id="view-experience" class="view fadeIn">
-            <div class="panel">
-              <div class="sectionTitle" style="margin-top:0">Experience</div>
-
-              <div class="card">
-                <h3>Ipser Labs — Product Manager (Co-op) | Jan 2025 – May 2025</h3>
-                <ul class="list">
-                  <li>Supported <b>5</b> B2B SaaS onboardings; contributed to <b>4</b> on-time go-lives.</li>
-                  <li>Led <b>6</b> requirements sessions; produced artifacts (requirements summary, mapping sheet, acceptance criteria).</li>
-                  <li>Coordinated UAT (1–2 cycles/customer), triaged <b>20</b> issues/requests in Jira; drove retest and sign-off.</li>
-                  <li>Created reusable onboarding docs + delivered <b>3</b> trainings; reduced repeat questions <b>5/week → 2/week</b>.</li>
-                  <li>Used SQL + Excel for onboarding KPIs; improved CS/Support handoff by ~<b>1 day</b>.</li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <h3>Vital Industrial Products — Project Engineer | Aug 2022 – Aug 2023</h3>
-                <ul class="list">
-                  <li>Planned and tracked weekly production/dispatch schedules for OEM accounts; managed <b>15–25</b> order lines/week.</li>
-                  <li>Handled change control via a revision/clarification log; closed <b>8–10</b> clarifications/month.</li>
-                  <li>Supported new-part/sample approvals with complete measurement packs; reduced review loops <b>3 → 2</b> cycles.</li>
-                </ul>
-              </div>
-
-              <div class="sectionTitle">What I used day-to-day</div>
-              <div class="cards">
-                <div class="card">
-                  <h3>Execution tools</h3>
-                  <p>Jira, Confluence, Slack/Teams, workback plans, RAID logs, status cadence.</p>
-                </div>
-                <div class="card">
-                  <h3>Analytics</h3>
-                  <p>SQL + Excel KPI tracking (time-to-go-live, backlog aging, UAT pass rate).</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- PROJECTS -->
-          <section id="view-projects" class="view fadeIn">
-            <div class="panel">
-              <div class="sectionTitle" style="margin-top:0">Projects</div>
-
-              <!-- IMPORTANT: All project cards must live inside this .cards grid -->
-              <div class="cards">
-
-                <div class="card">
-                  <h3>Lean time study + PDCA pilot — Checkout delays</h3>
-                  <p>Time study during rush hours; identified payment as bottleneck; piloted countermeasures.</p>
-                  <ul class="list">
-                    <li>Overrides: <b>12% → 8%</b></li>
-                    <li>Payment cycle time: <b>0.6 → 0.5</b> min</li>
-                    <li>Avg lead time: <b>5.5 → 5.1</b> min</li>
-                  </ul>
-                </div>
-
-                <div class="card">
-                  <h3>NUMarket Yard — MVP planning + rollout ops</h3>
-                  <p>Scope/deliverables, WBS, 10-milestone workback plan, RAID + comms plan, rollout operations.</p>
-                  <ul class="list">
-                    <li>Backlog with user stories + acceptance criteria</li>
-                    <li>Launch readiness KPI tracker (activation, time-to-first-listing, WAU)</li>
-                  </ul>
-                </div>
-
-                <div class="card">
-                  <h3>SubTrack — discovery + prototype demo flow</h3>
-                  <p>12 interviews + 8 feedback sessions; built Figma prototype + refined demo walkthrough.</p>
-                  <ul class="list">
-                    <li>Subscription detection, renewal alerts, spend dashboard, cancellation assist</li>
-                    <li>Planned data inputs: receipt parsing + CSV import</li>
-                  </ul>
-                </div>
-
-                <div class="card">
-                  <h3>California DWR water-quality dashboard (Streamlit)</h3>
-                  <p>Python dashboard integrating 3 datasets (~40k rows) with interactive filters and presets.</p>
-                  <ul class="list">
-                    <li>Reduced typical analysis from <b>10–15 min → 2–3 min</b></li>
-                    <li>4 interactive views + saved presets</li>
-                  </ul>
-                </div>
-
-                <!-- FIXED: Study Buddy card is now INSIDE the grid -->
-                <div class="card">
-                  <h3>Study Buddy Finder — Northeastern Edition (PRD + Prototype)</h3>
-                  <p>
-                    NU-only study partner matching + scheduling concept designed to create consistent study routines with trust &amp;
-                    safety and explainable AI matching.
-                  </p>
-                  <ul class="list">
-                    <li><b>Problem:</b> schedule mismatch, low-signal matching, and trust/safety concerns prevent repeatable routines.</li>
-                    <li><b>MVP flow:</b> verification → onboarding → match feed (“why this match?”) → chat + Study Coach → overlap scheduling → sessions + check-in.</li>
-                    <li><b>AI:</b> match ranking + explainability, overlap-based time suggestions, in-chat Study Coach (with disclaimers).</li>
-                    <li><b>Metrics:</b> North Star = Weekly Study Sessions Completed; time-to-first-session + match→chat→schedule conversion.</li>
-                  </ul>
-                  <div class="actions">
-                    <a class="btn primary" href="https://aman-studybuddy.netlify.app/" target="_blank" rel="noreferrer">Live Prototype</a>
-                    <!-- If you upload a PRD PDF later, uncomment this button and upload the file -->
-                    <!-- <a class="btn" href="Study_Buddy_Finder_PRD.pdf" target="_blank" rel="noreferrer">Open PRD</a> -->
-                  </div>
-                </div>
-
-              </div><!-- end .cards -->
-
-              <div class="sectionTitle">Want to add demo links?</div>
-              <div class="card">
-                <p style="margin:0; color:var(--muted); font-size:13px; line-height:1.6">
-                  If you upload demo videos (Loom/YouTube) or screenshots, I can add “Watch demo” buttons for each project.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <!-- SKILLS -->
-          <section id="view-skills" class="view fadeIn">
-            <div class="panel">
-              <div class="sectionTitle" style="margin-top:0">Skills</div>
-
-              <div class="cards">
-                <div class="card">
-                  <h3>Implementation & Delivery</h3>
-                  <div class="chips">
-                    <span class="chip">Onboarding</span>
-                    <span class="chip">Requirements</span>
-                    <span class="chip">CSV mapping</span>
-                    <span class="chip">UAT</span>
-                    <span class="chip">Go-live readiness</span>
-                    <span class="chip">Enablement</span>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <h3>Program / Ops Execution</h3>
-                  <div class="chips">
-                    <span class="chip">Workback plans</span>
-                    <span class="chip">Dependencies</span>
-                    <span class="chip">RAID logs</span>
-                    <span class="chip">Status cadence</span>
-                    <span class="chip">Escalations</span>
-                    <span class="chip">Lean / PDCA</span>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <h3>Solutions / Pre-Sales</h3>
-                  <div class="chips">
-                    <span class="chip">Discovery calls</span>
-                    <span class="chip">Demos</span>
-                    <span class="chip">Value messaging</span>
-                    <span class="chip">Objection basics</span>
-                    <span class="chip">Scoping</span>
-                    <span class="chip">Technical explanations</span>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <h3>Tools</h3>
-                  <div class="chips">
-                    <span class="chip">Jira</span>
-                    <span class="chip">Confluence</span>
-                    <span class="chip">SQL</span>
-                    <span class="chip">Excel</span>
-                    <span class="chip">PowerPoint</span>
-                    <span class="chip">Slack/Teams</span>
-                    <span class="chip">Google Workspace</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- RESUMES -->
-          <section id="view-resumes" class="view fadeIn">
-            <div class="panel">
-              <div class="sectionTitle" style="margin-top:0">Resumes</div>
-              <div class="card">
-                <p style="margin-top:0; color:var(--muted); font-size:13px; line-height:1.6">
-                  Upload your PDFs to the repo root and keep these exact names (or update the links below).
-                </p>
-
                 <div class="actions">
-                  <a class="btn primary" href="Aman_Lokhande_Implementation.pdf">Implementation / Delivery</a>
-                  <a class="btn primary" href="Aman_Lokhande_ProgramOps.pdf">Program / Ops</a>
-                  <a class="btn primary" href="Aman_Lokhande_Solutions.pdf">Solutions / Pre-Sales</a>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- CONTACT -->
-          <section id="view-contact" class="view fadeIn">
-            <div class="panel">
-              <div class="sectionTitle" style="margin-top:0">Contact</div>
-
-              <div class="cards">
-                <div class="card">
-                  <h3>Email</h3>
-                  <p><a href="mailto:amanlokhande247@gmail.com">amanlokhande247@gmail.com</a></p>
-                </div>
-                <div class="card">
-                  <h3>LinkedIn</h3>
-                  <p><a href="https://www.linkedin.com/in/aman-lokhande" target="_blank" rel="noreferrer">linkedin.com/in/aman-lokhande</a></p>
+                  <a class="btn primary" href="experience.html">Explore Experience →</a>
+                  <a class="btn" href="projects.html">See Projects</a>
+                  <a class="btn" href="resumes.html">Download Resumes</a>
                 </div>
               </div>
 
-              <div class="sectionTitle">Optional next upgrade</div>
               <div class="card">
-                <p style="margin:0; color:var(--muted); font-size:13px; line-height:1.6">
-                  Want a “Demos” area with thumbnails, or a “Download 1-pagers” section? Tell me and I’ll add it.
-                </p>
+                <div class="sectionTitle" style="margin-top:0">Highlights</div>
+                <ul>
+                  <li>Supported <b>5</b> B2B SaaS onboardings; contributed to <b>4</b> on-time go-lives.</li>
+                  <li>Led <b>6</b> requirements sessions; produced mapping sheets + acceptance criteria.</li>
+                  <li>Coordinated UAT (1–2 cycles/customer); triaged <b>20</b> Jira issues/requests.</li>
+                  <li>Reduced repeat onboarding questions <b>5/week → 2/week</b> via enablement docs + trainings.</li>
+                  <li>SQL/Excel KPI tracking improved CS/Support handoff by ~<b>1 day</b>.</li>
+                </ul>
+
+                <div class="sectionTitle">Start here</div>
+                <div class="grid">
+                  <div class="card">
+                    <b>Best project to open</b>
+                    <p style="margin-top:6px">Study Buddy Finder (PRD + Prototype)</p>
+                    <div class="actions">
+                      <a class="btn primary" href="study-buddy.html">Open Project</a>
+                      <a class="btn" href="https://aman-studybuddy.netlify.app/" target="_blank" rel="noreferrer">Live Prototype</a>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <b>Projects overview</b>
+                    <p style="margin-top:6px">Lean, MVP planning, SubTrack, Streamlit</p>
+                    <div class="actions">
+                      <a class="btn primary" href="projects.html">Open Projects</a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </section>
+
+            <div class="foot">© <span id="y"></span> Aman Lokhande • GitHub Pages</div>
+          </div>
         </main>
       </div>
     </div>
   </div>
 
   <script>
-    const views = ["home","about","experience","projects","skills","resumes","contact"];
-
-    function openTab(tab){
-      // activate tab button
-      document.querySelectorAll(".tab").forEach(el=>{
-        el.classList.toggle("active", el.dataset.tab === tab);
-      });
-      // show view
-      views.forEach(v=>{
-        const el = document.getElementById("view-" + v);
-        if(!el) return;
-        const on = v === tab;
-        el.classList.toggle("active", on);
-        if(on){
-          el.classList.remove("fadeIn");
-          void el.offsetWidth; // restart animation
-          el.classList.add("fadeIn");
-        }
-      });
-      // update hash
-      history.replaceState(null, "", "#" + tab);
-    }
-
-    // Simple search: dims non-matching cards
-    const searchInput = document.getElementById("search");
-    searchInput.addEventListener("input", () => {
-      const q = searchInput.value.trim().toLowerCase();
-      const cards = document.querySelectorAll(".card, .hcard");
-      cards.forEach(c=>{
-        const text = c.innerText.toLowerCase();
-        const match = q.length === 0 || text.includes(q);
-        c.style.opacity = match ? "1" : ".25";
-      });
-    });
-
-    // Open from URL hash
-    const hash = location.hash.replace("#","");
-    if(hash && views.includes(hash)) openTab(hash);
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Optional: if you upload profile.jpg, swap avatar
+    document.getElementById("y").textContent = new Date().getFullYear();
+    // Optional: upload profile.jpg to repo root to replace avatar
     const img = new Image();
     img.onload = () => {
       const av = document.querySelector(".avatar");

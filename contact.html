@@ -161,28 +161,25 @@
               </div>
 
               <div class="card">
-                <a class="bigbtn" href="tel:+18575069707">
-                  <span>📞 Phone</span>
-                  <span>Call</span>
-                </a>
-                <div class="mini">+1 (857) 506-9707</div>
-                <button class="bigbtn" id="copyPhone" type="button" style="margin-top:10px;">
-                  <span>📋 Copy phone</span>
-                  <span>Copy</span>
-                </button>
-              </div>
-
-              <div class="card">
                 <a class="bigbtn" href="resumes.html">
                   <span>📄 Resumes</span>
                   <span>Open</span>
                 </a>
                 <div class="mini">Pick the best version for the job.</div>
+
                 <a class="bigbtn" href="projects.html" style="margin-top:10px;">
                   <span>🧩 Projects</span>
                   <span>Open</span>
                 </a>
                 <div class="mini">See app-style project pages.</div>
+              </div>
+
+              <div class="card">
+                <div style="color:var(--muted); font-size:13px; line-height:1.6">
+                  <b style="color:var(--text)">Quick note</b><br/>
+                  If you include the job title + company in your email, I can respond faster with the most relevant resume
+                  version (Implementation / Ops / Solutions).
+                </div>
               </div>
             </div>
 
@@ -214,7 +211,6 @@
     img.src = "profile.jpg";
 
     const email = "amanlokhande247@gmail.com";
-    const phone = "+18575069707";
 
     const toast = document.getElementById("toast");
     let t;
@@ -239,7 +235,6 @@
     }
 
     document.getElementById("copyEmail").addEventListener("click", ()=> copyText(email));
-    document.getElementById("copyPhone").addEventListener("click", ()=> copyText(phone));
   </script>
 </body>
 </html>

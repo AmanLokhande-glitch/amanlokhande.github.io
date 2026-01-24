@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Aman Lokhande | Portfolio</title>
-  <meta name="description" content="Multi-page app-style portfolio." />
+  <meta name="description" content="Aman Lokhande — Implementation, Delivery, Program Ops, Solutions. App-style portfolio." />
   <style>
     :root{
       --bg:#0b1020; --panel:rgba(17,26,51,.45); --panel2:rgba(15,23,48,.62);
@@ -35,7 +35,7 @@
     .qbtn{display:inline-flex; align-items:center; gap:8px; padding:9px 12px; border:1px solid var(--line); background:rgba(17,26,51,.55); border-radius:999px; font-size:13px}
     .qbtn:hover{border-color:rgba(122,162,255,.6)}
     .dot{width:8px; height:8px; border-radius:99px; background:var(--good); box-shadow:0 0 0 4px rgba(99,230,190,.14)}
-    .main{display:grid; grid-template-columns:300px 1fr; min-height:640px}
+    .main{display:grid; grid-template-columns:300px 1fr; min-height:680px}
     @media (max-width:920px){.main{grid-template-columns:1fr} .sidebar{border-right:none!important; border-bottom:1px solid var(--line)}}
     .sidebar{padding:14px; border-right:1px solid var(--line); background:rgba(15,23,48,.42)}
     .nav{display:flex; flex-direction:column; gap:8px}
@@ -49,21 +49,23 @@
     .badge{font-size:12px; color:var(--muted); border:1px solid var(--line); padding:5px 9px; border-radius:999px; background:rgba(15,23,48,.65)}
     .content{padding:18px}
     .panel{border:1px solid var(--line); border-radius:var(--r2); background:rgba(17,26,51,.45); padding:18px; box-shadow:0 10px 28px rgba(0,0,0,.25)}
-    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:14px}
+    h1{margin:0 0 8px; font-size:24px; letter-spacing:-.2px}
+    p{margin:0 0 12px; color:var(--muted); line-height:1.6; font-size:13px}
+    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:12px}
     @media (max-width:920px){.hero{grid-template-columns:1fr}}
-    .card{border:1px solid var(--line); border-radius:var(--r); background:rgba(15,23,48,.55); padding:16px}
-    h1{margin:0 0 8px; font-size:26px; letter-spacing:-.3px}
-    p{margin:0 0 12px; color:var(--muted); line-height:1.55; font-size:14px}
-    .chips{display:flex; gap:8px; flex-wrap:wrap}
+    .card{border:1px solid var(--line); border-radius:18px; background:rgba(15,23,48,.55); padding:14px}
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
     .chip{padding:7px 10px; border-radius:999px; border:1px solid var(--line); background:rgba(17,26,51,.35); color:var(--muted); font-size:12px}
     .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
-    .btn{padding:10px 13px; border-radius:14px; border:1px solid var(--line); background:rgba(17,26,51,.35); font-weight:700; font-size:13px}
+    .btn{padding:10px 13px; border-radius:14px; border:1px solid var(--line); background:rgba(17,26,51,.35); font-weight:900; font-size:13px}
     .btn.primary{border:0; color:#071023; background:linear-gradient(135deg,rgba(122,162,255,.95),rgba(118,228,247,.85))}
     .btn:hover{border-color:rgba(122,162,255,.6)}
-    .sectionTitle{margin:18px 0 10px; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.16em}
-    ul{margin:0; padding-left:16px; color:var(--muted); line-height:1.65; font-size:13px}
-    .grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px}
+    .grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px}
     @media (max-width:920px){.grid{grid-template-columns:1fr}}
+    .sectionTitle{margin:14px 0 10px; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.16em}
+    .statrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .pill{font-size:12px; color:var(--muted); border:1px solid var(--line); padding:6px 10px; border-radius:999px; background:rgba(17,26,51,.35)}
+    .pill.good{border-color:rgba(99,230,190,.45)}
     .foot{margin-top:14px; text-align:center; color:rgba(169,181,214,.75); font-size:12px}
   </style>
 </head>
@@ -75,7 +77,7 @@
           <div class="avatar">AL</div>
           <div>
             <b>Aman Lokhande</b>
-            <span>Delivery • Program Ops • Solutions (B2B SaaS)</span>
+            <span>Implementation • Delivery • Program Ops • Solutions</span>
           </div>
         </div>
         <div class="q">
@@ -90,22 +92,22 @@
           <div class="nav">
             <a class="tab active" href="index.html">
               <div class="left"><div class="ico">🏠</div><div class="name"><b>Home</b><span>Landing page</span></div></div>
-              <div class="badge">Start</div>
+              <div class="badge">Now</div>
             </a>
             <a class="tab" href="about.html">
               <div class="left"><div class="ico">👤</div><div class="name"><b>About</b><span>Who I am</span></div></div>
-              <div class="badge">Quick</div>
+              <div class="badge">1</div>
             </a>
             <a class="tab" href="experience.html">
               <div class="left"><div class="ico">💼</div><div class="name"><b>Experience</b><span>Ipser + Vital</span></div></div>
               <div class="badge">2</div>
             </a>
             <a class="tab" href="projects.html">
-              <div class="left"><div class="ico">🧩</div><div class="name"><b>Projects</b><span>All projects</span></div></div>
+              <div class="left"><div class="ico">🧩</div><div class="name"><b>Projects</b><span>Case studies</span></div></div>
               <div class="badge">5</div>
             </a>
             <a class="tab" href="skills.html">
-              <div class="left"><div class="ico">🛠️</div><div class="name"><b>Skills</b><span>Tools + strengths</span></div></div>
+              <div class="left"><div class="ico">🛠️</div><div class="name"><b>Skills</b><span>Role-fit map</span></div></div>
               <div class="badge">Map</div>
             </a>
             <a class="tab" href="resumes.html">
@@ -113,69 +115,117 @@
               <div class="badge">3</div>
             </a>
             <a class="tab" href="contact.html">
-              <div class="left"><div class="ico">📫</div><div class="name"><b>Contact</b><span>Let’s talk</span></div></div>
-              <div class="badge">Now</div>
+              <div class="left"><div class="ico">📫</div><div class="name"><b>Contact</b><span>Get in touch</span></div></div>
+              <div class="badge">Hi</div>
             </a>
           </div>
-          <div class="foot">Multi-page app • Each tab is a page</div>
+          <div class="foot">App-style portfolio</div>
         </aside>
 
         <main class="content">
           <div class="panel">
             <div class="hero">
               <div class="card">
-                <h1>Customer-facing execution from discovery to go-live.</h1>
+                <h1>Customer-facing execution that gets to “go-live.”</h1>
                 <p>
-                  Engineering Management graduate with B2B SaaS onboarding experience: requirements workshops,
-                  CSV data mapping/imports, UAT coordination, enablement docs/training, and KPI tracking with SQL + Excel.
+                  Engineering Management graduate with B2B SaaS onboarding experience (requirements workshops, CSV data mapping,
+                  UAT coordination, go-live readiness) and strong SQL/Excel KPI tracking.
                 </p>
+
                 <div class="chips">
-                  <span class="chip">Requirements</span>
-                  <span class="chip">CSV mapping</span>
-                  <span class="chip">UAT</span>
-                  <span class="chip">Enablement</span>
-                  <span class="chip">RAID</span>
-                  <span class="chip">SQL/Excel</span>
+                  <span class="chip">Requirements workshops</span>
+                  <span class="chip">CSV mapping/imports</span>
+                  <span class="chip">UAT coordination</span>
+                  <span class="chip">Go-live checklists</span>
+                  <span class="chip">Docs + enablement</span>
+                  <span class="chip">SQL/Excel KPIs</span>
                 </div>
+
                 <div class="actions">
-                  <a class="btn primary" href="experience.html">Explore Experience →</a>
-                  <a class="btn" href="projects.html">See Projects</a>
-                  <a class="btn" href="resumes.html">Download Resumes</a>
+                  <a class="btn primary" href="projects.html">View Projects</a>
+                  <a class="btn" href="experience.html">Experience</a>
+                  <a class="btn" href="skills.html">Skills</a>
+                </div>
+
+                <div class="sectionTitle">Quick proof</div>
+                <div class="statrow">
+                  <span class="pill good">5 onboardings supported</span>
+                  <span class="pill good">4 on-time go-lives</span>
+                  <span class="pill">20 Jira issues triaged</span>
+                  <span class="pill">3 customer trainings</span>
                 </div>
               </div>
 
               <div class="card">
-                <div class="sectionTitle" style="margin-top:0">Highlights</div>
-                <ul>
-                  <li>Supported <b>5</b> B2B SaaS onboardings; contributed to <b>4</b> on-time go-lives.</li>
-                  <li>Led <b>6</b> requirements sessions; produced mapping sheets + acceptance criteria.</li>
-                  <li>Coordinated UAT (1–2 cycles/customer); triaged <b>20</b> Jira issues/requests.</li>
-                  <li>Reduced repeat onboarding questions <b>5/week → 2/week</b> via enablement docs + trainings.</li>
-                  <li>SQL/Excel KPI tracking improved CS/Support handoff by ~<b>1 day</b>.</li>
-                </ul>
+                <div class="sectionTitle" style="margin-top:0">Pick a path</div>
+                <p>These are the roles I’m targeting — each has a matching resume.</p>
 
-                <div class="sectionTitle">Start here</div>
-                <div class="grid">
-                  <div class="card">
-                    <b>Best project to open</b>
-                    <p style="margin-top:6px">Study Buddy Finder (PRD + Prototype)</p>
-                    <div class="actions">
-                      <a class="btn primary" href="study-buddy.html">Open Project</a>
-                      <a class="btn" href="https://aman-studybuddy.netlify.app/" target="_blank" rel="noreferrer">Live Prototype</a>
+                <div class="actions" style="margin-top:10px">
+                  <a class="btn primary" href="resumes.html">Implementation / Delivery</a>
+                  <a class="btn" href="resumes.html">Program / Project Ops</a>
+                  <a class="btn" href="resumes.html">Solutions / Pre-Sales</a>
+                </div>
+
+                <div class="sectionTitle">Featured projects</div>
+                <div class="grid" style="margin-top:0">
+                  <div class="card" style="padding:12px">
+                    <b>Study Buddy Finder</b>
+                    <p style="margin:6px 0 0">NU-only matching + scheduling concept + prototype.</p>
+                    <div class="actions" style="margin-top:10px">
+                      <a class="btn" href="studybuddy.html">Open</a>
+                      <a class="btn" href="https://aman-studybuddy.netlify.app/" target="_blank" rel="noreferrer">Prototype</a>
                     </div>
                   </div>
-                  <div class="card">
-                    <b>Projects overview</b>
-                    <p style="margin-top:6px">Lean, MVP planning, SubTrack, Streamlit</p>
-                    <div class="actions">
-                      <a class="btn primary" href="projects.html">Open Projects</a>
+                  <div class="card" style="padding:12px">
+                    <b>Water Quality Dashboard</b>
+                    <p style="margin:6px 0 0">Streamlit dashboard with filters + views.</p>
+                    <div class="actions" style="margin-top:10px">
+                      <a class="btn" href="water-dashboard.html">Open</a>
                     </div>
                   </div>
+                </div>
+
+                <div class="sectionTitle">Next steps</div>
+                <div class="actions" style="margin-top:0">
+                  <a class="btn" href="about.html">About</a>
+                  <a class="btn" href="contact.html">Contact</a>
                 </div>
               </div>
             </div>
 
-            <div class="foot">© <span id="y"></span> Aman Lokhande • GitHub Pages</div>
+            <div class="sectionTitle">What you’ll find inside</div>
+            <div class="grid">
+              <div class="card">
+                <b>Projects</b>
+                <p style="margin-top:6px">
+                  Case-study pages with problem → approach → outcomes. Includes your app prototype links.
+                </p>
+                <div class="actions"><a class="btn primary" href="projects.html">Go to Projects</a></div>
+              </div>
+              <div class="card">
+                <b>Resumes</b>
+                <p style="margin-top:6px">
+                  3 tailored resumes with a quick chooser so you always send the right one.
+                </p>
+                <div class="actions"><a class="btn" href="resumes.html">Open Resumes</a></div>
+              </div>
+              <div class="card">
+                <b>Skills</b>
+                <p style="margin-top:6px">
+                  Role-fit skill map for Implementation, Program Ops, and Solutions.
+                </p>
+                <div class="actions"><a class="btn" href="skills.html">Open Skills</a></div>
+              </div>
+              <div class="card">
+                <b>Experience</b>
+                <p style="margin-top:6px">
+                  Timeline view with highlights and impact bullets.
+                </p>
+                <div class="actions"><a class="btn" href="experience.html">Open Experience</a></div>
+              </div>
+            </div>
+
+            <div class="foot">© <span id="y"></span> Aman Lokhande</div>
           </div>
         </main>
       </div>
@@ -184,6 +234,7 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+
     // Optional: upload profile.jpg to repo root to replace avatar
     const img = new Image();
     img.onload = () => {

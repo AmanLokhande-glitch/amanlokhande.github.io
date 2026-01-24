@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aman Lokhande | Portfolio</title>
+  <meta name="description" content="Customer-facing delivery & ops — discovery to go-live." />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#111a33;
+      --card2:#0f1730;
+      --text:#eaf0ff;
+      --muted:#a9b5d6;
+      --line:#1f2a4a;
+      --accent:#7aa2ff;
+      --accent2:#76e4f7;
+      --good:#63e6be;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 20% 10%, rgba(122,162,255,.25), transparent 60%),
+                  radial-gradient(900px 700px at 80% 20%, rgba(118,228,247,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1050px; margin:0 auto; padding:28px 18px 60px}
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:18px 18px; border:1px solid var(--line);
+      border-radius: var(--radius); background: rgba(17,26,51,.6);
+      backdrop-filter: blur(10px); box-shadow: var(--shadow);
+      position: sticky; top: 14px; z-index: 10;
+    }
+    .brand{display:flex; align-items:center; gap:12px}
+    .avatar{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display:grid; place-items:center; font-weight:800; color:#0b1020;
+    }
+    .brand h1{font-size:15px; margin:0}
+    .brand p{margin:0; font-size:12px; color:var(--muted)}
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .pill{
+      padding:9px 12px; border:1px solid var(--line);
+      border-radius:999px; background: rgba(15,23,48,.7);
+      font-size:13px; color:var(--muted);
+    }
+    .pill:hover{border-color: rgba(122,162,255,.6); color:var(--text)}
+    .hero{
+      margin-top:18px; padding:22px; border-radius: var(--radius);
+      border:1px solid var(--line); background: rgba(17,26,51,.55);
+      box-shadow: var(--shadow);
+    }
+    .hero h2{margin:0 0 10px; font-size:26px; letter-spacing:-.3px}
+    .hero p{margin:0 0 16px; color:var(--muted); line-height:1.5}
+    .cta{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{
+      padding:10px 14px; border-radius:12px; border:1px solid var(--line);
+      background: rgba(15,23,48,.85); color:var(--text); font-weight:600;
+      font-size:13px;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(122,162,255,.9), rgba(118,228,247,.85));
+      border: 0; color:#0b1020;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .grid{display:grid; gap:14px; margin-top:14px}
+    .grid.cols-3{grid-template-columns: repeat(3, minmax(0, 1fr))}
+    .grid.cols-2{grid-template-columns: repeat(2, minmax(0, 1fr))}
+    @media (max-width: 900px){ .grid.cols-3{grid-template-columns:1fr} .grid.cols-2{grid-template-columns:1fr} header{position:static}}
+    .card{
+      border:1px solid var(--line); border-radius: var(--radius);
+      background: rgba(17,26,51,.5); box-shadow: var(--shadow);
+      padding:16px;
+    }
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card p{margin:0 0 12px; color:var(--muted); line-height:1.5; font-size:13px}
+    .tags{display:flex; gap:8px; flex-wrap:wrap}
+    .tag{
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--line);
+      padding:6px 10px; border-radius:999px; background: rgba(15,23,48,.7);
+    }
+    .list{margin:0; padding-left:16px; color:var(--muted); line-height:1.6}
+    .section-title{
+      margin:22px 0 10px; font-size:14px; color:var(--muted);
+      text-transform:uppercase; letter-spacing:.14em;
+    }
+    footer{margin-top:26px; color:var(--muted); font-size:12px; text-align:center}
+    .split{display:flex; gap:12px; flex-wrap:wrap}
+    .split .btn{flex: 0 0 auto}
+    .note{font-size:12px; color:var(--muted); margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="avatar">AL</div>
+        <div>
+          <h1>Aman Lokhande</h1>
+          <p>Delivery • Program Ops • Solutions (B2B SaaS)</p>
+        </div>
+      </div>
+      <nav>
+        <a class="pill" href="#tracks">Tracks</a>
+        <a class="pill" href="#case-studies">Case Studies</a>
+        <a class="pill" href="#resumes">Resumes</a>
+        <a class="pill" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2>Customer-facing execution from discovery to go-live.</h2>
+      <p>
+        I run structured delivery: requirements workshops, data mapping, UAT coordination, enablement docs/training,
+        and KPI tracking (SQL/Excel) to reduce onboarding friction and keep timelines on track.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#resumes">Download Resumes</a>
+        <a class="btn" href="#case-studies">View Case Studies</a>
+        <a class="btn" href="https://www.linkedin.com/in/aman-lokhande" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="mailto:amanlokhande247@gmail.com">Email</a>
+      </div>
+      <div class="note">Tip: replace the resume links below after you upload the PDFs.</div>
+    </section>
+
+    <div id="tracks" class="section-title">Tracks</div>
+    <section class="grid cols-3">
+      <div class="card">
+        <h3>Implementation / Delivery</h3>
+        <p>Kickoff → requirements → CSV data mapping → UAT → go-live readiness, plus runbooks and training.</p>
+        <div class="tags">
+          <span class="tag">Onboarding</span><span class="tag">UAT</span><span class="tag">Runbooks</span><span class="tag">CSV mapping</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Program / Project / Ops</h3>
+        <p>Milestone plans, dependency tracking, RAID logs, status cadence, escalations, and process improvement.</p>
+        <div class="tags">
+          <span class="tag">Workback plans</span><span class="tag">RAID</span><span class="tag">Stakeholders</span><span class="tag">Lean</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Solutions / Pre-Sales</h3>
+        <p>Discovery + demos/walkthroughs, value messaging, scoping, and customer-to-engineering bridge.</p>
+        <div class="tags">
+          <span class="tag">Discovery</span><span class="tag">Demos</span><span class="tag">Enablement</span><span class="tag">ROI</span>
+        </div>
+      </div>
+    </section>
+
+    <div id="case-studies" class="section-title">Featured case studies</div>
+    <section class="grid cols-2">
+      <div class="card">
+        <h3>Ipser Labs — B2B onboarding delivery cadence</h3>
+        <ul class="list">
+          <li>Supported 5 onboardings (often 2 in parallel); contributed to 4 on-time go-lives.</li>
+          <li>Requirements workshops + mapping sheets + UAT checklist → Jira execution.</li>
+          <li>Enablement docs + trainings reduced repeat questions (5/week → 2/week).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Lean PDCA pilot — checkout delays</h3>
+        <ul class="list">
+          <li>Time study (60 customers) identified payment as bottleneck.</li>
+          <li>Countermeasures: standard work, 6S layout, express lane, error-proofing.</li>
+          <li>Results: overrides 12% → 8%, lead time 5.5 → 5.1 min.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>NUMarket Yard — MVP plan + rollout ops</h3>
+        <ul class="list">
+          <li>WBS + 10-milestone workback plan, RAID log, comms plan.</li>
+          <li>Backlog with stories/AC; rollout ops + KPI tracker for launch readiness.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Streamlit dashboard — demoable analytics</h3>
+        <ul class="list">
+          <li>Integrated 3 datasets (~40k rows) into interactive filtered views.</li>
+          <li>Saved presets reduced time-to-answer from 10–15 min to 2–3 min.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div id="resumes" class="section-title">Resumes</div>
+    <section class="card">
+      <p style="margin-top:0">
+        Upload your PDFs to the repo root, then these links will work:
+      </p>
+      <div class="split">
+        <a class="btn primary" href="Aman_Lokhande_Implementation.pdf">Implementation PDF</a>
+        <a class="btn primary" href="Aman_Lokhande_ProgramOps.pdf">Program/Ops PDF</a>
+        <a class="btn primary" href="Aman_Lokhande_Solutions.pdf">Solutions PDF</a>
+      </div>
+      <p class="note">If your PDFs have different names, update the file names in these links.</p>
+    </section>
+
+    <div id="contact" class="section-title">Contact</div>
+    <section class="card">
+      <p><b>Email:</b> <a href="mailto:amanlokhande247@gmail.com">amanlokhande247@gmail.com</a></p>
+      <p><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/aman-lokhande" target="_blank" rel="noreferrer">linkedin.com/in/aman-lokhande</a></p>
+      <p class="note">Optional: add GitHub projects here once you have 2–3 repos worth showing.</p>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Aman Lokhande • Built on GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Study Buddy Finder — Project | Aman Lokhande</title>
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#0b1020;color:#eaf0ff}
+    .wrap{max-width:900px;margin:0 auto;padding:24px 16px 60px}
+    .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+    a{color:#7aa2ff;text-decoration:none}
+    .card{border:1px solid #1f2a4a;border-radius:16px;background:rgba(17,26,51,.55);padding:16px;margin-top:12px}
+    h1{margin:0 0 8px;font-size:26px}
+    p{color:#a9b5d6;line-height:1.6}
+    .btn{display:inline-block;padding:10px 12px;border-radius:12px;border:1px solid #1f2a4a;background:rgba(17,26,51,.35);color:#eaf0ff}
+    .btn.primary{border:0;background:linear-gradient(135deg,rgba(122,162,255,.95),rgba(118,228,247,.85));color:#071023;font-weight:700}
+    ul{color:#a9b5d6;line-height:1.7}
+    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .tag{font-size:12px;color:#a9b5d6;border:1px solid #1f2a4a;padding:6px 10px;border-radius:999px;background:rgba(15,23,48,.7)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a href="index.html">← Back to Home</a>
+      <a href="projects.html">Projects</a>
+    </div>
+
+    <div class="card">
+      <h1>Study Buddy Finder — Northeastern Edition</h1>
+      <p>
+        NU-only study partner matching + scheduling concept designed to create consistent study routines with trust & safety
+        and explainable AI matching.
+      </p>
+
+      <div class="row">
+        <span class="tag">Product</span>
+        <span class="tag">AI matching</span>
+        <span class="tag">Trust & Safety</span>
+        <span class="tag">Scheduling</span>
+      </div>
+
+      <div class="row" style="margin-top:14px">
+        <a class="btn primary" href="https://aman-studybuddy.netlify.app/" target="_blank" rel="noreferrer">Live Prototype</a>
+        <!-- Optional: upload your PRD PDF as Study_Buddy_Finder_PRD.pdf -->
+        <!-- <a class="btn" href="Study_Buddy_Finder_PRD.pdf" target="_blank" rel="noreferrer">Open PRD</a> -->
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 8px;font-size:16px">Problem</h2>
+      <ul>
+        <li>Schedule mismatch (classes, co-op timelines, time zones/campuses)</li>
+        <li>Low-signal matching (unclear compatibility: goals, study style, overlap)</li>
+        <li>Trust & safety concerns when meeting new people</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 8px;font-size:16px">MVP Solution</h2>
+      <ul>
+        <li><b>AI match ranking</b> + “Why this match?” explainability</li>
+        <li><b>Overlap-based scheduling</b> suggestions (“best overlaps”)</li>
+        <li><b>In-chat Study Coach</b> (session plans + quizzes, with disclaimers)</li>
+        <li>Trust & safety: report/block from chat, privacy controls</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 8px;font-size:16px">Success metrics</h2>
+      <ul>
+        <li><b>North Star:</b> Weekly Study Sessions Completed</li>
+        <li>Verification → onboarding completion</li>
+        <li>Match quality (match → chat → schedule conversion)</li>
+        <li>Time-to-first-session, session completion, “study again”</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Water Quality Dashboard (Streamlit) | Aman Lokhande</title>
+  <meta name="description" content="California DWR water-quality dashboard built in Streamlit." />
+  <style>
+    :root{
+      --bg:#0b1020; --panel:rgba(17,26,51,.45); --panel2:rgba(15,23,48,.62);
+      --text:#eaf0ff; --muted:#a9b5d6; --line:#1f2a4a;
+      --accent:#7aa2ff; --accent2:#76e4f7; --good:#63e6be;
+      --shadow: 0 14px 40px rgba(0,0,0,.35);
+      --r:18px; --r2:22px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(1200px 800px at 12% 8%, rgba(122,162,255,.26), transparent 55%),
+        radial-gradient(900px 700px at 86% 18%, rgba(118,228,247,.18), transparent 50%),
+        radial-gradient(900px 700px at 60% 90%, rgba(99,230,190,.12), transparent 55%),
+        var(--bg);
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1100px; margin:0 auto; padding:18px 16px 60px}
+    .app{border:1px solid var(--line); border-radius:var(--r2); background:var(--panel); box-shadow:var(--shadow); overflow:hidden; backdrop-filter: blur(10px)}
+    .topbar{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:14px; border-bottom:1px solid var(--line); background:var(--panel2)}
+    .brand{display:flex; align-items:center; gap:12px}
+    .avatar{width:40px; height:40px; border-radius:14px; background:linear-gradient(135deg,var(--accent),var(--accent2)); display:grid; place-items:center; color:#061024; font-weight:900}
+    .brand b{display:block; font-size:14px}
+    .brand span{display:block; font-size:12px; color:var(--muted)}
+    .q{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .qbtn{display:inline-flex; align-items:center; gap:8px; padding:9px 12px; border:1px solid var(--line); background:rgba(17,26,51,.55); border-radius:999px; font-size:13px}
+    .qbtn:hover{border-color:rgba(122,162,255,.6)}
+    .dot{width:8px; height:8px; border-radius:99px; background:var(--good); box-shadow:0 0 0 4px rgba(99,230,190,.14)}
+    .main{display:grid; grid-template-columns:300px 1fr; min-height:640px}
+    @media (max-width:920px){.main{grid-template-columns:1fr} .sidebar{border-right:none!important; border-bottom:1px solid var(--line)}}
+    .sidebar{padding:14px; border-right:1px solid var(--line); background:rgba(15,23,48,.42)}
+    .nav{display:flex; flex-direction:column; gap:8px}
+    .tab{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:12px; border:1px solid var(--line); border-radius:14px; background:rgba(17,26,51,.35)}
+    .tab:hover{border-color:rgba(122,162,255,.6)}
+    .tab.active{background:linear-gradient(135deg, rgba(122,162,255,.20), rgba(118,228,247,.14)); border-color:rgba(122,162,255,.75)}
+    .left{display:flex; align-items:center; gap:10px; min-width:0}
+    .ico{width:34px; height:34px; border-radius:12px; border:1px solid var(--line); background:rgba(15,23,48,.7); display:grid; place-items:center}
+    .name b{display:block; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .name span{display:block; font-size:12px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .badge{font-size:12px; color:var(--muted); border:1px solid var(--line); padding:5px 9px; border-radius:999px; background:rgba(15,23,48,.65)}
+    .content{padding:18px}
+    .panel{border:1px solid var(--line); border-radius:var(--r2); background:rgba(17,26,51,.45); padding:18px; box-shadow:0 10px 28px rgba(0,0,0,.25)}
+    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:12px}
+    @media (max-width:920px){.hero{grid-template-columns:1fr}}
+    .card{border:1px solid var(--line); border-radius:18px; background:rgba(15,23,48,.55); padding:14px}
+    h1{margin:0 0 8px; font-size:22px; letter-spacing:-.2px}
+    h2{margin:0 0 8px; font-size:14px}
+    p{margin:0 0 10px; color:var(--muted); line-height:1.6; font-size:13px}
+    ul{margin:0; padding-left:16px; color:var(--muted); line-height:1.7; font-size:13px}
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+    .chip{padding:7px 10px; border-radius:999px; border:1px solid var(--line); background:rgba(17,26,51,.35); color:var(--muted); font-size:12px}
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .btn{padding:10px 13px; border-radius:14px; border:1px solid var(--line); background:rgba(17,26,51,.35); font-weight:700; font-size:13px}
+    .btn.primary{border:0; color:#071023; background:linear-gradient(135deg,rgba(122,162,255,.95),rgba(118,228,247,.85))}
+    .btn:hover{border-color:rgba(122,162,255,.6)}
+    .grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px}
+    @media (max-width:920px){.grid{grid-template-columns:1fr}}
+    .sectionTitle{margin:14px 0 10px; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.16em}
+    .foot{margin-top:14px; text-align:center; color:rgba(169,181,214,.75); font-size:12px}
+    code{color:#dbe7ff}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="app">
+      <div class="topbar">
+        <div class="brand">
+          <div class="avatar">AL</div>
+          <div>
+            <b>Water Quality Dashboard</b>
+            <span>Streamlit • Data integration • Interactive analytics</span>
+          </div>
+        </div>
+        <div class="q">
+          <a class="qbtn" href="projects.html">← Projects</a>
+          <!-- Optional: add your GitHub repo link below -->
+          <!-- <a class="qbtn" href="PASTE_GITHUB_REPO_LINK" target="_blank" rel="noreferrer">Code</a> -->
+          <!-- Optional: add a hosted demo link below -->
+          <!-- <a class="qbtn" href="PASTE_LIVE_DEMO_LINK" target="_blank" rel="noreferrer">Live</a> -->
+          <a class="qbtn" href="mailto:amanlokhande247@gmail.com"><span class="dot"></span>Email</a>
+        </div>
+      </div>
+
+      <div class="main">
+        <aside class="sidebar">
+          <div class="nav">
+            <a class="tab" href="index.html">
+              <div class="left"><div class="ico">🏠</div><div class="name"><b>Home</b><span>Landing page</span></div></div>
+              <div class="badge">Start</div>
+            </a>
+            <a class="tab" href="about.html">
+              <div class="left"><div class="ico">👤</div><div class="name"><b>About</b><span>Who I am</span></div></div>
+              <div class="badge">Quick</div>
+            </a>
+            <a class="tab" href="experience.html">
+              <div class="left"><div class="ico">💼</div><div class="name"><b>Experience</b><span>Ipser + Vital</span></div></div>
+              <div class="badge">2</div>
+            </a>
+            <a class="tab active" href="projects.html">
+              <div class="left"><div class="ico">🧩</div><div class="name"><b>Projects</b><span>All projects</span></div></div>
+              <div class="badge">5</div>
+            </a>
+            <a class="tab" href="skills.html">
+              <div class="left"><div class="ico">🛠️</div><div class="name"><b>Skills</b><span>Tools + strengths</span></div></div>
+              <div class="badge">Map</div>
+            </a>
+            <a class="tab" href="resumes.html">
+              <div class="left"><div class="ico">📄</div><div class="name"><b>Resumes</b><span>Download PDFs</span></div></div>
+              <div class="badge">3</div>
+            </a>
+            <a class="tab" href="contact.html">
+              <div class="left"><div class="ico">📫</div><div class="name"><b>Contact</b><span>Let’s talk</span></div></div>
+              <div class="badge">Now</div>
+            </a>
+          </div>
+          <div class="foot">Project detail page.</div>
+        </aside>
+
+        <main class="content">
+          <div class="panel">
+            <div class="hero">
+              <div class="card">
+                <h1>California DWR Water Quality Dashboard</h1>
+                <p>
+                  Built a Streamlit dashboard to explore California Department of Water Resources water-quality data.
+                  Integrated <b>3 datasets</b> (~<b>40,000</b> measurement rows) and delivered interactive views with filters for
+                  location, parameter, and date range.
+                </p>
+
+                <div class="chips">
+                  <span class="chip">Python</span>
+                  <span class="chip">Streamlit</span>
+                  <span class="chip">Data integration</span>
+                  <span class="chip">Interactive filters</span>
+                  <span class="chip">Saved presets</span>
+                </div>
+
+                <div class="actions">
+                  <!-- Optional: add these links when you have them -->
+                  <!-- <a class="btn primary" href="PASTE_LIVE_DEMO_LINK" target="_blank" rel="noreferrer">Open Live Demo</a> -->
+                  <!-- <a class="btn" href="PASTE_GITHUB_REPO_LINK" target="_blank" rel="noreferrer">View Code</a> -->
+                  <a class="btn primary" href="projects.html">Back to Projects</a>
+                </div>
+
+                <div class="sectionTitle">Outcome</div>
+                <p style="margin-bottom:0">
+                  Reduced time to answer common stakeholder questions (site + parameter + date range) from
+                  <b>10–15 minutes</b> to <b>2–3 minutes</b> using interactive filtering + presets.
+                </p>
+              </div>
+
+              <div class="card">
+                <div class="sectionTitle" style="margin-top:0">At a glance</div>
+                <ul>
+                  <li><b>Type:</b> Data analytics web app</li>
+                  <li><b>Tooling:</b> Python + Streamlit</li>
+                  <li><b>Data:</b> 3 datasets, ~40k rows</li>
+                  <li><b>Users:</b> Stakeholders (demo + walkthrough)</li>
+                </ul>
+
+                <div class="sectionTitle">What it shows</div>
+                <ul>
+                  <li>Filtered views by location / parameter / date range</li>
+                  <li>4 interactive views (dashboard pages)</li>
+                  <li>Saved filter presets for frequent questions</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="grid">
+              <div class="card">
+                <h2>Problem</h2>
+                <p>
+                  Water-quality exploration was slow and repetitive. Each question required manually selecting a site,
+                  parameter, and date range, then rebuilding the view.
+                </p>
+              </div>
+
+              <div class="card">
+                <h2>Approach</h2>
+                <ul>
+                  <li>Integrated multiple datasets into a consistent format</li>
+                  <li>Built filters: location, parameter, date range</li>
+                  <li>Created 4 interactive dashboard views + presets</li>
+                  <li>Documented usage and delivered a demo walkthrough</li>
+                </ul>
+              </div>
+
+              <div class="card">
+                <h2>Key features</h2>
+                <ul>
+                  <li>Fast filtering (site/parameter/date)</li>
+                  <li>Saved presets for common questions</li>
+                  <li>Clear “demo flow” for stakeholders</li>
+                  <li>Reusable structure for new datasets later</li>
+                </ul>
+              </div>
+
+              <div class="card">
+                <h2>Impact</h2>
+                <ul>
+                  <li>Typical query time: <b>10–15 min → 2–3 min</b></li>
+                  <li>Lower friction for repeat analysis</li>
+                  <li>More consistent interpretation via presets</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="sectionTitle">Optional upgrade</div>
+            <div class="card">
+              <p style="margin:0">
+                If you upload 2 screenshots named <b>water-1.png</b> and <b>water-2.png</b>, I can add a mini gallery here.
+                If you share a repo link or a deployed Streamlit link, I’ll add <b>Code</b> and <b>Live</b> buttons at the top.
+              </p>
+            </div>
+
+            <div class="foot">© <span id="y"></span> Aman Lokhande</div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Optional: upload profile.jpg to repo root to replace avatar
+    const img = new Image();
+    img.onload = () => {
+      const av = document.querySelector(".avatar");
+      av.textContent = "";
+      av.style.background = "none";
+      av.style.border = "1px solid var(--line)";
+      av.style.overflow = "hidden";
+      av.appendChild(img);
+      img.style.width = "100%";
+      img.style.height = "100%";
+      img.style.objectFit = "cover";
+    };
+    img.src = "profile.jpg";
+  </script>
+</body>
+</html>

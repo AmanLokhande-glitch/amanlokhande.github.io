@@ -52,7 +52,7 @@
           <div class="avatar">AL</div>
           <div>
             <b>Resumes</b>
-            <span>Choose the right version for the job</span>
+            <span>Download the primary resume (Implementation / Delivery)</span>
           </div>
         </div>
         <div class="q">
@@ -99,31 +99,32 @@
 
         <main class="content">
           <div class="panel">
-            <h1>Download my resumes</h1>
+            <h1>Download my resume</h1>
             <p>
-              I keep three versions based on the role. Use the selector below if you’re not sure which one fits.
+              This website is focused on <b>Implementation / Delivery / Customer Onboarding</b>.
+              Below is my primary resume for those roles. I also keep two optional versions for adjacent roles.
             </p>
 
             <div class="grid">
               <div class="card">
                 <a class="btn primary" href="Resume_Implementation.pdf" target="_blank" rel="noreferrer">
-                  ⬇️ Resume 1 — Implementation / Delivery
+                  ⬇️ Primary Resume — Implementation / Delivery
                 </a>
-                <div class="mini">Best for: Implementation, Onboarding, Professional Services, Delivery.</div>
+                <div class="mini">Use this for: Implementation, Onboarding, Professional Services, Delivery, Customer Setup.</div>
               </div>
 
               <div class="card">
                 <a class="btn" href="Resume_ProgramOps.pdf" target="_blank" rel="noreferrer">
-                  ⬇️ Resume 2 — Program / Project / Ops
+                  ⬇️ Optional Resume — Program / Project / Ops
                 </a>
-                <div class="mini">Best for: Project Coordinator, Program Coordinator, Ops/Business Ops.</div>
+                <div class="mini">Use this for: Project Coordinator, Program Coordinator, PMO Analyst, Operations Analyst.</div>
               </div>
 
               <div class="card">
                 <a class="btn" href="Resume_Solutions.pdf" target="_blank" rel="noreferrer">
-                  ⬇️ Resume 3 — Solutions / Pre-Sales
+                  ⬇️ Optional Resume — Solutions / Pre-Sales
                 </a>
-                <div class="mini">Best for: Solutions Engineer, Sales Engineer (Junior), Solutions Consultant.</div>
+                <div class="mini">Use this for: Solutions Engineer (Junior), Sales Engineer (Junior), Solutions Consultant.</div>
               </div>
 
               <div class="card">
@@ -134,8 +135,8 @@
                   <span class="pill" data-r="sol">Solutions</span>
                 </div>
                 <div class="hint" id="hint">
-                  If the job description mentions onboarding, go-live, UAT, integrations, or delivery timelines —
-                  send <b>Resume 1 (Implementation / Delivery)</b>.
+                  If the job description mentions onboarding, go-live, UAT, integrations, CSV/data mapping, implementation plans, or delivery timelines —
+                  send <b>Primary Resume (Implementation / Delivery)</b>.
                 </div>
               </div>
             </div>
@@ -178,9 +179,9 @@
     const hint = document.getElementById("hint");
 
     const hints = {
-      impl: `If the job description mentions onboarding, go-live, UAT, integrations, CSV/data mapping, implementation plans, or delivery timelines — send <b>Resume 1 (Implementation / Delivery)</b>.`,
-      ops: `If the job description mentions schedules, milestones, PMO, dependency tracking, status reporting cadence, RAID logs, ops readiness, or process improvement — send <b>Resume 2 (Program / Project / Ops)</b>.`,
-      sol: `If the job description mentions discovery, demos, solutions engineering, pre-sales, scoping, technical explanation, or handoff from sales to delivery — send <b>Resume 3 (Solutions / Pre-Sales)</b>.`
+      impl: `If the job description mentions onboarding, go-live, UAT, integrations, CSV/data mapping, implementation plans, or delivery timelines — send <b>Primary Resume (Implementation / Delivery)</b>.`,
+      ops: `If the job description mentions schedules, milestones, PMO, dependency tracking, status reporting cadence, RAID logs, ops readiness, or process improvement — send <b>Optional Resume (Program / Project / Ops)</b>.`,
+      sol: `If the job description mentions discovery, demos, solutions engineering, pre-sales, scoping, technical explanation, or handoff from sales to delivery — send <b>Optional Resume (Solutions / Pre-Sales)</b>.`
     };
 
     pills.forEach(p=>{

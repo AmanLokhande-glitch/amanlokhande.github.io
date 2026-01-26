@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Water Quality Dashboard (Streamlit) | Aman Lokhande</title>
-  <meta name="description" content="California DWR water-quality dashboard built in Streamlit." />
+  <title>Water Quality Dashboard (Delivery-Ready Reporting) | Aman Lokhande</title>
+  <meta name="description" content="Delivery-ready reporting dashboard: integrated 3 datasets (~40k rows), built filters + presets, and enabled faster stakeholder answers." />
 
   <!-- ✅ Shared site-wide CSS -->
   <link rel="stylesheet" href="style.css" />
@@ -12,6 +12,12 @@
   <!-- ✅ Page-only styles -->
   <style>
     code{color:#dbe7ff}
+
+    .meta{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:10px}
+    @media (max-width:920px){.meta{grid-template-columns:1fr}}
+    .meta .item{border:1px solid var(--line); background:rgba(17,26,51,.25); border-radius:16px; padding:12px}
+    .meta .k{font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:6px}
+    .meta .v{font-size:13px; color:var(--text); font-weight:800}
   </style>
 </head>
 
@@ -23,11 +29,11 @@
           <div class="avatar">AL</div>
           <div>
             <b>Water Quality Dashboard</b>
-            <span>Streamlit • Data integration • Interactive analytics</span>
+            <span>Data setup • Stakeholder enablement • Delivery-ready reporting</span>
           </div>
         </div>
         <div class="q">
-          <a class="qbtn" href="projects.html">← Projects</a>
+          <a class="qbtn" href="projects.html">← Case Studies</a>
           <!-- Optional: add your GitHub repo link below -->
           <!-- <a class="qbtn" href="PASTE_GITHUB_REPO_LINK" target="_blank" rel="noreferrer">Code</a> -->
           <!-- Optional: add a hosted demo link below -->
@@ -52,7 +58,7 @@
               <div class="badge">2</div>
             </a>
             <a class="tab active" href="projects.html">
-              <div class="left"><div class="ico">🧩</div><div class="name"><b>Projects</b><span>All projects</span></div></div>
+              <div class="left"><div class="ico">🧩</div><div class="name"><b>Case Studies</b><span>Selected work</span></div></div>
               <div class="badge">5</div>
             </a>
             <a class="tab" href="skills.html">
@@ -60,64 +66,85 @@
               <div class="badge">Map</div>
             </a>
             <a class="tab" href="resumes.html">
-              <div class="left"><div class="ico">📄</div><div class="name"><b>Resumes</b><span>Download PDFs</span></div></div>
-              <div class="badge">3</div>
+              <div class="left"><div class="ico">📄</div><div class="name"><b>Resume</b><span>Download PDFs</span></div></div>
+              <div class="badge">1</div>
             </a>
             <a class="tab" href="contact.html">
               <div class="left"><div class="ico">📫</div><div class="name"><b>Contact</b><span>Let’s talk</span></div></div>
               <div class="badge">Now</div>
             </a>
           </div>
-          <div class="foot">Project detail page.</div>
+          <div class="foot">Case study detail page.</div>
         </aside>
 
         <main class="content">
           <div class="panel">
             <div class="hero">
               <div class="card">
-                <h1>California DWR Water Quality Dashboard</h1>
+                <h1>California DWR Water Quality Dashboard (Streamlit)</h1>
                 <p>
-                  Built a Streamlit dashboard to explore California Department of Water Resources water-quality data.
-                  Integrated <b>3 datasets</b> (~<b>40,000</b> measurement rows) and delivered interactive views with filters for
-                  location, parameter, and date range.
+                  Built a <b>delivery-ready reporting dashboard</b> to answer common stakeholder questions faster.
+                  I integrated <b>3 datasets</b> into a consistent structure (~<b>40,000</b> measurement rows), built interactive
+                  filters (site/parameter/date), and added <b>saved presets</b> for repeat questions.
                 </p>
+
+                <div class="meta">
+                  <div class="item">
+                    <div class="k">My role</div>
+                    <div class="v">Implementation-style delivery (data setup + enablement)</div>
+                  </div>
+                  <div class="item">
+                    <div class="k">Users</div>
+                    <div class="v">Stakeholders needing quick answers</div>
+                  </div>
+                  <div class="item">
+                    <div class="k">Tools</div>
+                    <div class="v">Python, Streamlit, Excel/CSV</div>
+                  </div>
+                  <div class="item">
+                    <div class="k">Data scope</div>
+                    <div class="v">3 datasets • ~40k rows</div>
+                  </div>
+                </div>
 
                 <div class="chips">
                   <span class="chip">Python</span>
                   <span class="chip">Streamlit</span>
-                  <span class="chip">Data integration</span>
+                  <span class="chip">Data mapping</span>
                   <span class="chip">Interactive filters</span>
                   <span class="chip">Saved presets</span>
+                  <span class="chip">Demo walkthrough</span>
                 </div>
 
                 <div class="actions">
                   <!-- Optional: add these links when you have them -->
                   <!-- <a class="btn primary" href="PASTE_LIVE_DEMO_LINK" target="_blank" rel="noreferrer">Open Live Demo</a> -->
                   <!-- <a class="btn" href="PASTE_GITHUB_REPO_LINK" target="_blank" rel="noreferrer">View Code</a> -->
-                  <a class="btn primary" href="projects.html">Back to Projects</a>
+                  <a class="btn primary" href="projects.html">Back to Case Studies</a>
                 </div>
 
                 <div class="sectionTitle">Outcome</div>
                 <p style="margin-bottom:0">
-                  Reduced time to answer common stakeholder questions (site + parameter + date range) from
-                  <b>10–15 minutes</b> to <b>2–3 minutes</b> using interactive filtering + presets.
+                  Reduced time to answer common questions (site + parameter + date range) from <b>10–15 minutes</b> to
+                  <b>2–3 minutes</b> using interactive filtering + saved presets.
                 </p>
               </div>
 
               <div class="card">
                 <div class="sectionTitle" style="margin-top:0">At a glance</div>
                 <ul>
-                  <li><b>Type:</b> Data analytics web app</li>
-                  <li><b>Tooling:</b> Python + Streamlit</li>
-                  <li><b>Data:</b> 3 datasets, ~40k rows</li>
-                  <li><b>Users:</b> Stakeholders (demo + walkthrough)</li>
+                  <li><b>Type:</b> Reporting / analytics app (stakeholder-facing)</li>
+                  <li><b>Implementation skills:</b> data mapping, usability, enablement</li>
+                  <li><b>Core flow:</b> select site → select parameter → choose date range → view trends</li>
+                  <li><b>Delivery:</b> repeatable structure (add datasets later)</li>
                 </ul>
 
-                <div class="sectionTitle">What it shows</div>
+                <div class="sectionTitle">What it includes</div>
                 <ul>
-                  <li>Filtered views by location / parameter / date range</li>
-                  <li>4 interactive views (dashboard pages)</li>
-                  <li>Saved filter presets for frequent questions</li>
+                  <li>Filters: location / parameter / date range</li>
+                  <li>Multiple views (dashboard pages)</li>
+                  <li>Saved presets for frequent questions</li>
+                  <li>Documentation + demo walkthrough outline</li>
                 </ul>
               </div>
             </div>
@@ -126,28 +153,29 @@
               <div class="card">
                 <h2>Problem</h2>
                 <p>
-                  Water-quality exploration was slow and repetitive. Each question required manually selecting a site,
-                  parameter, and date range, then rebuilding the view.
+                  Answering questions from water-quality data was slow and repetitive. Each request required manually selecting
+                  a site, parameter, and date range, then rebuilding the view and validating the interpretation.
                 </p>
               </div>
 
               <div class="card">
-                <h2>Approach</h2>
+                <h2>What I did (Implementation mindset)</h2>
                 <ul>
-                  <li>Integrated multiple datasets into a consistent format</li>
-                  <li>Built filters: location, parameter, date range</li>
-                  <li>Created 4 interactive dashboard views + presets</li>
-                  <li>Documented usage and delivered a demo walkthrough</li>
+                  <li><b>Mapped &amp; standardized</b> 3 datasets into a consistent structure</li>
+                  <li><b>Built a workflow</b> for fast filtering (site/parameter/date range)</li>
+                  <li><b>Created multiple views</b> to support common stakeholder questions</li>
+                  <li><b>Added saved presets</b> for repeat questions to reduce friction</li>
+                  <li><b>Prepared enablement</b> (usage notes + demo walkthrough)</li>
                 </ul>
               </div>
 
               <div class="card">
                 <h2>Key features</h2>
                 <ul>
-                  <li>Fast filtering (site/parameter/date)</li>
-                  <li>Saved presets for common questions</li>
-                  <li>Clear “demo flow” for stakeholders</li>
-                  <li>Reusable structure for new datasets later</li>
+                  <li>Fast, low-friction filtering</li>
+                  <li>Saved presets for consistent interpretation</li>
+                  <li>Clean “demo flow” for stakeholders</li>
+                  <li>Reusable structure to extend to new datasets</li>
                 </ul>
               </div>
 
@@ -156,7 +184,28 @@
                 <ul>
                   <li>Typical query time: <b>10–15 min → 2–3 min</b></li>
                   <li>Lower friction for repeat analysis</li>
-                  <li>More consistent interpretation via presets</li>
+                  <li>More consistent answers via presets</li>
+                  <li>Improved readiness to share insights with non-technical users</li>
+                </ul>
+              </div>
+
+              <div class="card">
+                <h2>Artifacts I can share (sanitized)</h2>
+                <ul>
+                  <li>Data mapping / field standardization notes</li>
+                  <li>Preset list (common stakeholder questions)</li>
+                  <li>Demo walkthrough outline (5–7 minutes)</li>
+                  <li>Short “how to use” guide</li>
+                </ul>
+              </div>
+
+              <div class="card">
+                <h2>How this maps to Implementation roles</h2>
+                <ul>
+                  <li>Translate stakeholder questions → workable workflow</li>
+                  <li>Data setup &amp; mapping (CSV-style thinking)</li>
+                  <li>Deliver a usable output + enable adoption</li>
+                  <li>Create repeatability (presets/templates)</li>
                 </ul>
               </div>
             </div>
@@ -165,7 +214,7 @@
             <div class="card">
               <p style="margin:0">
                 If you upload 2 screenshots named <b>water-1.png</b> and <b>water-2.png</b>, I can add a mini gallery here.
-                If you share a repo link or a deployed Streamlit link, I’ll add <b>Code</b> and <b>Live</b> buttons at the top.
+                If you share a repo link or deployed Streamlit link, I’ll add <b>Code</b> and <b>Live</b> buttons at the top.
               </p>
             </div>
 

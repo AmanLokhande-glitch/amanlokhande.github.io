@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact | Aman Lokhande</title>
-  <meta name="description" content="Contact Aman Lokhande." />
+  <meta name="description" content="Contact Aman Lokhande — Implementation and Customer Onboarding." />
 
   <!-- ✅ Shared site-wide CSS -->
   <link rel="stylesheet" href="style.css">
@@ -17,6 +17,8 @@
       padding:14px; border-radius:16px; border:1px solid var(--line);
       background:rgba(17,26,51,.35); font-weight:900; font-size:14px;
       cursor:pointer;
+      text-decoration:none;
+      color:inherit;
     }
     .bigbtn:hover{border-color:rgba(122,162,255,.6)}
     .bigbtn.primary{
@@ -34,6 +36,14 @@
       font-size:13px;
       display:none;
     }
+    .note{
+      color:var(--muted); font-size:13px; line-height:1.6;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+      background:rgba(17,26,51,.25);
+    }
+    .note b{color:var(--text)}
   </style>
 </head>
 
@@ -45,12 +55,12 @@
           <div class="avatar">AL</div>
           <div>
             <b>Contact</b>
-            <span>Let’s talk — email is best</span>
+            <span>Email is best — I respond fast</span>
           </div>
         </div>
         <div class="q">
-          <a class="qbtn" href="projects.html">Projects</a>
-          <a class="qbtn" href="resumes.html">Resumes</a>
+          <a class="qbtn" href="projects.html">Case Studies</a>
+          <a class="qbtn" href="resumes.html">Resume</a>
         </div>
       </div>
 
@@ -66,11 +76,11 @@
               <div class="badge">Quick</div>
             </a>
             <a class="tab" href="experience.html">
-              <div class="left"><div class="ico">💼</div><div class="name"><b>Experience</b><span>Ipser + Vital</span></div></div>
+              <div class="left"><div class="ico">💼</div><div class="name"><b>Experience</b><span>Customer + delivery</span></div></div>
               <div class="badge">2</div>
             </a>
             <a class="tab" href="projects.html">
-              <div class="left"><div class="ico">🧩</div><div class="name"><b>Projects</b><span>All projects</span></div></div>
+              <div class="left"><div class="ico">🧩</div><div class="name"><b>Case Studies</b><span>Selected work</span></div></div>
               <div class="badge">5</div>
             </a>
             <a class="tab" href="skills.html">
@@ -78,8 +88,8 @@
               <div class="badge">Map</div>
             </a>
             <a class="tab" href="resumes.html">
-              <div class="left"><div class="ico">📄</div><div class="name"><b>Resumes</b><span>Download PDFs</span></div></div>
-              <div class="badge">3</div>
+              <div class="left"><div class="ico">📄</div><div class="name"><b>Resume</b><span>Download PDF</span></div></div>
+              <div class="badge">1</div>
             </a>
             <a class="tab active" href="contact.html">
               <div class="left"><div class="ico">📫</div><div class="name"><b>Contact</b><span>Let’s talk</span></div></div>
@@ -91,23 +101,28 @@
 
         <main class="content">
           <div class="panel">
-            <h1>Contact Aman</h1>
+            <h1>Contact</h1>
             <p>
-              If you’re hiring for Implementation / Delivery / Program Ops / Solutions roles, I’d love to talk.
+              If you’re hiring for <b>Implementation / Customer Onboarding / Delivery</b> roles, I’d love to connect.
               Email is the fastest way to reach me.
             </p>
 
             <div class="grid">
               <div class="card">
                 <button class="bigbtn primary" id="emailBtn" type="button">
-                  <span>✉️ Email</span>
+                  <span>✉️ Email Aman</span>
                   <span>→</span>
                 </button>
                 <div class="mini">amanlokhande247@gmail.com</div>
+
                 <button class="bigbtn" id="copyEmail" type="button" style="margin-top:10px;">
                   <span>📋 Copy email</span>
                   <span>Copy</span>
                 </button>
+
+                <div class="mini" style="margin-top:10px">
+                  Tip: Use the email button to auto-fill the subject line.
+                </div>
               </div>
 
               <div class="card">
@@ -116,27 +131,33 @@
                   <span>Open</span>
                 </a>
                 <div class="mini">linkedin.com/in/aman-lokhande</div>
+
+                <a class="bigbtn" href="resumes.html" style="margin-top:10px;">
+                  <span>📄 Resume</span>
+                  <span>Open</span>
+                </a>
+                <div class="mini">Download the PDF.</div>
               </div>
 
               <div class="card">
-                <a class="bigbtn" href="resumes.html">
-                  <span>📄 Resumes</span>
+                <a class="bigbtn" href="projects.html">
+                  <span>🧩 Case Studies</span>
                   <span>Open</span>
                 </a>
-                <div class="mini">Pick the best version for the job.</div>
+                <div class="mini">Implementation-style write-ups (plan → UAT → go-live readiness).</div>
 
-                <a class="bigbtn" href="projects.html" style="margin-top:10px;">
-                  <span>🧩 Projects</span>
+                <a class="bigbtn" href="experience.html" style="margin-top:10px;">
+                  <span>💼 Experience</span>
                   <span>Open</span>
                 </a>
-                <div class="mini">See app-style project pages.</div>
+                <div class="mini">Implementation + delivery highlights.</div>
               </div>
 
               <div class="card">
-                <div style="color:var(--muted); font-size:13px; line-height:1.6">
-                  <b style="color:var(--text)">Quick note</b><br/>
-                  If you include the job title + company in your email, I can respond faster with the most relevant resume
-                  version (Implementation / Ops / Solutions).
+                <div class="note">
+                  <b>Quick note</b><br/>
+                  If you include the <b>job title</b> + <b>company</b> in your email, I’ll reply faster with the most relevant
+                  details and links (resume + matching case study).
                 </div>
               </div>
             </div>
@@ -180,7 +201,8 @@
     }
 
     document.getElementById("emailBtn").addEventListener("click", ()=>{
-      window.location.href = `mailto:${email}?subject=${encodeURIComponent("Hello Aman — Opportunity")}`;
+      const subject = "Implementation / Onboarding role — quick question";
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
     });
 
     async function copyText(text){

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Resumes | Aman Lokhande</title>
-  <meta name="description" content="Download Aman Lokhande's tailored resumes." />
+  <title>Resume | Aman Lokhande</title>
+  <meta name="description" content="Download Aman Lokhande's resume for Implementation / Delivery / Customer Onboarding roles." />
 
   <!-- ✅ Shared site-wide CSS -->
   <link rel="stylesheet" href="style.css">
@@ -19,25 +19,18 @@
       width:100%;
       padding:14px 14px; border-radius:16px; border:1px solid var(--line);
       background:rgba(17,26,51,.35); font-weight:900; font-size:14px;
+      text-decoration:none;
+      color:inherit;
     }
-    .btn.primary{border:0; color:#071023; background:linear-gradient(135deg,rgba(122,162,255,.95),rgba(118,228,247,.85))}
+    .btn.primary{
+      border:0; color:#071023;
+      background:linear-gradient(135deg,rgba(122,162,255,.95),rgba(118,228,247,.85))
+    }
     .btn:hover{border-color:rgba(122,162,255,.6)}
 
-    .mini{font-size:12px; color:var(--muted); margin-top:8px}
+    .mini{font-size:12px; color:var(--muted); margin-top:8px; line-height:1.6}
 
-    .chooser{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .pill{
-      padding:8px 10px; border-radius:999px;
-      border:1px solid var(--line); background:rgba(17,26,51,.35);
-      color:var(--muted); font-size:12px; cursor:pointer; user-select:none;
-    }
-    .pill.active{
-      border-color:rgba(122,162,255,.75);
-      color:var(--text);
-      background:linear-gradient(135deg, rgba(122,162,255,.18), rgba(118,228,247,.12));
-    }
-
-    .hint{
+    .note{
       margin-top:10px; padding:12px; border-radius:16px; border:1px solid var(--line);
       background:rgba(17,26,51,.25); color:var(--muted); font-size:13px; line-height:1.6;
     }
@@ -51,14 +44,14 @@
         <div class="brand">
           <div class="avatar">AL</div>
           <div>
-            <b>Resumes</b>
-            <span>Download the primary resume (Implementation / Delivery)</span>
+            <b>Resume</b>
+            <span>Implementation • Customer Onboarding • Delivery</span>
           </div>
         </div>
         <div class="q">
           <a class="qbtn" href="mailto:amanlokhande247@gmail.com"><span class="dot"></span>Email</a>
           <a class="qbtn" href="https://www.linkedin.com/in/aman-lokhande" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="qbtn" href="projects.html">Projects</a>
+          <a class="qbtn" href="projects.html">Case Studies</a>
         </div>
       </div>
 
@@ -74,11 +67,11 @@
               <div class="badge">Quick</div>
             </a>
             <a class="tab" href="experience.html">
-              <div class="left"><div class="ico">💼</div><div class="name"><b>Experience</b><span>Ipser + Vital</span></div></div>
+              <div class="left"><div class="ico">💼</div><div class="name"><b>Experience</b><span>Customer + delivery</span></div></div>
               <div class="badge">2</div>
             </a>
             <a class="tab" href="projects.html">
-              <div class="left"><div class="ico">🧩</div><div class="name"><b>Projects</b><span>All projects</span></div></div>
+              <div class="left"><div class="ico">🧩</div><div class="name"><b>Case Studies</b><span>Selected work</span></div></div>
               <div class="badge">5</div>
             </a>
             <a class="tab" href="skills.html">
@@ -86,7 +79,7 @@
               <div class="badge">Map</div>
             </a>
             <a class="tab active" href="resumes.html">
-              <div class="left"><div class="ico">📄</div><div class="name"><b>Resumes</b><span>Download PDFs</span></div></div>
+              <div class="left"><div class="ico">📄</div><div class="name"><b>Resume</b><span>Download PDF</span></div></div>
               <div class="badge">Now</div>
             </a>
             <a class="tab" href="contact.html">
@@ -94,49 +87,35 @@
               <div class="badge">Soon</div>
             </a>
           </div>
-          <div class="foot">Resumes page</div>
+          <div class="foot">Resume page</div>
         </aside>
 
         <main class="content">
           <div class="panel">
             <h1>Download my resume</h1>
             <p>
-              This website is focused on <b>Implementation / Delivery / Customer Onboarding</b>.
-              Below is my primary resume for those roles. I also keep two optional versions for adjacent roles.
+              This website is focused on <b>Implementation / Customer Onboarding / Delivery</b>.
+              Here is my primary resume for those roles.
             </p>
 
             <div class="grid">
               <div class="card">
                 <a class="btn primary" href="Resume_Implementation.pdf" target="_blank" rel="noreferrer">
-                  ⬇️ Primary Resume — Implementation / Delivery
+                  ⬇️ Download Resume (PDF)
                 </a>
-                <div class="mini">Use this for: Implementation, Onboarding, Professional Services, Delivery, Customer Setup.</div>
-              </div>
-
-              <div class="card">
-                <a class="btn" href="Resume_ProgramOps.pdf" target="_blank" rel="noreferrer">
-                  ⬇️ Optional Resume — Program / Project / Ops
-                </a>
-                <div class="mini">Use this for: Project Coordinator, Program Coordinator, PMO Analyst, Operations Analyst.</div>
-              </div>
-
-              <div class="card">
-                <a class="btn" href="Resume_Solutions.pdf" target="_blank" rel="noreferrer">
-                  ⬇️ Optional Resume — Solutions / Pre-Sales
-                </a>
-                <div class="mini">Use this for: Solutions Engineer (Junior), Sales Engineer (Junior), Solutions Consultant.</div>
-              </div>
-
-              <div class="card">
-                <div class="sectionTitle" style="margin-top:0">Quick chooser</div>
-                <div class="chooser" id="chooser">
-                  <span class="pill active" data-r="impl">Implementation</span>
-                  <span class="pill" data-r="ops">Program Ops</span>
-                  <span class="pill" data-r="sol">Solutions</span>
+                <div class="mini">
+                  Best for: Implementation Consultant/Coordinator, Implementation Specialist, Customer Onboarding,
+                  Delivery/Professional Services (Associate/Junior), Implementation Project roles.
                 </div>
-                <div class="hint" id="hint">
-                  If the job description mentions onboarding, go-live, UAT, integrations, CSV/data mapping, implementation plans, or delivery timelines —
-                  send <b>Primary Resume (Implementation / Delivery)</b>.
+              </div>
+
+              <div class="card">
+                <a class="btn" href="projects.html">
+                  🧩 View matching case studies
+                </a>
+                <div class="mini">
+                  If you want proof fast: see <b>NUMarket Yard (implementation plan)</b> and the
+                  <b>Water Quality Dashboard (delivery-ready reporting)</b>.
                 </div>
               </div>
             </div>
@@ -144,10 +123,12 @@
             <div class="sectionTitle">Important</div>
             <div class="card">
               <p style="margin:0">
-                Your PDF filenames must match exactly:
-                <b>Resume_Implementation.pdf</b>, <b>Resume_ProgramOps.pdf</b>, <b>Resume_Solutions.pdf</b>.
-                If a button opens a 404 page, the filename is the issue.
+                The PDF filename must match exactly: <b>Resume_Implementation.pdf</b>.
+                If the button opens a 404 page, the filename is the issue.
               </p>
+              <div class="note">
+                Tip: If you’re emailing me about a role, include the <b>job title</b> + <b>company</b> so I can reply faster.
+              </div>
             </div>
 
             <div class="foot">© <span id="y"></span> Aman Lokhande</div>
@@ -174,23 +155,6 @@
       img.style.objectFit = "cover";
     };
     img.src = "profile.jpg";
-
-    const pills = Array.from(document.querySelectorAll("#chooser .pill"));
-    const hint = document.getElementById("hint");
-
-    const hints = {
-      impl: `If the job description mentions onboarding, go-live, UAT, integrations, CSV/data mapping, implementation plans, or delivery timelines — send <b>Primary Resume (Implementation / Delivery)</b>.`,
-      ops: `If the job description mentions schedules, milestones, PMO, dependency tracking, status reporting cadence, RAID logs, ops readiness, or process improvement — send <b>Optional Resume (Program / Project / Ops)</b>.`,
-      sol: `If the job description mentions discovery, demos, solutions engineering, pre-sales, scoping, technical explanation, or handoff from sales to delivery — send <b>Optional Resume (Solutions / Pre-Sales)</b>.`
-    };
-
-    pills.forEach(p=>{
-      p.addEventListener("click", ()=>{
-        pills.forEach(x=>x.classList.remove("active"));
-        p.classList.add("active");
-        hint.innerHTML = hints[p.dataset.r];
-      });
-    });
   </script>
 </body>
 </html>

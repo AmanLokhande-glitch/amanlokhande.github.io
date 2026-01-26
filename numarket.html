@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>NUMarket Yard (MVP Planning) | Aman Lokhande</title>
-  <meta name="description" content="NUMarket Yard — MVP planning, UAT, rollout ops, and KPI tracking." />
+  <title>NUMarket Yard (Implementation Plan) | Aman Lokhande</title>
+  <meta name="description" content="NUMarket Yard — implementation-style rollout plan: scope, milestones, RAID, UAT, go-live readiness, and KPI tracking." />
 
   <!-- ✅ Shared site-wide CSS -->
   <link rel="stylesheet" href="style.css">
@@ -17,6 +17,11 @@
     ul{margin:0; padding-left:16px; color:var(--muted); line-height:1.7; font-size:13px}
     .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
     .chip{padding:7px 10px; border-radius:999px; border:1px solid var(--line); background:rgba(17,26,51,.35); color:var(--muted); font-size:12px}
+    .meta{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:10px}
+    @media (max-width:920px){.meta{grid-template-columns:1fr}}
+    .meta .item{border:1px solid var(--line); background:rgba(17,26,51,.25); border-radius:16px; padding:12px}
+    .meta .k{font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:6px}
+    .meta .v{font-size:13px; color:var(--text); font-weight:800}
   </style>
 </head>
 
@@ -28,13 +33,13 @@
           <div class="avatar">AL</div>
           <div>
             <b>NUMarket Yard</b>
-            <span>MVP planning • UAT • Rollout ops</span>
+            <span>Implementation plan • UAT • Go-live readiness</span>
           </div>
         </div>
         <div class="q">
-          <a class="qbtn" href="projects.html">← Projects</a>
-          <!-- Optional: add Figma link if you have it -->
-          <!-- <a class="qbtn" href="PASTE_FIGMA_LINK" target="_blank" rel="noreferrer">Figma</a> -->
+          <a class="qbtn" href="projects.html">← Case Studies</a>
+          <!-- Optional: add prototype link if you have it -->
+          <!-- <a class="qbtn" href="PASTE_LINK" target="_blank" rel="noreferrer">Prototype</a> -->
           <a class="qbtn" href="mailto:amanlokhande247@gmail.com"><span class="dot"></span>Email</a>
         </div>
       </div>
@@ -55,7 +60,7 @@
               <div class="badge">2</div>
             </a>
             <a class="tab active" href="projects.html">
-              <div class="left"><div class="ico">🧩</div><div class="name"><b>Projects</b><span>All projects</span></div></div>
+              <div class="left"><div class="ico">🧩</div><div class="name"><b>Case Studies</b><span>Selected work</span></div></div>
               <div class="badge">5</div>
             </a>
             <a class="tab" href="skills.html">
@@ -63,113 +68,161 @@
               <div class="badge">Map</div>
             </a>
             <a class="tab" href="resumes.html">
-              <div class="left"><div class="ico">📄</div><div class="name"><b>Resumes</b><span>Download PDFs</span></div></div>
-              <div class="badge">3</div>
+              <div class="left"><div class="ico">📄</div><div class="name"><b>Resume</b><span>Download PDFs</span></div></div>
+              <div class="badge">1</div>
             </a>
             <a class="tab" href="contact.html">
               <div class="left"><div class="ico">📫</div><div class="name"><b>Contact</b><span>Let’s talk</span></div></div>
               <div class="badge">Now</div>
             </a>
           </div>
-          <div class="foot">Project detail page.</div>
+          <div class="foot">Case study detail page.</div>
         </aside>
 
         <main class="content">
           <div class="panel">
             <div class="hero">
               <div class="card">
-                <h1>NUMarket Yard — Campus Marketplace MVP</h1>
+                <h1>NUMarket Yard — Campus Marketplace MVP (Implementation Plan)</h1>
                 <p>
-                  Planned delivery for a Northeastern-only marketplace MVP: defined scope, created a WBS + milestone
-                  workback plan, built a backlog with user stories + acceptance criteria, and designed rollout operations
-                  and launch KPIs.
+                  I built an end-to-end <b>implementation-style delivery package</b> for a Northeastern-only marketplace MVP:
+                  defined scope, created a milestone workback plan, documented roles/ownership, planned UAT and go-live readiness,
+                  and designed rollout operations + success metrics.
                 </p>
 
+                <div class="meta">
+                  <div class="item">
+                    <div class="k">My role</div>
+                    <div class="v">Implementation / Delivery (planning + readiness)</div>
+                  </div>
+                  <div class="item">
+                    <div class="k">Deliverables</div>
+                    <div class="v">Plan • RAID • UAT • Rollout ops • KPIs</div>
+                  </div>
+                  <div class="item">
+                    <div class="k">Tools</div>
+                    <div class="v">Jira, Confluence-style docs, Excel/Sheets</div>
+                  </div>
+                  <div class="item">
+                    <div class="k">Focus</div>
+                    <div class="v">Stakeholders • risks • launch readiness</div>
+                  </div>
+                </div>
+
                 <div class="chips">
-                  <span class="chip">PRD + backlog</span>
-                  <span class="chip">WBS + milestones</span>
-                  <span class="chip">RACI + comms</span>
+                  <span class="chip">Scope + acceptance criteria</span>
+                  <span class="chip">Milestones + workback plan</span>
+                  <span class="chip">RACI + comms cadence</span>
                   <span class="chip">RAID log</span>
-                  <span class="chip">UAT + issues</span>
+                  <span class="chip">UAT + issue tracking</span>
+                  <span class="chip">Go-live checklist</span>
                   <span class="chip">Launch KPIs</span>
                 </div>
 
                 <div class="actions">
-                  <a class="btn primary" href="projects.html">Back to Projects</a>
+                  <a class="btn primary" href="projects.html">Back to Case Studies</a>
                   <!-- Optional: add clickable prototype -->
-                  <!-- <a class="btn" href="PASTE_FIGMA_LINK" target="_blank" rel="noreferrer">Open Prototype</a> -->
+                  <!-- <a class="btn" href="PASTE_LINK" target="_blank" rel="noreferrer">Open Prototype</a> -->
                 </div>
 
                 <div class="sectionTitle">Outcome</div>
                 <p style="margin-bottom:0">
-                  Produced a complete “MVP-to-launch” package: PRD + backlog, delivery plan, UAT approach, operational
-                  rollout design, and KPI tracker for launch readiness.
+                  Produced a complete <b>“MVP-to-launch” readiness pack</b>: delivery plan, ownership model, risk tracking,
+                  UAT approach, rollout operations, and KPI tracker — the same structure used in implementation / onboarding teams.
                 </p>
               </div>
 
               <div class="card">
-                <div class="sectionTitle" style="margin-top:0">What I delivered</div>
+                <div class="sectionTitle" style="margin-top:0">What I delivered (recruiter view)</div>
                 <ul>
-                  <li><b>Product:</b> PRD, user stories + acceptance criteria, prioritized backlog</li>
-                  <li><b>Delivery:</b> charter, WBS, milestone schedule, RACI, comms plan, RAID log</li>
-                  <li><b>Quality:</b> UAT plan + issue tracking (Jira)</li>
+                  <li><b>Scope &amp; clarity:</b> user stories + acceptance criteria to prevent scope creep</li>
+                  <li><b>Delivery plan:</b> WBS + milestone workback plan + stakeholder cadence</li>
+                  <li><b>Ownership:</b> RACI + handoffs (build → test → launch → support)</li>
+                  <li><b>Risk control:</b> RAID log (risks, assumptions, issues, dependencies)</li>
+                  <li><b>Quality:</b> UAT plan + issue tracking approach (Jira)</li>
                   <li><b>Rollout ops:</b> verification, moderation, escalation, support handoff</li>
-                  <li><b>Metrics:</b> activation rate, time-to-first-listing, weekly active users</li>
+                  <li><b>Success metrics:</b> activation + time-to-first-listing + WAU &amp; funnel basics</li>
                 </ul>
               </div>
             </div>
 
             <div class="grid">
               <div class="card">
-                <h2>Problem</h2>
+                <h2>Context</h2>
                 <p>
-                  Students need a trusted, campus-specific way to buy/sell items. Generic marketplaces create friction
-                  around verification, safety, moderation, and support.
+                  Campus marketplaces fail when trust and operational ownership aren’t defined. This case focuses on
+                  making the MVP <b>launch-ready</b>: clear scope, predictable delivery steps, and operational workflows
+                  for verification, moderation, and support.
                 </p>
               </div>
 
               <div class="card">
-                <h2>Scope</h2>
+                <h2>Problem</h2>
+                <p>
+                  Students needed a trusted, campus-specific way to buy/sell items. Generic marketplaces create friction
+                  around verification, safety, moderation, and support — which leads to low adoption and poor retention.
+                </p>
+              </div>
+
+              <div class="card">
+                <h2>Approach (Implementation mindset)</h2>
                 <ul>
-                  <li>MVP focused on core listing + discovery + basic moderation</li>
-                  <li>Campus-only verification and a simple support workflow</li>
-                  <li>Clear acceptance criteria to keep delivery tight</li>
+                  <li>Define tight MVP scope with acceptance criteria</li>
+                  <li>Turn scope into a delivery plan (milestones + owners)</li>
+                  <li>Plan UAT and go-live readiness (checklists + issues)</li>
+                  <li>Design rollout operations (support + escalation)</li>
+                  <li>Track success with simple KPIs and a tracker</li>
                 </ul>
               </div>
 
               <div class="card">
-                <h2>Planning & execution artifacts</h2>
+                <h2>Delivery artifacts</h2>
                 <ul>
-                  <li>Project charter + WBS + milestone workback plan</li>
-                  <li>RACI and stakeholder communication cadence</li>
-                  <li>RAID log for risks, assumptions, issues, dependencies</li>
+                  <li><b>Charter:</b> goals, scope, constraints, assumptions</li>
+                  <li><b>Workback plan:</b> WBS + 10 milestone schedule</li>
+                  <li><b>RACI:</b> ownership and handoffs</li>
+                  <li><b>RAID:</b> risk and dependency tracking</li>
                 </ul>
               </div>
 
               <div class="card">
-                <h2>UAT & launch readiness</h2>
+                <h2>UAT &amp; go-live readiness</h2>
                 <ul>
-                  <li>UAT sessions with student users and issue capture</li>
-                  <li>Release notes/FAQ + onboarding checklist (Confluence-style assets)</li>
-                  <li>Defined escalation paths and support handoff</li>
+                  <li>UAT sessions: scripts, scenarios, expected outcomes</li>
+                  <li>Issue capture + triage approach (severity/priority)</li>
+                  <li>Go-live checklist: access, verification rules, support readiness</li>
+                  <li>Release notes / FAQ outline for onboarding</li>
                 </ul>
               </div>
 
               <div class="card">
                 <h2>Rollout operations</h2>
                 <ul>
-                  <li>Student verification rules</li>
-                  <li>Listing moderation guidelines</li>
-                  <li>Issue escalation and support ownership</li>
+                  <li>Student verification rules (who can list + buy)</li>
+                  <li>Listing moderation guidelines (what gets flagged/removed)</li>
+                  <li>Escalation workflow (what happens when something goes wrong)</li>
+                  <li>Support handoff (who owns tickets post-launch)</li>
                 </ul>
               </div>
 
               <div class="card">
-                <h2>KPI tracker</h2>
+                <h2>KPI tracker (launch success)</h2>
                 <ul>
-                  <li><b>Activation rate</b> (verified → active)</li>
-                  <li><b>Time-to-first-listing</b> (friction indicator)</li>
-                  <li><b>WAU</b> + basic funnel metrics (browse → message)</li>
+                  <li><b>Activation rate:</b> verified → active</li>
+                  <li><b>Time-to-first-listing:</b> setup friction indicator</li>
+                  <li><b>WAU:</b> engagement / retention signal</li>
+                  <li><b>Funnel basics:</b> browse → message → transaction intent</li>
+                </ul>
+              </div>
+
+              <div class="card">
+                <h2>Artifacts I can share (sanitized)</h2>
+                <ul>
+                  <li>Milestone workback plan template</li>
+                  <li>RAID log template</li>
+                  <li>UAT test plan template</li>
+                  <li>Go-live checklist template</li>
+                  <li>KPI tracker template</li>
                 </ul>
               </div>
             </div>
@@ -177,8 +230,8 @@
             <div class="sectionTitle">Optional upgrade</div>
             <div class="card">
               <p style="margin:0">
-                If you have a Figma prototype link, I’ll add it as a top button and also embed 2–3 screenshots here
-                (e.g., <b>numarket-1.png</b>, <b>numarket-2.png</b>).
+                If you have a prototype link (Figma or live demo), I’ll add it as a top button and we can embed
+                2–3 screenshots here (e.g., <b>numarket-1.png</b>, <b>numarket-2.png</b>).
               </p>
             </div>
 

@@ -1,206 +1,231 @@
-/* =========================================================
-   Aman Lokhande — Site-wide CSS (App layout + Case Studies)
-   This CSS supports ALL pages: about, experience, projects,
-   skills, resumes, contact + your project detail pages.
-   ========================================================= */
+/* ================================
+   Aman Lokhande — Unified Site CSS
+   One stylesheet for ALL pages
+   (Home + About + Experience + Projects + Skills + Resume + Contact)
+================================ */
 
 /* Reset */
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
-button{font-family:inherit}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
 
-/* Theme variables */
+/* Theme */
 :root{
-  --bg:#0b1020;
-  --panel:#0f1730;
-  --panel2:rgba(15,23,48,.55);
-  --card:rgba(17,26,51,.35);
-  --line:rgba(31,42,74,.9);
-  --text:rgba(234,240,255,.95);
-  --muted:rgba(169,181,214,.85);
-  --accent:#7aa2ff;
-  --accent2:#76e4f7;
+  --bg0:#050A18;
+  --bg1:#071026;
+  --panel:rgba(15,23,48,.62);
+  --panel2:rgba(12,18,40,.72);
+  --card:rgba(17,26,51,.45);
+  --line:rgba(97,116,168,.22);
+  --line2:rgba(122,162,255,.22);
+  --text:rgba(234,240,255,.92);
+  --muted:rgba(169,181,214,.82);
+  --accent:rgba(122,162,255,1);
+  --accent2:rgba(118,228,247,1);
+  --shadow:0 18px 50px rgba(0,0,0,.35);
 }
 
-/* Page background */
+/* Base */
 body{
-  background:
-    radial-gradient(900px 600px at 10% 10%, rgba(122,162,255,.18), transparent 60%),
-    radial-gradient(900px 600px at 90% 20%, rgba(118,228,247,.12), transparent 55%),
-    var(--bg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
   color:var(--text);
-  font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
-  line-height:1.5;
+  background:
+    radial-gradient(1200px 700px at 10% 0%, rgba(122,162,255,.22), transparent 55%),
+    radial-gradient(900px 600px at 85% 12%, rgba(118,228,247,.12), transparent 55%),
+    linear-gradient(180deg, var(--bg1), var(--bg0));
+  min-height:100vh;
 }
 
-/* Outer wrap */
+/* Page wrapper */
 .wrap{
-  max-width:1200px;
-  margin:0 auto;
-  padding:18px 14px 40px;
+  width:min(1180px, calc(100% - 36px));
+  margin:22px auto 42px;
 }
 
-/* App shell */
+/* App container */
 .app{
   border:1px solid var(--line);
-  background:rgba(10,16,34,.55);
-  border-radius:18px;
+  border-radius:22px;
   overflow:hidden;
-  box-shadow:0 18px 60px rgba(0,0,0,.35);
+  background:rgba(7,16,38,.55);
+  box-shadow:var(--shadow);
 }
 
-/* Top bar (used on internal pages) */
+/* Topbar (used on ALL internal pages) */
 .topbar{
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  gap:12px;
-  padding:14px 14px;
+  justify-content:space-between;
+  gap:14px;
+  padding:14px 18px;
   border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg, rgba(15,23,48,.72), rgba(15,23,48,.40));
+  background:linear-gradient(180deg, rgba(10,18,44,.72), rgba(10,18,44,.35));
 }
 
-/* Brand block */
-.brand{display:flex; align-items:center; gap:12px}
-.brand b{display:block; font-size:14px; letter-spacing:.2px}
-.brand span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:240px;
+}
 
-/* Small avatar pill (AL) */
 .avatar{
-  width:34px; height:34px; border-radius:12px;
-  border:1px solid var(--line);
-  background:linear-gradient(135deg, rgba(122,162,255,.25), rgba(118,228,247,.18));
-  display:flex; align-items:center; justify-content:center;
-  font-weight:900; font-size:12px; color:var(--text);
+  width:38px;height:38px;
+  border-radius:12px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg, rgba(122,162,255,.25), rgba(118,228,247,.16));
+  border:1px solid var(--line2);
+  color:var(--text);
+  font-weight:900;
   overflow:hidden;
 }
 
-/* Right side quick buttons */
-.q{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+.brand b{display:block;font-size:14px;letter-spacing:.2px}
+.brand span{
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+  margin-top:2px;
+}
+
+.q{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
 .qbtn{
-  display:inline-flex; align-items:center; gap:8px;
-  padding:10px 12px;
+  padding:8px 10px;
+  border-radius:999px;
   border:1px solid var(--line);
-  border-radius:12px;
-  background:rgba(17,26,51,.35);
+  background:rgba(17,26,51,.38);
   font-size:12px;
   color:var(--muted);
 }
-.qbtn:hover{border-color:rgba(122,162,255,.65); color:var(--text)}
+.qbtn:hover{border-color:rgba(122,162,255,.55); color:var(--text)}
 .dot{
-  width:8px; height:8px; border-radius:3px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  width:8px;height:8px;border-radius:999px;
+  background:var(--accent);
+  display:inline-block;
+  margin-right:8px;
 }
 
-/* Main area */
-.main{display:grid; grid-template-columns:280px 1fr; min-height:78vh}
-@media (max-width: 920px){
-  .main{grid-template-columns:1fr}
+/* Main layout */
+.main{
+  display:grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 640px;
 }
 
 /* Sidebar */
 .sidebar{
   border-right:1px solid var(--line);
-  background:rgba(15,23,48,.40);
+  background:linear-gradient(180deg, rgba(7,16,38,.45), rgba(7,16,38,.25));
   padding:14px;
 }
-@media (max-width: 920px){
-  .sidebar{border-right:0; border-bottom:1px solid var(--line)}
-}
 
-/* Sidebar nav tabs */
-.nav{display:flex; flex-direction:column; gap:10px}
+.nav{display:flex;flex-direction:column;gap:10px}
+
 .tab{
-  display:flex; justify-content:space-between; align-items:center; gap:10px;
-  padding:12px;
-  border:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:12px 12px;
   border-radius:16px;
-  background:rgba(17,26,51,.25);
+  border:1px solid var(--line);
+  background:rgba(17,26,51,.20);
 }
-.tab:hover{border-color:rgba(122,162,255,.65)}
+.tab:hover{border-color:rgba(122,162,255,.55)}
 .tab.active{
-  border-color:rgba(122,162,255,.85);
-  background:linear-gradient(135deg, rgba(122,162,255,.18), rgba(118,228,247,.10));
+  border-color:rgba(122,162,255,.65);
+  background:linear-gradient(135deg, rgba(122,162,255,.18), rgba(118,228,247,.08));
 }
-.left{display:flex; gap:10px; align-items:center}
-.ico{width:26px; height:26px; display:flex; align-items:center; justify-content:center}
-.name b{display:block; font-size:13px}
-.name span{display:block; font-size:11px; color:var(--muted); margin-top:2px}
-
-/* small badge */
+.left{display:flex;gap:10px;align-items:center}
+.ico{width:24px;height:24px;display:grid;place-items:center;opacity:.9}
+.name b{display:block;font-size:13px}
+.name span{display:block;font-size:11px;color:var(--muted);margin-top:2px}
 .badge{
   font-size:11px;
+  color:var(--muted);
   padding:6px 10px;
   border-radius:999px;
   border:1px solid var(--line);
-  background:rgba(17,26,51,.35);
-  color:var(--muted);
+  background:rgba(17,26,51,.30);
 }
 
-/* Footer text in sidebar */
 .foot{
-  margin-top:12px;
-  color:var(--muted);
+  margin-top:14px;
   font-size:12px;
-  opacity:.9;
+  color:rgba(169,181,214,.72);
 }
 
-/* Content */
-.content{padding:14px}
+/* Content area */
+.content{
+  padding:16px;
+  background:rgba(7,16,38,.18);
+}
+
 .panel{
   border:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(15,23,48,.55), rgba(15,23,48,.35));
   border-radius:18px;
-  background:rgba(15,23,48,.35);
-  padding:16px;
+  padding:18px;
 }
 
-/* Typography inside panels */
-h1{margin:0 0 10px; font-size:22px; letter-spacing:.2px}
-p{margin:0 0 10px; color:var(--muted); font-size:14px}
+h1{margin:0 0 8px;font-size:26px;letter-spacing:-.3px}
+p{margin:8px 0;color:var(--muted);line-height:1.65;font-size:14px}
 
-/* Sections */
-.sectionTitle{
-  margin-top:14px;
-  font-weight:900;
-  font-size:12px;
-  letter-spacing:.12em;
-  color:var(--muted);
-  text-transform:uppercase;
+/* Cards + grid (used everywhere) */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin-top:12px;
 }
-
-/* Cards & grids (used on all internal pages) */
-.grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px}
-@media (max-width: 920px){ .grid{grid-template-columns:1fr} }
+@media (max-width: 920px){
+  .main{grid-template-columns:1fr}
+  .sidebar{border-right:0;border-bottom:1px solid var(--line)}
+  .grid{grid-template-columns:1fr}
+}
 
 .card{
   border:1px solid var(--line);
+  background:rgba(17,26,51,.35);
   border-radius:18px;
-  background:rgba(17,26,51,.25);
   padding:14px;
 }
 
-/* Buttons (used in projects/resumes/etc.) */
-.actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+.sectionTitle{
+  margin-top:14px;
+  font-weight:900;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:rgba(169,181,214,.78);
+}
+
+/* Buttons */
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
 .btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
   padding:10px 12px;
-  border-radius:14px;
+  border-radius:999px;
   border:1px solid var(--line);
   background:rgba(17,26,51,.35);
-  font-weight:900;
   font-size:12px;
+  font-weight:800;
   color:var(--muted);
 }
-.btn:hover{border-color:rgba(122,162,255,.65); color:var(--text)}
+.btn:hover{border-color:rgba(122,162,255,.55); color:var(--text)}
 .btn.primary{
   border:0;
   color:#071023;
   background:linear-gradient(135deg, rgba(122,162,255,.95), rgba(118,228,247,.85));
 }
+.btn.primary:hover{filter:brightness(1.03)}
 
-/* Pills (used in experience highlights, skills, filters) */
+/* Pills */
 .pill{
   padding:8px 10px;
   border-radius:999px;
@@ -208,82 +233,44 @@ p{margin:0 0 10px; color:var(--muted); font-size:14px}
   background:rgba(17,26,51,.35);
   color:var(--muted);
   font-size:12px;
+  cursor:pointer;
+  user-select:none;
 }
-.pill.good{border-color:rgba(118,228,247,.45)}
-.pill.warn{border-color:rgba(255,212,59,.45)}
-
-/* Make inline code readable */
-code{
-  padding:2px 6px;
-  border-radius:8px;
-  border:1px solid var(--line);
-  background:rgba(17,26,51,.35);
-  color:rgba(219,231,255,.95);
-  font-size:12px;
+.pill.active{
+  border-color:rgba(122,162,255,.75);
+  color:var(--text);
+  background:linear-gradient(135deg, rgba(122,162,255,.18), rgba(118,228,247,.12));
+}
+.pill.good{
+  border-color:rgba(118,228,247,.35);
+}
+.pill.warn{
+  border-color:rgba(255,212,59,.40);
 }
 
-/* =========================================================
-   OPTIONAL: Homepage (index.html) Wix-like hero support
-   If your index.html is the simple Wix layout version,
-   these styles will keep it pretty without breaking other pages.
-   ========================================================= */
-
-/* Only apply when index uses .hero and .heroText */
+/* Home page (Wix-like hero) — OPTIONAL support
+   If your index.html still uses .hero / .heroText / .cardName etc, it will still look fine.
+*/
 .hero{
-  position:relative;
   display:grid;
-  grid-template-columns: 420px 1fr;
-  gap: 80px;
+  grid-template-columns:420px 1fr;
+  gap:26px;
   align-items:center;
+  margin-top:14px;
 }
-@media (max-width: 900px){
-  .hero{grid-template-columns:1fr; gap:24px}
-}
-
-/* Beige block */
-.hero::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0;
-  width: 520px;
-  height: 420px;
-  background:#e9dfd6;
-  border-radius:18px;
-  z-index:0;
-  opacity:.22;
-}
-@media (max-width: 900px){
-  .hero::before{width:100%; height:320px}
+@media (max-width:920px){
+  .hero{grid-template-columns:1fr}
 }
 
-/* Homepage hero card look */
-.hero .card{
-  position:relative;
-  z-index:1;
-  background:#f6f1ec;
-  color:#111;
-  border:0;
-  box-shadow:0 14px 40px rgba(0,0,0,0.20);
-}
-.hero .cardTitle,
-.hero .cardLine{opacity:1}
-.heroText{position:relative; z-index:1}
 .heroText h1{
-  font-size:78px;
+  font-size:54px;
+  line-height:1.02;
   margin:0 0 10px;
-  line-height:.95;
-  font-weight:900;
 }
-@media (max-width: 900px){
-  .heroText h1{font-size:52px}
-}
-.subtitle{font-size:18px; margin:0 0 16px; color:rgba(234,240,255,.92)}
+.subtitle{font-size:15px;color:var(--muted);margin:0 0 10px}
 .body{max-width:640px}
-.link{
-  border:1px solid rgba(234,240,255,.25);
-  padding:10px 14px;
-  border-radius:999px;
-  font-size:13px;
-}
-.link:hover{border-color:rgba(234,240,255,.45)}
+
+/* If you use the “Wix card” look on home */
+.cardName{margin:0;font-size:30px;line-height:1.05;font-weight:900;color:var(--text)}
+.cardLine{width:34px;height:3px;background:var(--accent);margin:14px 0;border-radius:99px}
+.cardTitle{margin:0;letter-spacing:.18em;font-size:11px;color:rgba(169,181,214,.75)}

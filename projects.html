@@ -86,13 +86,16 @@
               <div class="badge">Quick</div>
             </a>
             <a class="tab" href="experience.html">
-              <div class="left"><div class="ico">💼</div><div class="name"><b>Experience</b><span>Ipser + Vital</span></div></div>
+              <div class="left"><div class="ico">💼</div><div class="name"><b>Experience</b><span>Customer + delivery</span></div></div>
               <div class="badge">2</div>
             </a>
-            <a class="tab active" href="Case Studies.html">
+
+            <!-- ✅ FIXED: link must be projects.html -->
+            <a class="tab active" href="projects.html">
               <div class="left"><div class="ico">🧩</div><div class="name"><b>Case Studies</b><span>Selected work</span></div></div>
               <div class="badge">5</div>
             </a>
+
             <a class="tab" href="skills.html">
               <div class="left"><div class="ico">🛠️</div><div class="name"><b>Skills</b><span>Tools + strengths</span></div></div>
               <div class="badge">Map</div>
@@ -113,36 +116,34 @@
           <div class="panel">
             <h1>Case Studies</h1>
             <p>
-              These are written like real implementation work: <b>requirements → setup/config → testing/UAT → launch readiness</b>,
+              These are written like implementation work: <b>requirements → setup/config → testing/UAT → go-live readiness</b>,
               plus documentation and tracking. Click <b>Open Case Study</b> for the full write-up.
             </p>
             <p class="kicker">
-              Recruiter tip: If you’re hiring for Implementation / Onboarding / Delivery, start with the 3 featured cases below.
+              Recruiter tip: start with the 3 featured cases below.
             </p>
 
             <div class="sectionTitle2">Featured (Recommended)</div>
             <div class="grid" id="featured">
 
-              <!-- Featured 1: Water Dashboard -->
-              <div class="card" data-tags="data implementation reporting">
-                <h3>Water Quality Dashboard (Streamlit) — Reporting &amp; Delivery Readiness</h3>
-                <p><b>Problem:</b> Data was spread across multiple sources; hard to monitor and share insights.</p>
-                <p><b>What I did:</b> Integrated 3 datasets (~40k rows), built filters + saved presets, and created a usable workflow.</p>
-                <p><b>Outcome:</b> A shareable dashboard that supports consistent reporting and faster decisions.</p>
+              <div class="card" data-tags="data implementation">
+                <h3>Water Quality Dashboard (Streamlit) — Reporting &amp; delivery readiness</h3>
+                <p><b>Problem:</b> Data spread across sources; reporting was slow and inconsistent.</p>
+                <p><b>What I did:</b> Integrated 3 datasets (~40k rows), built filters + presets, and documented usage.</p>
+                <p><b>Outcome:</b> A shareable dashboard that enables faster, repeatable reporting.</p>
                 <div class="tags">
-                  <span class="tag">Data setup</span><span class="tag">Dashboard</span><span class="tag">Delivery-ready</span><span class="tag">Python/Streamlit</span>
+                  <span class="tag">Data setup</span><span class="tag">Reporting</span><span class="tag">Delivery-ready</span><span class="tag">Python/Streamlit</span>
                 </div>
                 <div class="actions">
                   <a class="btn primary" href="water-dashboard.html">Open Case Study</a>
                 </div>
               </div>
 
-              <!-- Featured 2: NUMarket -->
-              <div class="card" data-tags="delivery implementation ops">
+              <div class="card" data-tags="implementation delivery ops">
                 <h3>NUMarket Yard — Implementation-style rollout plan</h3>
-                <p><b>Problem:</b> Needed a clear launch plan with owners, risks, and milestones.</p>
-                <p><b>What I did:</b> Built WBS + 10-milestone workback plan, RAID log, rollout ops plan, and KPI tracker.</p>
-                <p><b>Outcome:</b> A repeatable rollout structure that improves readiness and stakeholder alignment.</p>
+                <p><b>Problem:</b> Needed a clear plan with owners, risks, and milestones for launch readiness.</p>
+                <p><b>What I did:</b> WBS + workback plan, RAID log, rollout ops plan, and KPI tracker.</p>
+                <p><b>Outcome:</b> A repeatable delivery structure that improves readiness and stakeholder alignment.</p>
                 <div class="tags">
                   <span class="tag">Implementation plan</span><span class="tag">RAID</span><span class="tag">Ops readiness</span><span class="tag">Tracking</span>
                 </div>
@@ -151,11 +152,10 @@
                 </div>
               </div>
 
-              <!-- Featured 3: Lean PDCA -->
-              <div class="card" data-tags="ops delivery process">
+              <div class="card" data-tags="ops delivery">
                 <h3>Lean Time Study + PDCA — Reducing delays with clear countermeasures</h3>
                 <p><b>Problem:</b> Checkout delays during rush hours due to rework and overrides.</p>
-                <p><b>What I did:</b> Ran a time study, identified root causes, implemented countermeasures, tracked impact.</p>
+                <p><b>What I did:</b> Time study → root causes → countermeasures → tracking.</p>
                 <p><b>Outcome:</b> A structured improvement pilot with measurable process visibility.</p>
                 <div class="tags">
                   <span class="tag">Process improvement</span><span class="tag">Metrics</span><span class="tag">Execution</span><span class="tag">Stakeholders</span>
@@ -184,12 +184,11 @@
 
             <div class="grid" id="grid">
 
-              <!-- Study Buddy -->
-              <div class="card" data-tags="implementation delivery ops">
+              <div class="card" data-tags="implementation delivery">
                 <h3>Study Buddy Finder — Workflow setup &amp; coordination (NU Edition)</h3>
-                <p><b>Problem:</b> Students needed a structured way to match and schedule study partners safely.</p>
-                <p><b>What I did:</b> Defined the workflow, mapped requirements, and designed a clear matching + scheduling flow.</p>
-                <p><b>Outcome:</b> A usable prototype with a clean end-to-end user journey.</p>
+                <p><b>Problem:</b> Needed a structured workflow to match and schedule study partners.</p>
+                <p><b>What I did:</b> Mapped requirements and designed an end-to-end matching + scheduling flow.</p>
+                <p><b>Outcome:</b> A usable prototype with a clear user journey.</p>
                 <div class="tags">
                   <span class="tag">Workflow</span><span class="tag">Requirements</span><span class="tag">Coordination</span><span class="tag">Prototype</span>
                 </div>
@@ -199,26 +198,24 @@
                 </div>
               </div>
 
-              <!-- Water Dashboard -->
-              <div class="card" data-tags="data implementation reporting">
+              <div class="card" data-tags="data implementation">
                 <h3>California DWR Water Quality Dashboard (Streamlit)</h3>
                 <p><b>Problem:</b> Multiple datasets made reporting slow and inconsistent.</p>
-                <p><b>What I did:</b> Combined data sources and built interactive filters + saved presets.</p>
-                <p><b>Outcome:</b> Faster analysis and clearer reporting workflow.</p>
+                <p><b>What I did:</b> Integrated sources and built interactive filters + saved presets.</p>
+                <p><b>Outcome:</b> Faster analysis and a clearer reporting workflow.</p>
                 <div class="tags">
-                  <span class="tag">Data</span><span class="tag">Streamlit</span><span class="tag">Analytics</span><span class="tag">Demo</span>
+                  <span class="tag">Data</span><span class="tag">Streamlit</span><span class="tag">Analytics</span><span class="tag">Reporting</span>
                 </div>
                 <div class="actions">
                   <a class="btn primary" href="water-dashboard.html">Open Case Study</a>
                 </div>
               </div>
 
-              <!-- NUMarket -->
-              <div class="card" data-tags="delivery implementation ops">
+              <div class="card" data-tags="implementation delivery ops">
                 <h3>NUMarket Yard — MVP planning + rollout ops</h3>
-                <p><b>Problem:</b> Needed a clear implementation plan to launch an MVP.</p>
-                <p><b>What I did:</b> WBS + milestone workback plan, RAID log, rollout ops plan, KPI tracker.</p>
-                <p><b>Outcome:</b> Stronger launch readiness and clearer stakeholder alignment.</p>
+                <p><b>Problem:</b> Needed a clear delivery plan to launch an MVP.</p>
+                <p><b>What I did:</b> WBS + milestone plan, RAID log, rollout ops plan, KPI tracker.</p>
+                <p><b>Outcome:</b> Stronger launch readiness and stakeholder alignment.</p>
                 <div class="tags">
                   <span class="tag">Delivery</span><span class="tag">Ops</span><span class="tag">RAID</span><span class="tag">Planning</span>
                 </div>
@@ -227,12 +224,11 @@
                 </div>
               </div>
 
-              <!-- SubTrack -->
-              <div class="card" data-tags="delivery implementation">
+              <div class="card" data-tags="implementation delivery">
                 <h3>SubTrack — Discovery → prototype → demo flow</h3>
-                <p><b>Problem:</b> Needed to validate the workflow and user needs before building.</p>
-                <p><b>What I did:</b> Ran 12 interviews + 8 feedback sessions; refined the prototype and demo flow.</p>
-                <p><b>Outcome:</b> Clearer scope, workflow, and a stronger customer-facing demo narrative.</p>
+                <p><b>Problem:</b> Needed to validate needs and workflow before building.</p>
+                <p><b>What I did:</b> 12 interviews + feedback sessions; refined prototype and demo flow.</p>
+                <p><b>Outcome:</b> Clearer scope and a stronger customer-facing narrative.</p>
                 <div class="tags">
                   <span class="tag">Discovery</span><span class="tag">Scoping</span><span class="tag">Demo flow</span>
                 </div>
@@ -241,12 +237,11 @@
                 </div>
               </div>
 
-              <!-- Lean PDCA -->
-              <div class="card" data-tags="ops delivery process">
+              <div class="card" data-tags="ops delivery">
                 <h3>Lean Time Study + PDCA Pilot — Checkout Delays</h3>
                 <p><b>Problem:</b> Delays during peak hours caused rework and long wait times.</p>
-                <p><b>What I did:</b> Time study, root cause analysis, countermeasures, and tracking.</p>
-                <p><b>Outcome:</b> Structured improvement plan with measurable process visibility.</p>
+                <p><b>What I did:</b> Time study, root cause analysis, countermeasures, tracking.</p>
+                <p><b>Outcome:</b> A structured improvement plan with measurable visibility.</p>
                 <div class="tags">
                   <span class="tag">Ops</span><span class="tag">Lean</span><span class="tag">PDCA</span><span class="tag">Metrics</span>
                 </div>

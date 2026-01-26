@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projects | Aman Lokhande</title>
-  <meta name="description" content="Projects portfolio for Aman Lokhande." />
+  <title>Case Studies | Aman Lokhande</title>
+  <meta name="description" content="Implementation and delivery case studies for Aman Lokhande." />
 
   <!-- ✅ Shared site-wide CSS -->
   <link rel="stylesheet" href="style.css">
@@ -42,6 +42,7 @@
 
     .card h3{margin:0 0 8px; font-size:14px}
     .card p{margin:0 0 10px; font-size:13px}
+
     .tags{display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 10px}
     .tag{
       font-size:12px; color:var(--muted);
@@ -49,6 +50,9 @@
       padding:6px 10px; border-radius:999px;
       background:rgba(17,26,51,.35);
     }
+
+    .kicker{color:var(--muted); font-size:12px; margin-top:8px}
+    .sectionTitle2{margin-top:18px; font-weight:900; font-size:12px; letter-spacing:.12em; color:var(--muted); text-transform:uppercase}
   </style>
 </head>
 
@@ -60,13 +64,13 @@
           <div class="avatar">AL</div>
           <div>
             <b>Aman Lokhande</b>
-            <span>Projects</span>
+            <span>Case Studies (Implementation / Delivery)</span>
           </div>
         </div>
         <div class="q">
           <a class="qbtn" href="mailto:amanlokhande247@gmail.com"><span class="dot"></span>Email</a>
           <a class="qbtn" href="https://www.linkedin.com/in/aman-lokhande" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="qbtn" href="resumes.html">Resumes</a>
+          <a class="qbtn" href="resumes.html">Resume</a>
         </div>
       </div>
 
@@ -86,7 +90,7 @@
               <div class="badge">2</div>
             </a>
             <a class="tab active" href="projects.html">
-              <div class="left"><div class="ico">🧩</div><div class="name"><b>Projects</b><span>All projects</span></div></div>
+              <div class="left"><div class="ico">🧩</div><div class="name"><b>Case Studies</b><span>Selected work</span></div></div>
               <div class="badge">5</div>
             </a>
             <a class="tab" href="skills.html">
@@ -94,95 +98,160 @@
               <div class="badge">Map</div>
             </a>
             <a class="tab" href="resumes.html">
-              <div class="left"><div class="ico">📄</div><div class="name"><b>Resumes</b><span>Download PDFs</span></div></div>
-              <div class="badge">3</div>
+              <div class="left"><div class="ico">📄</div><div class="name"><b>Resume</b><span>Download PDF</span></div></div>
+              <div class="badge">1</div>
             </a>
             <a class="tab" href="contact.html">
               <div class="left"><div class="ico">📫</div><div class="name"><b>Contact</b><span>Let’s talk</span></div></div>
               <div class="badge">Now</div>
             </a>
           </div>
-          <div class="foot">Tip: add new projects as new HTML files.</div>
+          <div class="foot">Tip: keep 3 featured case studies at the top.</div>
         </aside>
 
         <main class="content">
           <div class="panel">
-            <h1>Projects</h1>
-            <p>Click <b>Open Project</b> for your detailed write-up pages. Use <b>Live</b> for prototypes/demos.</p>
+            <h1>Case Studies</h1>
+            <p>
+              These are written like real implementation work: <b>requirements → setup/config → testing/UAT → launch readiness</b>,
+              plus documentation and tracking. Click <b>Open Case Study</b> for the full write-up.
+            </p>
+            <p class="kicker">
+              Recruiter tip: If you’re hiring for Implementation / Onboarding / Delivery, start with the 3 featured cases below.
+            </p>
+
+            <div class="sectionTitle2">Featured (Recommended)</div>
+            <div class="grid" id="featured">
+
+              <!-- Featured 1: Water Dashboard -->
+              <div class="card" data-tags="data implementation reporting">
+                <h3>Water Quality Dashboard (Streamlit) — Reporting &amp; Delivery Readiness</h3>
+                <p><b>Problem:</b> Data was spread across multiple sources; hard to monitor and share insights.</p>
+                <p><b>What I did:</b> Integrated 3 datasets (~40k rows), built filters + saved presets, and created a usable workflow.</p>
+                <p><b>Outcome:</b> A shareable dashboard that supports consistent reporting and faster decisions.</p>
+                <div class="tags">
+                  <span class="tag">Data setup</span><span class="tag">Dashboard</span><span class="tag">Delivery-ready</span><span class="tag">Python/Streamlit</span>
+                </div>
+                <div class="actions">
+                  <a class="btn primary" href="water-dashboard.html">Open Case Study</a>
+                </div>
+              </div>
+
+              <!-- Featured 2: NUMarket -->
+              <div class="card" data-tags="delivery implementation ops">
+                <h3>NUMarket Yard — Implementation-style rollout plan</h3>
+                <p><b>Problem:</b> Needed a clear launch plan with owners, risks, and milestones.</p>
+                <p><b>What I did:</b> Built WBS + 10-milestone workback plan, RAID log, rollout ops plan, and KPI tracker.</p>
+                <p><b>Outcome:</b> A repeatable rollout structure that improves readiness and stakeholder alignment.</p>
+                <div class="tags">
+                  <span class="tag">Implementation plan</span><span class="tag">RAID</span><span class="tag">Ops readiness</span><span class="tag">Tracking</span>
+                </div>
+                <div class="actions">
+                  <a class="btn primary" href="numarket.html">Open Case Study</a>
+                </div>
+              </div>
+
+              <!-- Featured 3: Lean PDCA -->
+              <div class="card" data-tags="ops delivery process">
+                <h3>Lean Time Study + PDCA — Reducing delays with clear countermeasures</h3>
+                <p><b>Problem:</b> Checkout delays during rush hours due to rework and overrides.</p>
+                <p><b>What I did:</b> Ran a time study, identified root causes, implemented countermeasures, tracked impact.</p>
+                <p><b>Outcome:</b> A structured improvement pilot with measurable process visibility.</p>
+                <div class="tags">
+                  <span class="tag">Process improvement</span><span class="tag">Metrics</span><span class="tag">Execution</span><span class="tag">Stakeholders</span>
+                </div>
+                <div class="actions">
+                  <a class="btn primary" href="lean-pdca.html">Open Case Study</a>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="sectionTitle2">All Case Studies</div>
 
             <div class="toolbar">
               <div class="search">
-                🔎 <input id="q" placeholder="Search projects (e.g., AI, UAT, Lean, Streamlit, MVP)..." />
+                🔎 <input id="q" placeholder="Search (e.g., onboarding, UAT, dashboard, rollout, Lean, MVP)..." />
               </div>
               <div class="filter" id="filters">
                 <span class="pill active" data-filter="all">All</span>
-                <span class="pill" data-filter="product">Product</span>
+                <span class="pill" data-filter="implementation">Implementation</span>
+                <span class="pill" data-filter="delivery">Delivery</span>
                 <span class="pill" data-filter="ops">Ops</span>
-                <span class="pill" data-filter="solutions">Solutions</span>
                 <span class="pill" data-filter="data">Data</span>
               </div>
             </div>
 
             <div class="grid" id="grid">
 
-              <!-- ✅ Study Buddy (FIXED LINK) -->
-              <div class="card" data-tags="product solutions ops">
-                <h3>Study Buddy Finder — Northeastern Edition</h3>
-                <p>NU-only study partner matching + scheduling with explainable AI matching and trust &amp; safety.</p>
+              <!-- Study Buddy -->
+              <div class="card" data-tags="implementation delivery ops">
+                <h3>Study Buddy Finder — Workflow setup &amp; coordination (NU Edition)</h3>
+                <p><b>Problem:</b> Students needed a structured way to match and schedule study partners safely.</p>
+                <p><b>What I did:</b> Defined the workflow, mapped requirements, and designed a clear matching + scheduling flow.</p>
+                <p><b>Outcome:</b> A usable prototype with a clean end-to-end user journey.</p>
                 <div class="tags">
-                  <span class="tag">Product</span><span class="tag">AI explainability</span><span class="tag">Scheduling</span><span class="tag">Trust & Safety</span>
+                  <span class="tag">Workflow</span><span class="tag">Requirements</span><span class="tag">Coordination</span><span class="tag">Prototype</span>
                 </div>
                 <div class="actions">
-                  <a class="btn primary" href="studybuddy.html">Open Project</a>
+                  <a class="btn primary" href="studybuddy.html">Open Case Study</a>
                   <a class="btn" href="https://aman-studybuddy.netlify.app/" target="_blank" rel="noreferrer">Live</a>
                 </div>
               </div>
 
               <!-- Water Dashboard -->
-              <div class="card" data-tags="data solutions">
+              <div class="card" data-tags="data implementation reporting">
                 <h3>California DWR Water Quality Dashboard (Streamlit)</h3>
-                <p>Python dashboard integrating 3 datasets (~40k rows) with interactive filters + saved presets.</p>
+                <p><b>Problem:</b> Multiple datasets made reporting slow and inconsistent.</p>
+                <p><b>What I did:</b> Combined data sources and built interactive filters + saved presets.</p>
+                <p><b>Outcome:</b> Faster analysis and clearer reporting workflow.</p>
                 <div class="tags">
-                  <span class="tag">Data</span><span class="tag">Streamlit</span><span class="tag">Demo</span><span class="tag">Analytics</span>
+                  <span class="tag">Data</span><span class="tag">Streamlit</span><span class="tag">Analytics</span><span class="tag">Demo</span>
                 </div>
                 <div class="actions">
-                  <a class="btn primary" href="water-dashboard.html">Open Project</a>
+                  <a class="btn primary" href="water-dashboard.html">Open Case Study</a>
                 </div>
               </div>
 
               <!-- NUMarket -->
-              <div class="card" data-tags="product ops">
+              <div class="card" data-tags="delivery implementation ops">
                 <h3>NUMarket Yard — MVP planning + rollout ops</h3>
-                <p>WBS + 10-milestone workback plan, RAID log, rollout operations, and KPI tracker for launch readiness.</p>
+                <p><b>Problem:</b> Needed a clear implementation plan to launch an MVP.</p>
+                <p><b>What I did:</b> WBS + milestone workback plan, RAID log, rollout ops plan, KPI tracker.</p>
+                <p><b>Outcome:</b> Stronger launch readiness and clearer stakeholder alignment.</p>
                 <div class="tags">
-                  <span class="tag">Product</span><span class="tag">Ops</span><span class="tag">PM</span><span class="tag">RAID</span>
+                  <span class="tag">Delivery</span><span class="tag">Ops</span><span class="tag">RAID</span><span class="tag">Planning</span>
                 </div>
                 <div class="actions">
-                  <a class="btn primary" href="numarket.html">Open Project</a>
+                  <a class="btn primary" href="numarket.html">Open Case Study</a>
                 </div>
               </div>
 
               <!-- SubTrack -->
-              <div class="card" data-tags="product solutions">
-                <h3>SubTrack — customer discovery + prototype demo</h3>
-                <p>12 interviews + 8 feedback sessions; Figma prototype + refined demo flow from user feedback.</p>
+              <div class="card" data-tags="delivery implementation">
+                <h3>SubTrack — Discovery → prototype → demo flow</h3>
+                <p><b>Problem:</b> Needed to validate the workflow and user needs before building.</p>
+                <p><b>What I did:</b> Ran 12 interviews + 8 feedback sessions; refined the prototype and demo flow.</p>
+                <p><b>Outcome:</b> Clearer scope, workflow, and a stronger customer-facing demo narrative.</p>
                 <div class="tags">
-                  <span class="tag">Discovery</span><span class="tag">Prototype</span><span class="tag">Demo flow</span>
+                  <span class="tag">Discovery</span><span class="tag">Scoping</span><span class="tag">Demo flow</span>
                 </div>
                 <div class="actions">
-                  <a class="btn primary" href="subtrack.html">Open Project</a>
+                  <a class="btn primary" href="subtrack.html">Open Case Study</a>
                 </div>
               </div>
 
               <!-- Lean PDCA -->
-              <div class="card" data-tags="ops">
+              <div class="card" data-tags="ops delivery process">
                 <h3>Lean Time Study + PDCA Pilot — Checkout Delays</h3>
-                <p>Time study during rush hours; implemented countermeasures to reduce overrides and lead time.</p>
+                <p><b>Problem:</b> Delays during peak hours caused rework and long wait times.</p>
+                <p><b>What I did:</b> Time study, root cause analysis, countermeasures, and tracking.</p>
+                <p><b>Outcome:</b> Structured improvement plan with measurable process visibility.</p>
                 <div class="tags">
                   <span class="tag">Ops</span><span class="tag">Lean</span><span class="tag">PDCA</span><span class="tag">Metrics</span>
                 </div>
                 <div class="actions">
-                  <a class="btn primary" href="lean-pdca.html">Open Project</a>
+                  <a class="btn primary" href="lean-pdca.html">Open Case Study</a>
                 </div>
               </div>
 
@@ -214,7 +283,7 @@
     img.src = "profile.jpg";
 
     const q = document.getElementById("q");
-    const pills = Array.from(document.querySelectorAll(".pill"));
+    const pills = Array.from(document.querySelectorAll("#filters .pill"));
     const cards = Array.from(document.querySelectorAll("#grid .card"));
 
     let activeFilter = "all";

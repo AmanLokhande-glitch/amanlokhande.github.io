@@ -1,121 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About | Aman Lokhande</title>
-  <meta name="description" content="About Aman Lokhande — implementation, delivery, and customer onboarding." />
-
-  <!-- Shared site-wide CSS (your WIX-style file) -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aman Lokhande | Implementation & Customer Onboarding</title>
   <link rel="stylesheet" href="./style.css" />
-
-  <!-- Page-only styles (kept small + compatible with your style.css) -->
-  <style>
-    .page{
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 18px 56px 80px;
-    }
-    @media (max-width: 900px){
-      .page{ padding: 12px 20px 60px; }
-    }
-
-    .backRow{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      margin: 10px 0 18px;
-      flex-wrap:wrap;
-    }
-
-    .backLink{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size: 13px;
-      opacity: .8;
-      border: 1px solid rgba(0,0,0,.18);
-      padding: 10px 14px;
-      border-radius: 999px;
-    }
-    .backLink:hover{ opacity: 1; border-color: rgba(0,0,0,.35); }
-
-    .grid2{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 18px;
-      align-items:start;
-    }
-    @media (max-width: 900px){
-      .grid2{ grid-template-columns: 1fr; }
-    }
-
-    .box{
-      background: #f6f1ec;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.08);
-      border-radius: 10px;
-      padding: 22px 22px;
-    }
-
-    h1{ margin: 0 0 10px; font-size: 34px; line-height: 1.1; }
-    h2{ margin: 0 0 10px; font-size: 16px; }
-
-    p{ margin: 0 0 12px; line-height: 1.7; font-size: 14px; opacity:.9; }
-
-    ul{
-      margin: 0;
-      padding-left: 18px;
-      line-height: 1.8;
-      font-size: 14px;
-      opacity: .9;
-    }
-
-    .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
-    .chip{
-      border: 1px solid rgba(0,0,0,.18);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      opacity: .85;
-      background: rgba(255,255,255,.45);
-    }
-
-    .actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top: 14px;
-    }
-    .btn2{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      border: 1px solid rgba(0,0,0,.18);
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-size: 13px;
-      opacity: .9;
-    }
-    .btn2:hover{ opacity: 1; border-color: rgba(0,0,0,.35); }
-    .btn2.primary{
-      border-color: transparent;
-      background: #1f4fff;
-      color: #fff;
-      opacity: 1;
-    }
-    .btn2.primary:hover{ filter: brightness(0.95); }
-
-    .footer{
-      margin-top: 22px;
-      font-size: 12px;
-      opacity: .7;
-    }
-  </style>
 </head>
 
 <body>
-  <!-- SAME TOP NAV AS INDEX -->
   <header class="topbar">
     <div class="brand">
       <span class="dot"></span>
@@ -126,98 +18,39 @@
     </div>
 
     <nav class="nav">
-      <a href="./about.html" style="opacity:1; font-weight:700;">About</a>
-      <a href="./resumes.html">Resume</a>
+      <a href="./about.html">About</a>
+      <a href="./experience.html">Experience</a>
       <a href="./projects.html">Case Studies</a>
+      <a href="./resumes.html">Resume</a>
       <a href="./contact.html">Contact</a>
     </nav>
   </header>
 
-  <main class="page">
-    <!-- BACK BUTTON ROW -->
-    <div class="backRow">
-      <a class="backLink" href="./index.html">← Back to Home</a>
-      <div style="font-size:13px; opacity:.75;">
-        Email: <a href="mailto:amanlokhande247@gmail.com" style="text-decoration:underline;">amanlokhande247@gmail.com</a>
+  <main class="wrap">
+    <section class="hero">
+      <div class="card center">
+        <img class="avatar" src="./profile.jpg" alt="Profile photo" />
+        <h2 class="cardName">Aman<br/>Lokhande</h2>
+        <div class="cardLine"></div>
+        <p class="cardTitle">IMPLEMENTATION / DELIVERY</p>
       </div>
-    </div>
 
-    <div class="grid2">
-      <section class="box">
-        <h1>Hi — I’m Aman.</h1>
-        <p>
-          I’m a Master’s in Engineering Management candidate focused on <b>customer onboarding and implementation</b>.
-          My background includes a Product Management co-op supporting B2B SaaS implementations and earlier experience as a
-          Project Engineer, where I built strong fundamentals in execution, coordination, and delivery reliability.
-        </p>
-        <p>
-          I do my best work when I’m translating requirements into <b>clear plans</b>, coordinating stakeholders through
-          <b>UAT and go-live readiness</b>, and creating documentation/training so customers adopt smoothly.
+      <div class="heroText">
+        <h1>Implementation &amp; Delivery professional helping B2B teams onboard customers and launch successfully.</h1>
+        <p class="subtitle">Master’s in Engineering Management | PM Co-op + Project Engineer background</p>
+
+        <p class="body">
+          I support customer onboarding and implementation by translating requirements into clear plans,
+          coordinating stakeholders, and creating documentation/training for smooth go-lives. I’m targeting
+          Implementation / Customer Onboarding / Delivery roles in B2B SaaS.
         </p>
 
-        <div class="chips">
-          <span class="chip">Requirements workshops</span>
-          <span class="chip">Setup &amp; CSV data mapping</span>
-          <span class="chip">UAT coordination</span>
-          <span class="chip">Go-live readiness</span>
-          <span class="chip">Docs + training</span>
-          <span class="chip">SQL/Excel KPIs</span>
+        <div class="links">
+          <a class="link" href="./projects.html">View Case Studies</a>
+          <a class="link" href="./Resume_Implementation.pdf" target="_blank" rel="noreferrer">Download Resume</a>
         </div>
-
-        <div class="actions">
-          <a class="btn2 primary" href="./resumes.html">Download Resume</a>
-          <a class="btn2" href="./projects.html">View Case Studies</a>
-          <a class="btn2" href="./contact.html">Contact</a>
-        </div>
-      </section>
-
-      <aside class="box">
-        <h2>What I’m targeting</h2>
-        <p>
-          Entry-level roles in <b>Implementation / Customer Onboarding / Delivery</b> (B2B/SaaS).
-          I’m especially interested in teams that value clear documentation, structured execution,
-          and strong customer communication.
-        </p>
-
-        <h2 style="margin-top:18px;">How I work</h2>
-        <ul>
-          <li><b>Clarity first:</b> clean requirements, acceptance criteria, and checklists</li>
-          <li><b>Execution:</b> milestones, owners, and a simple status cadence</li>
-          <li><b>Bridge role:</b> customer ↔ engineering during setup, UAT, and go-live</li>
-          <li><b>Enablement:</b> runbooks, FAQs, release notes, trainings</li>
-          <li><b>Measurement:</b> basic KPIs to spot bottlenecks and improve handoffs</li>
-        </ul>
-      </aside>
-    </div>
-
-    <div class="grid2" style="margin-top:18px;">
-      <section class="box">
-        <h2>Strengths (recruiter view)</h2>
-        <ul>
-          <li>Requirements gathering + implementation-ready documentation</li>
-          <li>Customer onboarding support, training, and enablement content</li>
-          <li>UAT coordination and issue triage (Jira-style workflow)</li>
-          <li>Cross-functional follow-ups and unblock escalation</li>
-          <li>Metrics tracking with SQL + Excel/Sheets</li>
-        </ul>
-      </section>
-
-      <section class="box">
-        <h2>What I like working on</h2>
-        <ul>
-          <li>Onboarding workflows that need structure and clarity</li>
-          <li>Reducing setup friction with templates, checklists, and FAQs</li>
-          <li>Go-live readiness: UAT plans, triage, and sign-off</li>
-          <li>Simple dashboards/reporting that make decisions easier</li>
-        </ul>
-      </section>
-    </div>
-
-    <div class="footer">© <span id="y"></span> Aman Lokhande</div>
+      </div>
+    </section>
   </main>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>

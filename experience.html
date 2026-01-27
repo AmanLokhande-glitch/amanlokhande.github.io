@@ -6,215 +6,330 @@
   <title>Experience | Aman Lokhande</title>
   <meta name="description" content="Implementation, delivery, and customer onboarding experience for Aman Lokhande." />
 
-  <!-- ✅ Shared site-wide CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Shared site-wide CSS (your WIX-style file) -->
+  <link rel="stylesheet" href="./style.css" />
 
-  <!-- ✅ Page-only styles (timeline + a couple small extras) -->
+  <!-- Page-only styles (WIX-style compatible; no dark vars) -->
   <style>
-    /* Extra pill variant used on this page */
-    .pill.warn{border-color:rgba(255,212,59,.45)}
+    .page{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 56px 80px;
+    }
+    @media (max-width: 900px){
+      .page{ padding: 12px 20px 60px; }
+    }
+
+    .backRow{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin: 10px 0 18px;
+      flex-wrap:wrap;
+    }
+    .backLink{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size: 13px;
+      opacity: .8;
+      border: 1px solid rgba(0,0,0,.18);
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
+    .backLink:hover{ opacity: 1; border-color: rgba(0,0,0,.35); }
+
+    .box{
+      background: #f6f1ec;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+      border-radius: 10px;
+      padding: 22px 22px;
+    }
+
+    h1{ margin:0 0 10px; font-size:34px; line-height:1.1; }
+    p{ margin:0 0 12px; line-height:1.7; font-size:14px; opacity:.9; }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px;
+      align-items:start;
+    }
+    @media (max-width: 900px){
+      .grid2{ grid-template-columns: 1fr; }
+    }
+
+    .pills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 10px;
+    }
+    .pill{
+      border: 1px solid rgba(0,0,0,.18);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      opacity: .9;
+      background: rgba(255,255,255,.35);
+    }
+    .pill.good{ border-color: rgba(31,79,255,.35); }
+    .pill.warn{ border-color: rgba(255,212,59,.55); }
+
+    ul{
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.75;
+      font-size: 14px;
+      opacity: .9;
+    }
+    li{ margin: 6px 0; }
+
+    .sectionLabel{
+      margin-top: 18px;
+      margin-bottom: 10px;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: .12em;
+      opacity: .75;
+      text-transform: uppercase;
+    }
 
     /* Timeline */
-    .timeline{position:relative; margin-top:10px; padding-left:18px}
-    .timeline:before{content:""; position:absolute; left:6px; top:6px; bottom:6px; width:2px; background:rgba(31,42,74,.9)}
-    .item{position:relative; margin:0 0 12px}
-    .dot2{position:absolute; left:-1px; top:10px; width:14px; height:14px; border-radius:99px; background:linear-gradient(135deg,var(--accent),var(--accent2)); box-shadow:0 0 0 5px rgba(122,162,255,.14)}
-    .hdr{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:baseline}
-    .role{font-weight:800; font-size:14px}
-    .meta{color:var(--muted); font-size:12px}
-    .company{color:rgba(234,240,255,.92)}
+    .timeline{
+      position: relative;
+      margin-top: 6px;
+      padding-left: 18px;
+    }
+    .timeline:before{
+      content:"";
+      position:absolute;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: rgba(0,0,0,.12);
+    }
 
-    /* Lists on this page */
-    ul{margin:0; padding-left:16px; color:var(--muted); line-height:1.7; font-size:13px}
+    .item{
+      position: relative;
+      margin: 0 0 16px;
+    }
+    .dot2{
+      position:absolute;
+      left: 0px;
+      top: 18px;
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: #1f4fff;
+      box-shadow: 0 0 0 6px rgba(31,79,255,.12);
+    }
 
-    /* KPI row layout */
-    .kpi{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .jobHeader{
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+    .jobTitle{
+      font-weight: 900;
+      font-size: 16px;
+      margin: 0;
+    }
+    .jobMeta{
+      font-size: 13px;
+      opacity: .75;
+      margin: 4px 0 0;
+    }
+    .jobDate{
+      font-size: 13px;
+      opacity: .75;
+      white-space: nowrap;
+    }
+
+    .btnRow{
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border: 1px solid rgba(0,0,0,.18);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      opacity: .9;
+      background: rgba(255,255,255,.35);
+      text-decoration:none;
+      color: inherit;
+    }
+    .btn:hover{ opacity: 1; border-color: rgba(0,0,0,.35); }
+    .btn.primary{
+      background:#1f4fff;
+      border-color: transparent;
+      color:#fff;
+      opacity: 1;
+    }
+    .btn.primary:hover{ filter: brightness(.95); }
+
+    .footer{
+      margin-top: 22px;
+      font-size: 12px;
+      opacity: .7;
+    }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="app">
-      <div class="topbar">
-        <div class="brand">
-          <div class="avatar">AL</div>
-          <div>
-            <b>Experience</b>
-            <span>Implementation • Customer onboarding • Delivery execution</span>
-          </div>
-        </div>
-        <div class="q">
-          <a class="qbtn" href="mailto:amanlokhande247@gmail.com"><span class="dot"></span>Email</a>
-          <a class="qbtn" href="https://www.linkedin.com/in/aman-lokhande" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="qbtn" href="resumes.html">Resume</a>
-        </div>
-      </div>
-
-      <div class="main">
-        <aside class="sidebar">
-          <div class="nav">
-            <a class="tab" href="index.html">
-              <div class="left"><div class="ico">🏠</div><div class="name"><b>Home</b><span>Landing page</span></div></div>
-              <div class="badge">Start</div>
-            </a>
-            <a class="tab" href="about.html">
-              <div class="left"><div class="ico">👤</div><div class="name"><b>About</b><span>Who I am</span></div></div>
-              <div class="badge">Quick</div>
-            </a>
-            <a class="tab active" href="experience.html">
-              <div class="left"><div class="ico">💼</div><div class="name"><b>Experience</b><span>Customer + delivery</span></div></div>
-              <div class="badge">Now</div>
-            </a>
-            <a class="tab" href="projects.html">
-              <div class="left"><div class="ico">🧩</div><div class="name"><b>Case Studies</b><span>Selected work</span></div></div>
-              <div class="badge">5</div>
-            </a>
-            <a class="tab" href="skills.html">
-              <div class="left"><div class="ico">🛠️</div><div class="name"><b>Skills</b><span>Tools + strengths</span></div></div>
-              <div class="badge">Map</div>
-            </a>
-            <a class="tab" href="resumes.html">
-              <div class="left"><div class="ico">📄</div><div class="name"><b>Resume</b><span>Download PDF</span></div></div>
-              <div class="badge">1</div>
-            </a>
-            <a class="tab" href="contact.html">
-              <div class="left"><div class="ico">📫</div><div class="name"><b>Contact</b><span>Let’s talk</span></div></div>
-              <div class="badge">Soon</div>
-            </a>
-          </div>
-          <div class="foot">Experience page</div>
-        </aside>
-
-        <main class="content">
-          <div class="panel">
-            <h1>Experience</h1>
-            <p>
-              I work like an implementation / delivery teammate: <b>kickoff → requirements → setup/data mapping → UAT → go-live readiness</b>,
-              with clear documentation, stakeholder cadence, and simple KPI tracking.
-            </p>
-
-            <div class="grid">
-              <div class="card">
-                <div class="sectionTitle" style="margin-top:0">Highlights (quick scan)</div>
-                <div class="kpi">
-                  <span class="pill good">B2B onboarding support</span>
-                  <span class="pill good">Requirements workshops</span>
-                  <span class="pill">CSV/data mapping</span>
-                  <span class="pill">UAT coordination</span>
-                  <span class="pill">Jira issue triage</span>
-                  <span class="pill">Docs + trainings</span>
-                  <span class="pill warn">Reduced repeat support questions</span>
-                </div>
-                <div class="actions">
-                  <a class="btn primary" href="projects.html">View Case Studies</a>
-                  <a class="btn" href="resumes.html">Download Resume</a>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="sectionTitle" style="margin-top:0">What I bring</div>
-                <ul>
-                  <li>Structured execution: milestones, owners, RAID logs, weekly status cadence</li>
-                  <li>Customer-facing clarity: workshops, specs, mapping sheets, UAT checklists</li>
-                  <li>Bridge customer ↔ engineering during setup, testing, and go-live</li>
-                  <li>Enablement: runbooks, FAQs, release notes, training sessions</li>
-                  <li>SQL/Excel metrics to spot bottlenecks and improve handoffs</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="sectionTitle">Timeline</div>
-            <div class="timeline">
-
-              <div class="item">
-                <div class="dot2"></div>
-                <div class="card">
-                  <div class="hdr">
-                    <div>
-                      <div class="role">Product Manager, Co-op (Implementation-focused)</div>
-                      <div class="meta"><span class="company">Ipser Labs LLC</span> • Fort Worth, TX</div>
-                    </div>
-                    <div class="meta">Jan 2025 – May 2025</div>
-                  </div>
-
-                  <div class="sectionTitle">Implementation / onboarding delivery</div>
-                  <ul>
-                    <li>Supported multiple B2B SaaS customer onboardings from kickoff through UAT and go-live readiness</li>
-                    <li>Led requirements workshops and produced implementation-ready documentation: workflows, roles/permissions, data fields, and success criteria</li>
-                    <li>Coordinated CSV data mapping/import preparation with customers and Engineering to ensure clean setup before UAT</li>
-                    <li>Coordinated UAT cycles: collected issues/requests, triaged in Jira, partnered with Engineering on retesting and sign-off</li>
-                    <li>Built onboarding assets (runbooks, FAQs, release notes) and delivered customer training sessions to reduce repeat questions</li>
-                    <li>Used SQL + Excel to track onboarding KPIs (time-to-go-live, backlog aging, UAT progress) and improve handoffs with CS/Support</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="dot2"></div>
-                <div class="card">
-                  <div class="hdr">
-                    <div>
-                      <div class="role">Project Engineer</div>
-                      <div class="meta"><span class="company">Vital Industrial Products</span> • Kolhapur, India</div>
-                    </div>
-                    <div class="meta">Aug 2022 – Aug 2023</div>
-                  </div>
-
-                  <div class="sectionTitle">Delivery execution / operations coordination</div>
-                  <ul>
-                    <li>Coordinated order execution for OEM accounts; maintained an Excel tracker across machining, quality, and dispatch through shipment</li>
-                    <li>Owned drawing/spec control by maintaining a revision and clarification register; drove closure of specification questions with stakeholders</li>
-                    <li>Supported first-article/sample approvals by coordinating trial runs and compiling inspection evidence under ISO workflows</li>
-                    <li>Improved delivery reliability by keeping stakeholders aligned on changes, dependencies, and approval requirements</li>
-                  </ul>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="sectionTitle">Education</div>
-            <div class="grid">
-              <div class="card">
-                <b>Northeastern University</b>
-                <p style="margin-top:6px">M.S. Engineering Management • Sept 2023 – Dec 2025</p>
-                <ul>
-                  <li>Focus: project management, operations, analytics</li>
-                  <li>Case studies: NUMarket Yard, Streamlit dashboard, Lean PDCA</li>
-                </ul>
-              </div>
-              <div class="card">
-                <b>Zeal College of Engineering (University of Pune)</b>
-                <p style="margin-top:6px">B.E. Mechanical Engineering • Aug 2019 – Aug 2022</p>
-                <ul>
-                  <li>Engineering fundamentals + manufacturing execution exposure</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="foot">© <span id="y"></span> Aman Lokhande</div>
-          </div>
-        </main>
+  <!-- SAME TOP NAV AS INDEX -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        <div class="name">Aman Lokhande</div>
+        <div class="role">Implementation • Customer Onboarding • Professional Services</div>
       </div>
     </div>
-  </div>
+
+    <nav class="nav">
+      <a href="./about.html">About</a>
+      <a href="./resumes.html">Resume</a>
+      <a href="./projects.html">Case Studies</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="backRow">
+      <a class="backLink" href="./index.html">← Back to Home</a>
+      <a class="backLink" href="./projects.html">🧩 View Case Studies</a>
+    </div>
+
+    <section class="box">
+      <h1>Experience</h1>
+      <p>
+        I work like an implementation / delivery teammate:
+        <b>kickoff → requirements → setup/data mapping → UAT → go-live readiness</b>,
+        with clear documentation, stakeholder cadence, and simple KPI tracking.
+      </p>
+    </section>
+
+    <section class="grid2" style="margin-top:18px;">
+      <div class="box">
+        <div class="sectionLabel" style="margin-top:0;">Highlights</div>
+        <div class="pills">
+          <span class="pill good">B2B onboarding support</span>
+          <span class="pill good">Requirements workshops</span>
+          <span class="pill">CSV/data mapping</span>
+          <span class="pill">UAT coordination</span>
+          <span class="pill">Jira issue triage</span>
+          <span class="pill">Docs + trainings</span>
+          <span class="pill warn">Reduced repeat support questions</span>
+        </div>
+
+        <div class="btnRow">
+          <a class="btn primary" href="./projects.html">View Case Studies</a>
+          <a class="btn" href="./resumes.html">Download Resume</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="sectionLabel" style="margin-top:0;">What I bring</div>
+        <ul>
+          <li>Structured execution: milestones, owners, RAID logs, weekly status cadence</li>
+          <li>Customer-facing clarity: workshops, specs, mapping sheets, UAT checklists</li>
+          <li>Bridge customer ↔ engineering during setup, testing, and go-live</li>
+          <li>Enablement: runbooks, FAQs, release notes, training sessions</li>
+          <li>SQL/Excel metrics to spot bottlenecks and improve handoffs</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="sectionLabel">Timeline</div>
+
+    <section class="timeline">
+      <!-- Ipser -->
+      <div class="item">
+        <div class="dot2"></div>
+        <div class="box">
+          <div class="jobHeader">
+            <div>
+              <div class="jobTitle">Product Manager, Co-op (Implementation-focused)</div>
+              <div class="jobMeta"><b>Ipser Labs LLC</b> • Fort Worth, TX</div>
+            </div>
+            <div class="jobDate">Jan 2025 – May 2025</div>
+          </div>
+
+          <div class="sectionLabel" style="margin-top:0;">Implementation / onboarding delivery</div>
+          <ul>
+            <li>Supported multiple B2B SaaS customer onboardings from kickoff through UAT and go-live readiness</li>
+            <li>Led requirements workshops and produced implementation-ready documentation: workflows, roles/permissions, data fields, and success criteria</li>
+            <li>Coordinated CSV data mapping/import preparation with customers and Engineering to ensure clean setup before UAT</li>
+            <li>Coordinated UAT cycles: collected issues/requests, triaged in Jira, partnered with Engineering on retesting and sign-off</li>
+            <li>Built onboarding assets (runbooks, FAQs, release notes) and delivered customer training sessions to reduce repeat questions</li>
+            <li>Used SQL + Excel to track onboarding KPIs (time-to-go-live, backlog aging, UAT progress) and improve handoffs with CS/Support</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Vital -->
+      <div class="item">
+        <div class="dot2"></div>
+        <div class="box">
+          <div class="jobHeader">
+            <div>
+              <div class="jobTitle">Project Engineer</div>
+              <div class="jobMeta"><b>Vital Industrial Products</b> • Kolhapur, India</div>
+            </div>
+            <div class="jobDate">Aug 2022 – Aug 2023</div>
+          </div>
+
+          <div class="sectionLabel" style="margin-top:0;">Delivery execution / operations coordination</div>
+          <ul>
+            <li>Coordinated order execution for OEM accounts; maintained an Excel tracker across machining, quality, and dispatch through shipment</li>
+            <li>Owned drawing/spec control by maintaining a revision and clarification register; drove closure of specification questions with stakeholders</li>
+            <li>Supported first-article/sample approvals by coordinating trial runs and compiling inspection evidence under ISO workflows</li>
+            <li>Improved delivery reliability by keeping stakeholders aligned on changes, dependencies, and approval requirements</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="sectionLabel">Education</div>
+
+    <section class="grid2">
+      <div class="box">
+        <div class="jobTitle" style="font-size:16px;">Northeastern University</div>
+        <p style="margin-top:6px;">M.S. Engineering Management • Sept 2023 – Dec 2025</p>
+        <ul>
+          <li>Focus: project management, operations, analytics</li>
+          <li>Case studies: NUMarket Yard, Streamlit dashboard, Lean PDCA</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <div class="jobTitle" style="font-size:16px;">Zeal College of Engineering (University of Pune)</div>
+        <p style="margin-top:6px;">B.E. Mechanical Engineering • Aug 2019 – Aug 2022</p>
+        <ul>
+          <li>Engineering fundamentals + manufacturing execution exposure</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer">© <span id="y"></span> Aman Lokhande</div>
+  </main>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
-
-    // Optional: upload profile.jpg to repo root to replace avatar
-    const img = new Image();
-    img.onload = () => {
-      const av = document.querySelector(".avatar");
-      av.textContent = "";
-      av.style.background = "none";
-      av.style.border = "1px solid var(--line)";
-      av.style.overflow = "hidden";
-      av.appendChild(img);
-      img.style.width = "100%";
-      img.style.height = "100%";
-      img.style.objectFit = "cover";
-    };
-    img.src = "profile.jpg";
   </script>
 </body>
 </html>

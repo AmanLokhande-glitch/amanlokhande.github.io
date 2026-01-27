@@ -5,156 +5,83 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Resume | Aman Lokhande</title>
   <meta name="description" content="Download Aman Lokhande's resume for Implementation / Delivery / Customer Onboarding roles." />
-
-  <!-- ✅ Shared site-wide CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- ✅ Page-only styles -->
-  <style>
-    .grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px}
-    @media (max-width:920px){.grid{grid-template-columns:1fr}}
-
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      width:100%;
-      padding:14px 14px; border-radius:16px; border:1px solid var(--line);
-      background:rgba(17,26,51,.35); font-weight:900; font-size:14px;
-      text-decoration:none;
-      color:inherit;
-    }
-    .btn.primary{
-      border:0; color:#071023;
-      background:linear-gradient(135deg,rgba(122,162,255,.95),rgba(118,228,247,.85))
-    }
-    .btn:hover{border-color:rgba(122,162,255,.6)}
-
-    .mini{font-size:12px; color:var(--muted); margin-top:8px; line-height:1.6}
-
-    .note{
-      margin-top:10px; padding:12px; border-radius:16px; border:1px solid var(--line);
-      background:rgba(17,26,51,.25); color:var(--muted); font-size:13px; line-height:1.6;
-    }
-  </style>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="app">
-      <div class="topbar">
-        <div class="brand">
-          <div class="avatar">AL</div>
-          <div>
-            <b>Resume</b>
-            <span>Implementation • Customer Onboarding • Delivery</span>
-          </div>
-        </div>
-        <div class="q">
-          <a class="qbtn" href="mailto:amanlokhande247@gmail.com"><span class="dot"></span>Email</a>
-          <a class="qbtn" href="https://www.linkedin.com/in/aman-lokhande" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="qbtn" href="projects.html">Case Studies</a>
-        </div>
-      </div>
-
-      <div class="main">
-        <aside class="sidebar">
-          <div class="nav">
-            <a class="tab" href="index.html">
-              <div class="left"><div class="ico">🏠</div><div class="name"><b>Home</b><span>Landing page</span></div></div>
-              <div class="badge">Start</div>
-            </a>
-            <a class="tab" href="about.html">
-              <div class="left"><div class="ico">👤</div><div class="name"><b>About</b><span>Who I am</span></div></div>
-              <div class="badge">Quick</div>
-            </a>
-            <a class="tab" href="experience.html">
-              <div class="left"><div class="ico">💼</div><div class="name"><b>Experience</b><span>Customer + delivery</span></div></div>
-              <div class="badge">2</div>
-            </a>
-            <a class="tab" href="projects.html">
-              <div class="left"><div class="ico">🧩</div><div class="name"><b>Case Studies</b><span>Selected work</span></div></div>
-              <div class="badge">5</div>
-            </a>
-            <a class="tab" href="skills.html">
-              <div class="left"><div class="ico">🛠️</div><div class="name"><b>Skills</b><span>Tools + strengths</span></div></div>
-              <div class="badge">Map</div>
-            </a>
-            <a class="tab active" href="resumes.html">
-              <div class="left"><div class="ico">📄</div><div class="name"><b>Resume</b><span>Download PDF</span></div></div>
-              <div class="badge">Now</div>
-            </a>
-            <a class="tab" href="contact.html">
-              <div class="left"><div class="ico">📫</div><div class="name"><b>Contact</b><span>Let’s talk</span></div></div>
-              <div class="badge">Soon</div>
-            </a>
-          </div>
-          <div class="foot">Resume page</div>
-        </aside>
-
-        <main class="content">
-          <div class="panel">
-            <h1>Download my resume</h1>
-            <p>
-              This website is focused on <b>Implementation / Customer Onboarding / Delivery</b>.
-              Here is my primary resume for those roles.
-            </p>
-
-            <div class="grid">
-              <div class="card">
-                <a class="btn primary" href="Resume_Implementation.pdf" target="_blank" rel="noreferrer">
-                  ⬇️ Download Resume (PDF)
-                </a>
-                <div class="mini">
-                  Best for: Implementation Consultant/Coordinator, Implementation Specialist, Customer Onboarding,
-                  Delivery/Professional Services (Associate/Junior), Implementation Project roles.
-                </div>
-              </div>
-
-              <div class="card">
-                <a class="btn" href="projects.html">
-                  🧩 View matching case studies
-                </a>
-                <div class="mini">
-                  If you want proof fast: see <b>NUMarket Yard (implementation plan)</b> and the
-                  <b>Water Quality Dashboard (delivery-ready reporting)</b>.
-                </div>
-              </div>
-            </div>
-
-            <div class="sectionTitle">Important</div>
-            <div class="card">
-              <p style="margin:0">
-                The PDF filename must match exactly: <b>Resume_Implementation.pdf</b>.
-                If the button opens a 404 page, the filename is the issue.
-              </p>
-              <div class="note">
-                Tip: If you’re emailing me about a role, include the <b>job title</b> + <b>company</b> so I can reply faster.
-              </div>
-            </div>
-
-            <div class="foot">© <span id="y"></span> Aman Lokhande</div>
-          </div>
-        </main>
+  <header class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        <div class="name">Aman Lokhande</div>
+        <div class="role">Implementation • Customer Onboarding • Delivery</div>
       </div>
     </div>
-  </div>
+
+    <nav class="nav">
+      <a href="./index.html">← Home</a>
+      <a href="./about.html">About</a>
+      <a href="./experience.html">Experience</a>
+      <a href="./projects.html">Case Studies</a>
+      <a aria-current="page" href="./resumes.html">Resume</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <h1>Resume</h1>
+    <p class="subtitle">
+      Download my resume for <b>Implementation / Customer Onboarding / Delivery</b> roles.
+    </p>
+
+    <div class="grid2">
+      <div class="card">
+        <h2 style="margin:0 0 10px">Primary resume (PDF)</h2>
+        <p class="body" style="max-width:none">
+          Best for: Implementation Coordinator/Consultant, Implementation Specialist, Customer Onboarding,
+          Delivery / Professional Services (Associate/Junior).
+        </p>
+
+        <div class="links" style="margin-top:14px">
+          <a class="link" href="./Resume_Implementation.pdf" target="_blank" rel="noreferrer">
+            Download Resume (PDF)
+          </a>
+          <a class="link" href="./projects.html">
+            View matching case studies →
+          </a>
+        </div>
+
+        <p class="body" style="max-width:none; margin-top:12px">
+          If the PDF link opens a 404, the filename must match exactly:
+          <b>Resume_Implementation.pdf</b>.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2 style="margin:0 0 10px">Quick links</h2>
+        <p class="body" style="max-width:none">
+          Want the fastest proof? Start with:
+          <b>NUMarket Yard</b> and the <b>Water Quality Dashboard</b>.
+        </p>
+
+        <div class="links" style="margin-top:14px">
+          <a class="link" href="./projects.html">Open Case Studies</a>
+          <a class="link" href="mailto:amanlokhande247@gmail.com?subject=Implementation%20%2F%20Onboarding%20role%20%E2%80%94%20quick%20question">
+            Email me
+          </a>
+        </div>
+
+        <p class="body" style="max-width:none; margin-top:12px">
+          Tip: include <b>job title</b> + <b>company</b> in your email so I can reply faster.
+        </p>
+      </div>
+    </div>
+
+    <div class="foot">© <span id="y"></span> Aman Lokhande</div>
+  </main>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
-
-    // Optional: upload profile.jpg to repo root to replace avatar
-    const img = new Image();
-    img.onload = () => {
-      const av = document.querySelector(".avatar");
-      av.textContent = "";
-      av.style.background = "none";
-      av.style.border = "1px solid var(--line)";
-      av.style.overflow = "hidden";
-      av.appendChild(img);
-      img.style.width = "100%";
-      img.style.height = "100%";
-      img.style.objectFit = "cover";
-    };
-    img.src = "profile.jpg";
   </script>
 </body>
 </html>

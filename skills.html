@@ -31,126 +31,99 @@
 
   <main class="wrap">
     <h1>Skills</h1>
-    <p class="subtitle">
-      Written for <b>Implementation / Customer Onboarding / Delivery</b> roles.
-      Use the buttons below to filter.
+    <p class="body" style="max-width:none">
+      Written for Implementation / Onboarding / Delivery roles. Use the tabs to filter.
     </p>
 
-    <div class="links" style="margin:14px 0 18px">
-      <a class="link" href="./index.html">← Back to Home</a>
-      <a class="link" href="./resumes.html">Next: Resume →</a>
-    </div>
-
     <div class="toolbar" id="rolebar">
-      <span class="pill active" data-role="impl">Implementation</span>
-      <span class="pill" data-role="all">All</span>
-      <span class="pill" data-role="ops">Project Ops (adjacent)</span>
-      <span class="pill" data-role="sol">Solutions (adjacent)</span>
+      <div class="pills" style="margin-top:0">
+        <span class="pill active" data-role="impl">Implementation</span>
+        <span class="pill" data-role="all">All</span>
+        <span class="pill" data-role="ops">Project Ops (adjacent)</span>
+        <span class="pill" data-role="sol">Solutions (adjacent)</span>
+      </div>
     </div>
 
     <div class="grid" id="grid">
-      <!-- Implementation Core -->
       <div class="card" data-role="impl">
-        <h2 style="margin:0 0 8px">Implementation &amp; Customer Onboarding (core)</h2>
-        <ul>
+        <h2>Implementation &amp; Customer Onboarding (core)</h2>
+        <ul style="margin:0; padding-left:18px">
           <li>Kickoff → requirements → setup/data mapping → UAT → go-live readiness</li>
-          <li>Requirements workshops; implementation-ready specs + acceptance criteria</li>
+          <li>Requirements workshops; specs and acceptance criteria</li>
           <li>CSV/data mapping, imports, and validation before testing</li>
-          <li>UAT coordination: scenarios, issue triage, retest, sign-off</li>
-          <li>Enablement: runbooks, FAQs, release notes, training sessions</li>
-          <li>Post go-live handoff + adoption follow-up</li>
+          <li>UAT coordination: scenarios, triage, retest, sign-off</li>
+          <li>Enablement: runbooks, FAQs, release notes, training</li>
+          <li>Post go-live handoff and adoption follow-up</li>
         </ul>
         <div class="tags">
-          <span class="tag">Implementation</span>
-          <span class="tag">Onboarding</span>
-          <span class="tag">UAT</span>
-          <span class="tag">Data mapping</span>
-          <span class="tag">Enablement</span>
+          <span class="tag">Implementation</span><span class="tag">Onboarding</span><span class="tag">UAT</span><span class="tag">Data mapping</span><span class="tag">Enablement</span>
         </div>
       </div>
 
-      <!-- Delivery Execution -->
       <div class="card" data-role="impl">
-        <h2 style="margin:0 0 8px">Delivery execution &amp; stakeholder coordination</h2>
-        <ul>
-          <li>Workback plans, milestones, owners, and a simple weekly status cadence</li>
-          <li>RAID logs (risks, assumptions, issues, dependencies) + escalation</li>
+        <h2>Delivery execution &amp; stakeholder coordination</h2>
+        <ul style="margin:0; padding-left:18px">
+          <li>Workback plans, milestones, owners, weekly cadence</li>
+          <li>RAID logs + escalation when blocked</li>
           <li>Cross-functional coordination (customer ↔ engineering ↔ CS/support)</li>
-          <li>Scope clarity + change requests + action item tracking</li>
+          <li>Change requests, scope clarity, action tracking</li>
           <li>Documentation discipline: notes, decisions, next steps</li>
         </ul>
         <div class="tags">
-          <span class="tag">Delivery</span>
-          <span class="tag">RAID</span>
-          <span class="tag">Stakeholders</span>
-          <span class="tag">Execution</span>
+          <span class="tag">Delivery</span><span class="tag">RAID</span><span class="tag">Stakeholders</span><span class="tag">Execution</span>
         </div>
       </div>
 
-      <!-- Tools -->
       <div class="card" data-role="all">
-        <h2 style="margin:0 0 8px">Tools &amp; platforms</h2>
-        <ul>
-          <li>Jira (issue triage, backlog, workflows)</li>
-          <li>Docs (runbooks, release notes, FAQs)</li>
-          <li>Excel / Google Sheets (tracking, mapping sheets, KPI trackers)</li>
+        <h2>Tools &amp; platforms</h2>
+        <ul style="margin:0; padding-left:18px">
+          <li>Jira (issue triage, backlog, workflow)</li>
+          <li>Confluence / docs (runbooks, release notes, FAQs)</li>
+          <li>Excel / Sheets (tracking, mapping sheets, KPI trackers)</li>
           <li>Slack / Teams (stakeholder comms)</li>
           <li>PowerPoint / Slides (status updates, training decks)</li>
-          <li>Figma (basic flows / prototypes)</li>
+          <li>Figma (basic prototypes/flows)</li>
         </ul>
         <div class="tags">
-          <span class="tag">Jira</span>
-          <span class="tag">Docs</span>
-          <span class="tag">Excel</span>
-          <span class="tag">Tracking</span>
+          <span class="tag">Jira</span><span class="tag">Docs</span><span class="tag">Excel</span><span class="tag">Slides</span><span class="tag">Figma</span>
         </div>
       </div>
 
-      <!-- Analytics -->
       <div class="card" data-role="all">
-        <h2 style="margin:0 0 8px">Analytics for implementation teams</h2>
-        <ul>
+        <h2>Analytics for implementation teams</h2>
+        <ul style="margin:0; padding-left:18px">
           <li>SQL + Excel KPI tracking (time-to-go-live, backlog aging, UAT progress)</li>
-          <li>Operational dashboards + reporting for visibility</li>
-          <li>Root-cause thinking: identify bottlenecks and recurring issues</li>
-          <li>Validation mindset (prevent garbage-in)</li>
+          <li>Operational dashboards and reporting</li>
+          <li>Root-cause thinking: find bottlenecks and recurring failure points</li>
+          <li>Data validation mindset (prevent garbage-in)</li>
         </ul>
         <div class="tags">
-          <span class="tag">SQL</span>
-          <span class="tag">Excel</span>
-          <span class="tag">KPI</span>
-          <span class="tag">Reporting</span>
+          <span class="tag">SQL</span><span class="tag">Excel</span><span class="tag">KPI</span><span class="tag">Reporting</span>
         </div>
       </div>
 
-      <!-- Project Ops (adjacent) -->
       <div class="card" data-role="ops">
-        <h2 style="margin:0 0 8px">Project / Program Ops (adjacent)</h2>
-        <ul>
+        <h2>Project / Program Ops (adjacent)</h2>
+        <ul style="margin:0; padding-left:18px">
           <li>Dependency tracking and follow-ups across teams</li>
-          <li>Status reporting cadence + stakeholder alignment</li>
-          <li>Process improvement templates (checklists, standard work)</li>
-          <li>Operational readiness + handoffs</li>
+          <li>Status reporting cadence and stakeholder alignment</li>
+          <li>Templates, checklists, standard work</li>
+          <li>Operational readiness and handoffs</li>
         </ul>
         <div class="tags">
-          <span class="tag">Coordination</span>
-          <span class="tag">Ops readiness</span>
-          <span class="tag">Templates</span>
+          <span class="tag">Coordination</span><span class="tag">Scheduling</span><span class="tag">Ops readiness</span>
         </div>
       </div>
 
-      <!-- Solutions (adjacent) -->
       <div class="card" data-role="sol">
-        <h2 style="margin:0 0 8px">Solutions / pre-sales (adjacent)</h2>
-        <ul>
-          <li>Discovery questions + scoping basics</li>
+        <h2>Solutions / pre-sales (adjacent)</h2>
+        <ul style="margin:0; padding-left:18px">
+          <li>Discovery questions and scoping basics</li>
           <li>Product walkthroughs and demo flow</li>
-          <li>Translate needs into a plan + clean handoff to delivery</li>
+          <li>Translate needs into a plan and smooth handoff to delivery</li>
         </ul>
         <div class="tags">
-          <span class="tag">Discovery</span>
-          <span class="tag">Demos</span>
-          <span class="tag">Handoff</span>
+          <span class="tag">Discovery</span><span class="tag">Demos</span><span class="tag">Handoff</span>
         </div>
       </div>
     </div>
@@ -163,8 +136,7 @@
 
     const pills = Array.from(document.querySelectorAll("#rolebar .pill"));
     const cards = Array.from(document.querySelectorAll("#grid .card"));
-
-    let role = "impl"; // default
+    let role = "impl";
 
     function apply(){
       cards.forEach(c=>{

@@ -6,193 +6,217 @@
   <title>Contact | Aman Lokhande</title>
   <meta name="description" content="Contact Aman Lokhande — Implementation and Customer Onboarding." />
 
-  <!-- ✅ Shared site-wide CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Shared site-wide CSS (your WIX-style file) -->
+  <link rel="stylesheet" href="./style.css" />
 
-  <!-- ✅ Page-only styles (small) -->
+  <!-- Page-only styles (WIX-style compatible) -->
   <style>
+    .page{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 56px 80px;
+    }
+    @media (max-width: 900px){
+      .page{ padding: 12px 20px 60px; }
+    }
+
+    .backRow{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin: 10px 0 18px;
+      flex-wrap:wrap;
+    }
+
+    .backLink{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size: 13px;
+      opacity: .8;
+      border: 1px solid rgba(0,0,0,.18);
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
+    .backLink:hover{ opacity: 1; border-color: rgba(0,0,0,.35); }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px;
+      align-items:start;
+    }
+    @media (max-width: 900px){
+      .grid2{ grid-template-columns: 1fr; }
+    }
+
+    .box{
+      background: #f6f1ec;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+      border-radius: 10px;
+      padding: 22px 22px;
+    }
+
+    h1{ margin: 0 0 10px; font-size: 34px; line-height: 1.1; }
+    p{ margin: 0 0 12px; line-height: 1.7; font-size: 14px; opacity:.9; }
+
     .bigbtn{
       width:100%;
-      display:flex; justify-content:space-between; align-items:center; gap:10px;
-      padding:14px; border-radius:16px; border:1px solid var(--line);
-      background:rgba(17,26,51,.35); font-weight:900; font-size:14px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      padding:14px;
+      border-radius:999px;
+      border:1px solid rgba(0,0,0,.18);
+      background: rgba(255,255,255,.45);
+      font-weight:800;
+      font-size:14px;
       cursor:pointer;
       text-decoration:none;
       color:inherit;
     }
-    .bigbtn:hover{border-color:rgba(122,162,255,.6)}
+    .bigbtn:hover{ border-color: rgba(0,0,0,.35); }
+
     .bigbtn.primary{
-      border:0; color:#071023;
-      background:linear-gradient(135deg,rgba(122,162,255,.95),rgba(118,228,247,.85));
+      border-color: transparent;
+      background:#1f4fff;
+      color:#fff;
     }
-    .mini{font-size:12px; color:var(--muted); margin-top:8px}
+    .bigbtn.primary:hover{ filter: brightness(.95); }
+
+    .mini{
+      font-size:12px;
+      opacity:.75;
+      margin-top:8px;
+    }
+
+    .note{
+      font-size:13px;
+      line-height:1.6;
+      border:1px solid rgba(0,0,0,.18);
+      border-radius:10px;
+      padding:14px;
+      background: rgba(255,255,255,.45);
+      opacity:.9;
+    }
+
     .toast{
-      margin-top:10px;
+      margin-top:14px;
       padding:10px 12px;
-      border:1px solid var(--line);
-      border-radius:14px;
-      background:rgba(15,23,48,.55);
-      color:var(--muted);
+      border:1px solid rgba(0,0,0,.18);
+      border-radius:10px;
+      background: rgba(255,255,255,.45);
       font-size:13px;
       display:none;
+      opacity:.9;
     }
-    .note{
-      color:var(--muted); font-size:13px; line-height:1.6;
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:14px;
-      background:rgba(17,26,51,.25);
+
+    .footer{
+      margin-top: 22px;
+      font-size: 12px;
+      opacity: .7;
     }
-    .note b{color:var(--text)}
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="app">
-      <div class="topbar">
-        <div class="brand">
-          <div class="avatar">AL</div>
-          <div>
-            <b>Contact</b>
-            <span>Email is best — I respond fast</span>
-          </div>
-        </div>
-        <div class="q">
-          <a class="qbtn" href="Case Studies.html">Case Studies</a>
-          <a class="qbtn" href="resumes.html">Resume</a>
-        </div>
-      </div>
-
-      <div class="main">
-        <aside class="sidebar">
-          <div class="nav">
-            <a class="tab" href="index.html">
-              <div class="left"><div class="ico">🏠</div><div class="name"><b>Home</b><span>Landing page</span></div></div>
-              <div class="badge">Start</div>
-            </a>
-            <a class="tab" href="about.html">
-              <div class="left"><div class="ico">👤</div><div class="name"><b>About</b><span>Who I am</span></div></div>
-              <div class="badge">Quick</div>
-            </a>
-            <a class="tab" href="experience.html">
-              <div class="left"><div class="ico">💼</div><div class="name"><b>Experience</b><span>Customer + delivery</span></div></div>
-              <div class="badge">2</div>
-            </a>
-            <a class="tab" href="Case Studies.html">
-              <div class="left"><div class="ico">🧩</div><div class="name"><b>Case Studies</b><span>Selected work</span></div></div>
-              <div class="badge">5</div>
-            </a>
-            <a class="tab" href="skills.html">
-              <div class="left"><div class="ico">🛠️</div><div class="name"><b>Skills</b><span>Tools + strengths</span></div></div>
-              <div class="badge">Map</div>
-            </a>
-            <a class="tab" href="resumes.html">
-              <div class="left"><div class="ico">📄</div><div class="name"><b>Resume</b><span>Download PDF</span></div></div>
-              <div class="badge">1</div>
-            </a>
-            <a class="tab active" href="contact.html">
-              <div class="left"><div class="ico">📫</div><div class="name"><b>Contact</b><span>Let’s talk</span></div></div>
-              <div class="badge">Now</div>
-            </a>
-          </div>
-          <div class="foot">Contact page</div>
-        </aside>
-
-        <main class="content">
-          <div class="panel">
-            <h1>Contact</h1>
-            <p>
-              If you’re hiring for <b>Implementation / Customer Onboarding / Delivery</b> roles, I’d love to connect.
-              Email is the fastest way to reach me.
-            </p>
-
-            <div class="grid">
-              <div class="card">
-                <button class="bigbtn primary" id="emailBtn" type="button">
-                  <span>✉️ Email Aman</span>
-                  <span>→</span>
-                </button>
-                <div class="mini">amanlokhande247@gmail.com</div>
-
-                <button class="bigbtn" id="copyEmail" type="button" style="margin-top:10px;">
-                  <span>📋 Copy email</span>
-                  <span>Copy</span>
-                </button>
-
-                <div class="mini" style="margin-top:10px">
-                  Tip: Use the email button to auto-fill the subject line.
-                </div>
-              </div>
-
-              <div class="card">
-                <a class="bigbtn" href="https://www.linkedin.com/in/aman-lokhande" target="_blank" rel="noreferrer">
-                  <span>🔗 LinkedIn</span>
-                  <span>Open</span>
-                </a>
-                <div class="mini">linkedin.com/in/aman-lokhande</div>
-
-                <a class="bigbtn" href="resumes.html" style="margin-top:10px;">
-                  <span>📄 Resume</span>
-                  <span>Open</span>
-                </a>
-                <div class="mini">Download the PDF.</div>
-              </div>
-
-              <div class="card">
-                <a class="bigbtn" href="Case Studies.html">
-                  <span>🧩 Case Studies</span>
-                  <span>Open</span>
-                </a>
-                <div class="mini">Implementation-style write-ups (plan → UAT → go-live readiness).</div>
-
-                <a class="bigbtn" href="experience.html" style="margin-top:10px;">
-                  <span>💼 Experience</span>
-                  <span>Open</span>
-                </a>
-                <div class="mini">Implementation + delivery highlights.</div>
-              </div>
-
-              <div class="card">
-                <div class="note">
-                  <b>Quick note</b><br/>
-                  If you include the <b>job title</b> + <b>company</b> in your email, I’ll reply faster with the most relevant
-                  details and links (resume + matching case study).
-                </div>
-              </div>
-            </div>
-
-            <div class="toast" id="toast">Copied.</div>
-
-            <div class="foot">© <span id="y"></span> Aman Lokhande</div>
-          </div>
-        </main>
+  <!-- SAME TOP NAV AS INDEX -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        <div class="name">Aman Lokhande</div>
+        <div class="role">Implementation • Customer Onboarding • Professional Services</div>
       </div>
     </div>
-  </div>
+
+    <nav class="nav">
+      <a href="./about.html">About</a>
+      <a href="./resumes.html">Resume</a>
+      <a href="./projects.html">Case Studies</a>
+      <a href="./contact.html" style="opacity:1; font-weight:700;">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <!-- BACK BUTTON ROW -->
+    <div class="backRow">
+      <a class="backLink" href="./index.html">← Back to Home</a>
+      <div style="font-size:13px; opacity:.75;">
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/aman-lokhande" target="_blank" rel="noreferrer" style="text-decoration:underline;">
+          aman-lokhande
+        </a>
+      </div>
+    </div>
+
+    <div class="box" style="margin-bottom:18px;">
+      <h1>Contact</h1>
+      <p>
+        If you’re hiring for <b>Implementation / Customer Onboarding / Delivery</b> roles, I’d love to connect.
+        Email is the fastest way to reach me.
+      </p>
+    </div>
+
+    <div class="grid2">
+      <section class="box">
+        <button class="bigbtn primary" id="emailBtn" type="button">
+          <span>✉️ Email Aman</span>
+          <span>→</span>
+        </button>
+        <div class="mini">amanlokhande247@gmail.com</div>
+
+        <button class="bigbtn" id="copyEmail" type="button" style="margin-top:10px;">
+          <span>📋 Copy email</span>
+          <span>Copy</span>
+        </button>
+
+        <div class="mini" style="margin-top:10px;">
+          Tip: The email button auto-fills the subject line.
+        </div>
+
+        <div class="toast" id="toast">Copied.</div>
+      </section>
+
+      <section class="box">
+        <a class="bigbtn" href="https://www.linkedin.com/in/aman-lokhande" target="_blank" rel="noreferrer">
+          <span>🔗 LinkedIn</span>
+          <span>Open</span>
+        </a>
+        <div class="mini">linkedin.com/in/aman-lokhande</div>
+
+        <a class="bigbtn" href="./resumes.html" style="margin-top:10px;">
+          <span>📄 Resume</span>
+          <span>Open</span>
+        </a>
+        <div class="mini">Download the PDF.</div>
+
+        <a class="bigbtn" href="./projects.html" style="margin-top:10px;">
+          <span>🧩 Case Studies</span>
+          <span>Open</span>
+        </a>
+        <div class="mini">Implementation-style write-ups (plan → UAT → go-live readiness).</div>
+
+        <div class="note" style="margin-top:14px;">
+          <b>Quick note:</b><br/>
+          If you include the <b>job title</b> + <b>company</b> in your email,
+          I’ll reply faster with the most relevant resume + matching case study.
+        </div>
+      </section>
+    </div>
+
+    <div class="footer">© <span id="y"></span> Aman Lokhande</div>
+  </main>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    // Optional: upload profile.jpg to repo root to replace avatar
-    const img = new Image();
-    img.onload = () => {
-      const av = document.querySelector(".avatar");
-      av.textContent = "";
-      av.style.background = "none";
-      av.style.border = "1px solid var(--line)";
-      av.style.overflow = "hidden";
-      av.appendChild(img);
-      img.style.width = "100%";
-      img.style.height = "100%";
-      img.style.objectFit = "cover";
-    };
-    img.src = "profile.jpg";
-
     const email = "amanlokhande247@gmail.com";
-
     const toast = document.getElementById("toast");
     let t;
+
     function showToast(msg){
       toast.textContent = msg;
       toast.style.display = "block";

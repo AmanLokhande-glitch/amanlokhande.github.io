@@ -5,219 +5,117 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SubTrack (Discovery + Prototype) | Aman Lokhande</title>
   <meta name="description" content="SubTrack — customer discovery, prototype, and demo flow." />
-
-  <!-- ✅ Shared site-wide CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- ✅ Page-only styles (project detail layout bits) -->
-  <style>
-    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:12px}
-    @media (max-width:920px){.hero{grid-template-columns:1fr}}
-
-    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
-    .chip{padding:7px 10px; border-radius:999px; border:1px solid var(--line); background:rgba(17,26,51,.35); color:var(--muted); font-size:12px}
-
-    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .btn{padding:10px 13px; border-radius:14px; border:1px solid var(--line); background:rgba(17,26,51,.35); font-weight:700; font-size:13px}
-    .btn.primary{border:0; color:#071023; background:linear-gradient(135deg,rgba(122,162,255,.95),rgba(118,228,247,.85))}
-    .btn:hover{border-color:rgba(122,162,255,.6)}
-
-    .grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px}
-    @media (max-width:920px){.grid{grid-template-columns:1fr}}
-
-    .sectionTitle{margin:14px 0 10px; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.16em}
-    ul{margin:0; padding-left:16px; color:var(--muted); line-height:1.7; font-size:13px}
-    p{margin:0 0 10px; color:var(--muted); line-height:1.6; font-size:13px}
-    h1{margin:0 0 8px; font-size:22px; letter-spacing:-.2px}
-    h2{margin:0 0 8px; font-size:14px}
-  </style>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="app">
-      <div class="topbar">
-        <div class="brand">
-          <div class="avatar">AL</div>
-          <div>
-            <b>SubTrack</b>
-            <span>Customer discovery • Prototype • Demo flow</span>
-          </div>
-        </div>
-        <div class="q">
-          <a class="qbtn" href="projects.html">← Projects</a>
-          <!-- Optional: add Figma link if you have it -->
-          <!-- <a class="qbtn" href="PASTE_FIGMA_LINK" target="_blank" rel="noreferrer">Figma</a> -->
-          <a class="qbtn" href="mailto:amanlokhande247@gmail.com"><span class="dot"></span>Email</a>
-        </div>
-      </div>
-
-      <div class="main">
-        <aside class="sidebar">
-          <div class="nav">
-            <a class="tab" href="index.html">
-              <div class="left"><div class="ico">🏠</div><div class="name"><b>Home</b><span>Landing page</span></div></div>
-              <div class="badge">Start</div>
-            </a>
-            <a class="tab" href="about.html">
-              <div class="left"><div class="ico">👤</div><div class="name"><b>About</b><span>Who I am</span></div></div>
-              <div class="badge">Quick</div>
-            </a>
-            <a class="tab" href="experience.html">
-              <div class="left"><div class="ico">💼</div><div class="name"><b>Experience</b><span>Ipser + Vital</span></div></div>
-              <div class="badge">2</div>
-            </a>
-            <a class="tab active" href="projects.html">
-              <div class="left"><div class="ico">🧩</div><div class="name"><b>Projects</b><span>All projects</span></div></div>
-              <div class="badge">5</div>
-            </a>
-            <a class="tab" href="skills.html">
-              <div class="left"><div class="ico">🛠️</div><div class="name"><b>Skills</b><span>Tools + strengths</span></div></div>
-              <div class="badge">Map</div>
-            </a>
-            <a class="tab" href="resumes.html">
-              <div class="left"><div class="ico">📄</div><div class="name"><b>Resumes</b><span>Download PDFs</span></div></div>
-              <div class="badge">3</div>
-            </a>
-            <a class="tab" href="contact.html">
-              <div class="left"><div class="ico">📫</div><div class="name"><b>Contact</b><span>Let’s talk</span></div></div>
-              <div class="badge">Now</div>
-            </a>
-          </div>
-          <div class="foot">Project detail page.</div>
-        </aside>
-
-        <main class="content">
-          <div class="panel">
-            <div class="hero">
-              <div class="card">
-                <h1>SubTrack — Subscription management concept</h1>
-                <p>
-                  Led customer discovery and turned pain points into a prototype demo flow for subscription detection,
-                  renewal alerts, spend insights, and cancellation assist — designed to be easy to explain and easy to use.
-                </p>
-
-                <div class="chips">
-                  <span class="chip">Discovery interviews</span>
-                  <span class="chip">Jobs-to-be-done</span>
-                  <span class="chip">Prototype + demo flow</span>
-                  <span class="chip">Prioritization</span>
-                  <span class="chip">Iteration</span>
-                </div>
-
-                <div class="actions">
-                  <a class="btn primary" href="projects.html">Back to Projects</a>
-                  <!-- Optional -->
-                  <!-- <a class="btn" href="PASTE_FIGMA_LINK" target="_blank" rel="noreferrer">Open Prototype</a> -->
-                </div>
-
-                <div class="sectionTitle">Outcome</div>
-                <p style="margin-bottom:0">
-                  Converted qualitative discovery into a focused walkthrough by narrowing to the top <b>3</b> features and
-                  simplifying the user journey based on feedback.
-                </p>
-              </div>
-
-              <div class="card">
-                <div class="sectionTitle" style="margin-top:0">What I did</div>
-                <ul>
-                  <li>Conducted <b>12</b> discovery interviews to surface subscription pain points</li>
-                  <li>Mapped insights into personas, jobs-to-be-done, and success criteria</li>
-                  <li>Built a prototype + demo narrative (walkthrough flow)</li>
-                  <li>Ran <b>8</b> feedback sessions and iterated on the top 3 features</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="grid">
-              <div class="card">
-                <h2>Problem</h2>
-                <p>
-                  People lose track of subscriptions, miss renewals, and struggle to understand recurring spend —
-                  leading to wasted money and frustration.
-                </p>
-              </div>
-
-              <div class="card">
-                <h2>Proposed solution</h2>
-                <ul>
-                  <li><b>Subscription detection</b> (find recurring charges)</li>
-                  <li><b>Renewal alerts</b> (notify before renewals)</li>
-                  <li><b>Spend dashboard</b> (clear monthly/annual rollups)</li>
-                  <li><b>Cancellation assist</b> (guided steps / shortcuts)</li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <h2>Prototype + demo flow</h2>
-                <ul>
-                  <li>Start with “what you’re paying for” overview</li>
-                  <li>Drill into a subscription → renewal + pricing details</li>
-                  <li>Show “next actions” (alert, cancel, track)</li>
-                  <li>Close with spend summary + saved views</li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <h2>Data inputs (planned)</h2>
-                <ul>
-                  <li>Email receipt parsing (future)</li>
-                  <li>CSV import (MVP-friendly)</li>
-                  <li>Manual add/edit for edge cases</li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <h2>Prioritization</h2>
-                <ul>
-                  <li>Ranked features by user pain + frequency</li>
-                  <li>Focused on the “top 3” for clarity and speed</li>
-                  <li>Cut nice-to-haves to keep walkthrough tight</li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <h2>What I’d measure</h2>
-                <ul>
-                  <li>Time-to-first-detected subscription</li>
-                  <li>Alert set rate + alert effectiveness</li>
-                  <li>Monthly active usage of spend dashboard</li>
-                  <li>Successful cancellation assist completion</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="sectionTitle">Optional upgrade</div>
-            <div class="card">
-              <p style="margin:0">
-                If you share your Figma link, I’ll add an <b>Open Prototype</b> button at the top and embed 2–3 screenshots
-                here (e.g., <b>subtrack-1.png</b>, <b>subtrack-2.png</b>).
-              </p>
-            </div>
-
-            <div class="foot">© <span id="y"></span> Aman Lokhande</div>
-          </div>
-        </main>
+  <header class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        <div class="name">Aman Lokhande</div>
+        <div class="role">Case Study • Discovery • Prototype</div>
       </div>
     </div>
-  </div>
+
+    <nav class="nav">
+      <a href="./index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./experience.html">Experience</a>
+      <a href="./projects.html">Case Studies</a>
+      <a href="./skills.html">Skills</a>
+      <a href="./resumes.html">Resume</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <div class="links" style="margin-top:0">
+      <a class="link" href="./projects.html">← Back to Case Studies</a>
+      <a class="link" href="./index.html">🏠 Home</a>
+    </div>
+
+    <h1>SubTrack — Subscription management concept</h1>
+    <p class="body" style="max-width:none">
+      Led customer discovery and turned pain points into a prototype demo flow for subscription detection,
+      renewal alerts, spend insights, and cancellation assist — designed to be easy to explain and easy to use.
+    </p>
+
+    <div class="chips">
+      <span class="chip">Discovery interviews</span>
+      <span class="chip">Jobs-to-be-done</span>
+      <span class="chip">Prototype flow</span>
+      <span class="chip">Prioritization</span>
+      <span class="chip">Iteration</span>
+    </div>
+
+    <div class="grid2" style="margin-top:14px">
+      <div class="card">
+        <div class="sectionTitle" style="margin-top:0">What I did</div>
+        <ul style="margin:0; padding-left:18px">
+          <li>Conducted <b>12</b> discovery interviews</li>
+          <li>Mapped insights into personas, jobs-to-be-done, and success criteria</li>
+          <li>Built a prototype + demo narrative</li>
+          <li>Ran <b>8</b> feedback sessions and iterated on top 3 features</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="sectionTitle" style="margin-top:0">Outcome</div>
+        <p class="body" style="max-width:none">
+          Converted qualitative discovery into a focused walkthrough by narrowing to the top <b>3</b> features and simplifying the journey.
+        </p>
+        <div class="links">
+          <a class="btn primary" href="./projects.html">Back to Case Studies</a>
+          <a class="btn" href="./contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid" style="margin-top:14px">
+      <div class="card">
+        <h2>Problem</h2>
+        <p class="body" style="max-width:none">
+          People lose track of subscriptions, miss renewals, and struggle to understand recurring spend — leading to wasted money and frustration.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Proposed solution</h2>
+        <ul style="margin:0; padding-left:18px">
+          <li><b>Subscription detection</b> (find recurring charges)</li>
+          <li><b>Renewal alerts</b> (notify before renewals)</li>
+          <li><b>Spend dashboard</b> (monthly/annual rollups)</li>
+          <li><b>Cancellation assist</b> (guided steps)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Prototype + demo flow</h2>
+        <ul style="margin:0; padding-left:18px">
+          <li>Start with “what you’re paying for” overview</li>
+          <li>Drill into subscription → renewal + pricing details</li>
+          <li>Show “next actions” (alert, cancel, track)</li>
+          <li>Close with spend summary</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>What I’d measure</h2>
+        <ul style="margin:0; padding-left:18px">
+          <li>Time-to-first-detected subscription</li>
+          <li>Alert set rate + alert effectiveness</li>
+          <li>Monthly active usage of spend dashboard</li>
+          <li>Successful cancellation assist completion</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot">© <span id="y"></span> Aman Lokhande</div>
+  </main>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
-    // Optional: upload profile.jpg to repo root to replace avatar
-    const img = new Image();
-    img.onload = () => {
-      const av = document.querySelector(".avatar");
-      av.textContent = "";
-      av.style.background = "none";
-      av.style.border = "1px solid var(--line)";
-      av.style.overflow = "hidden";
-      av.appendChild(img);
-      img.style.width = "100%";
-      img.style.height = "100%";
-      img.style.objectFit = "cover";
-    };
-    img.src = "profile.jpg";
   </script>
 </body>
 </html>

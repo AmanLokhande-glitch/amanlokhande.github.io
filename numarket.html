@@ -6,259 +6,348 @@
   <title>NUMarket Yard (Implementation Plan) | Aman Lokhande</title>
   <meta name="description" content="NUMarket Yard — implementation-style rollout plan: scope, milestones, RAID, UAT, go-live readiness, and KPI tracking." />
 
-  <!-- ✅ Shared site-wide CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Shared site-wide CSS (your WIX-style file) -->
+  <link rel="stylesheet" href="./style.css" />
 
-  <!-- ✅ Page-only styles (small) -->
+  <!-- Page-only styles (WIX-style compatible; no dark vars) -->
   <style>
-    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:12px}
-    @media (max-width:920px){.hero{grid-template-columns:1fr}}
-    h2{margin:0 0 8px; font-size:14px}
-    ul{margin:0; padding-left:16px; color:var(--muted); line-height:1.7; font-size:13px}
-    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
-    .chip{padding:7px 10px; border-radius:999px; border:1px solid var(--line); background:rgba(17,26,51,.35); color:var(--muted); font-size:12px}
-    .meta{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:10px}
-    @media (max-width:920px){.meta{grid-template-columns:1fr}}
-    .meta .item{border:1px solid var(--line); background:rgba(17,26,51,.25); border-radius:16px; padding:12px}
-    .meta .k{font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:6px}
-    .meta .v{font-size:13px; color:var(--text); font-weight:800}
+    .page{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 56px 80px;
+    }
+    @media (max-width: 900px){
+      .page{ padding: 12px 20px 60px; }
+    }
+
+    .backRow{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin: 10px 0 18px;
+      flex-wrap:wrap;
+    }
+    .backLink{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size: 13px;
+      opacity: .8;
+      border: 1px solid rgba(0,0,0,.18);
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
+    .backLink:hover{ opacity: 1; border-color: rgba(0,0,0,.35); }
+
+    .box{
+      background: #f6f1ec;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+      border-radius: 10px;
+      padding: 22px 22px;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      align-items:start;
+      margin-top: 14px;
+    }
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+
+    h1{ margin:0 0 10px; font-size:32px; line-height:1.12; }
+    h2{ margin:0 0 8px; font-size:16px; }
+    p{ margin:0 0 12px; line-height:1.7; font-size:14px; opacity:.9; }
+
+    .sectionLabel{
+      margin-top: 14px;
+      margin-bottom: 10px;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: .12em;
+      opacity: .75;
+      text-transform: uppercase;
+    }
+
+    ul{
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.75;
+      font-size: 14px;
+      opacity: .9;
+    }
+    li{ margin: 6px 0; }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 10px;
+    }
+    .chip{
+      border: 1px solid rgba(0,0,0,.18);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      opacity: .9;
+      background: rgba(255,255,255,.35);
+    }
+
+    .meta{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 900px){
+      .meta{ grid-template-columns: 1fr; }
+    }
+    .meta .item{
+      border: 1px solid rgba(0,0,0,.12);
+      background: rgba(255,255,255,.35);
+      border-radius: 12px;
+      padding: 12px 12px;
+    }
+    .meta .k{
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      opacity: .75;
+      margin-bottom: 6px;
+    }
+    .meta .v{
+      font-size: 14px;
+      font-weight: 800;
+      opacity: .95;
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px;
+      align-items:start;
+      margin-top: 18px;
+    }
+    @media (max-width: 900px){
+      .grid2{ grid-template-columns: 1fr; }
+    }
+
+    .btnRow{
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border: 1px solid rgba(0,0,0,.18);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      opacity: .9;
+      background: rgba(255,255,255,.35);
+      text-decoration:none;
+      color: inherit;
+    }
+    .btn:hover{ opacity: 1; border-color: rgba(0,0,0,.35); }
+    .btn.primary{
+      background:#1f4fff;
+      border-color: transparent;
+      color:#fff;
+      opacity: 1;
+    }
+    .btn.primary:hover{ filter: brightness(.95); }
+
+    .footer{
+      margin-top: 22px;
+      font-size: 12px;
+      opacity: .7;
+    }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="app">
-      <div class="topbar">
-        <div class="brand">
-          <div class="avatar">AL</div>
-          <div>
-            <b>NUMarket Yard</b>
-            <span>Implementation plan • UAT • Go-live readiness</span>
-          </div>
-        </div>
-        <div class="q">
-          <a class="qbtn" href="projects.html">← Case Studies</a>
-          <!-- Optional: add prototype link if you have it -->
-          <!-- <a class="qbtn" href="PASTE_LINK" target="_blank" rel="noreferrer">Prototype</a> -->
-          <a class="qbtn" href="mailto:amanlokhande247@gmail.com"><span class="dot"></span>Email</a>
-        </div>
-      </div>
-
-      <div class="main">
-        <aside class="sidebar">
-          <div class="nav">
-            <a class="tab" href="index.html">
-              <div class="left"><div class="ico">🏠</div><div class="name"><b>Home</b><span>Landing page</span></div></div>
-              <div class="badge">Start</div>
-            </a>
-            <a class="tab" href="about.html">
-              <div class="left"><div class="ico">👤</div><div class="name"><b>About</b><span>Who I am</span></div></div>
-              <div class="badge">Quick</div>
-            </a>
-            <a class="tab" href="experience.html">
-              <div class="left"><div class="ico">💼</div><div class="name"><b>Experience</b><span>Ipser + Vital</span></div></div>
-              <div class="badge">2</div>
-            </a>
-            <a class="tab active" href="projects.html">
-              <div class="left"><div class="ico">🧩</div><div class="name"><b>Case Studies</b><span>Selected work</span></div></div>
-              <div class="badge">5</div>
-            </a>
-            <a class="tab" href="skills.html">
-              <div class="left"><div class="ico">🛠️</div><div class="name"><b>Skills</b><span>Tools + strengths</span></div></div>
-              <div class="badge">Map</div>
-            </a>
-            <a class="tab" href="resumes.html">
-              <div class="left"><div class="ico">📄</div><div class="name"><b>Resume</b><span>Download PDFs</span></div></div>
-              <div class="badge">1</div>
-            </a>
-            <a class="tab" href="contact.html">
-              <div class="left"><div class="ico">📫</div><div class="name"><b>Contact</b><span>Let’s talk</span></div></div>
-              <div class="badge">Now</div>
-            </a>
-          </div>
-          <div class="foot">Case study detail page.</div>
-        </aside>
-
-        <main class="content">
-          <div class="panel">
-            <div class="hero">
-              <div class="card">
-                <h1>NUMarket Yard — Campus Marketplace MVP (Implementation Plan)</h1>
-                <p>
-                  I built an end-to-end <b>implementation-style delivery package</b> for a Northeastern-only marketplace MVP:
-                  defined scope, created a milestone workback plan, documented roles/ownership, planned UAT and go-live readiness,
-                  and designed rollout operations + success metrics.
-                </p>
-
-                <div class="meta">
-                  <div class="item">
-                    <div class="k">My role</div>
-                    <div class="v">Implementation / Delivery (planning + readiness)</div>
-                  </div>
-                  <div class="item">
-                    <div class="k">Deliverables</div>
-                    <div class="v">Plan • RAID • UAT • Rollout ops • KPIs</div>
-                  </div>
-                  <div class="item">
-                    <div class="k">Tools</div>
-                    <div class="v">Jira, Confluence-style docs, Excel/Sheets</div>
-                  </div>
-                  <div class="item">
-                    <div class="k">Focus</div>
-                    <div class="v">Stakeholders • risks • launch readiness</div>
-                  </div>
-                </div>
-
-                <div class="chips">
-                  <span class="chip">Scope + acceptance criteria</span>
-                  <span class="chip">Milestones + workback plan</span>
-                  <span class="chip">RACI + comms cadence</span>
-                  <span class="chip">RAID log</span>
-                  <span class="chip">UAT + issue tracking</span>
-                  <span class="chip">Go-live checklist</span>
-                  <span class="chip">Launch KPIs</span>
-                </div>
-
-                <div class="actions">
-                  <a class="btn primary" href="projects.html">Back to Case Studies</a>
-                  <!-- Optional: add clickable prototype -->
-                  <!-- <a class="btn" href="PASTE_LINK" target="_blank" rel="noreferrer">Open Prototype</a> -->
-                </div>
-
-                <div class="sectionTitle">Outcome</div>
-                <p style="margin-bottom:0">
-                  Produced a complete <b>“MVP-to-launch” readiness pack</b>: delivery plan, ownership model, risk tracking,
-                  UAT approach, rollout operations, and KPI tracker — the same structure used in implementation / onboarding teams.
-                </p>
-              </div>
-
-              <div class="card">
-                <div class="sectionTitle" style="margin-top:0">What I delivered (recruiter view)</div>
-                <ul>
-                  <li><b>Scope &amp; clarity:</b> user stories + acceptance criteria to prevent scope creep</li>
-                  <li><b>Delivery plan:</b> WBS + milestone workback plan + stakeholder cadence</li>
-                  <li><b>Ownership:</b> RACI + handoffs (build → test → launch → support)</li>
-                  <li><b>Risk control:</b> RAID log (risks, assumptions, issues, dependencies)</li>
-                  <li><b>Quality:</b> UAT plan + issue tracking approach (Jira)</li>
-                  <li><b>Rollout ops:</b> verification, moderation, escalation, support handoff</li>
-                  <li><b>Success metrics:</b> activation + time-to-first-listing + WAU &amp; funnel basics</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="grid">
-              <div class="card">
-                <h2>Context</h2>
-                <p>
-                  Campus marketplaces fail when trust and operational ownership aren’t defined. This case focuses on
-                  making the MVP <b>launch-ready</b>: clear scope, predictable delivery steps, and operational workflows
-                  for verification, moderation, and support.
-                </p>
-              </div>
-
-              <div class="card">
-                <h2>Problem</h2>
-                <p>
-                  Students needed a trusted, campus-specific way to buy/sell items. Generic marketplaces create friction
-                  around verification, safety, moderation, and support — which leads to low adoption and poor retention.
-                </p>
-              </div>
-
-              <div class="card">
-                <h2>Approach (Implementation mindset)</h2>
-                <ul>
-                  <li>Define tight MVP scope with acceptance criteria</li>
-                  <li>Turn scope into a delivery plan (milestones + owners)</li>
-                  <li>Plan UAT and go-live readiness (checklists + issues)</li>
-                  <li>Design rollout operations (support + escalation)</li>
-                  <li>Track success with simple KPIs and a tracker</li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <h2>Delivery artifacts</h2>
-                <ul>
-                  <li><b>Charter:</b> goals, scope, constraints, assumptions</li>
-                  <li><b>Workback plan:</b> WBS + 10 milestone schedule</li>
-                  <li><b>RACI:</b> ownership and handoffs</li>
-                  <li><b>RAID:</b> risk and dependency tracking</li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <h2>UAT &amp; go-live readiness</h2>
-                <ul>
-                  <li>UAT sessions: scripts, scenarios, expected outcomes</li>
-                  <li>Issue capture + triage approach (severity/priority)</li>
-                  <li>Go-live checklist: access, verification rules, support readiness</li>
-                  <li>Release notes / FAQ outline for onboarding</li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <h2>Rollout operations</h2>
-                <ul>
-                  <li>Student verification rules (who can list + buy)</li>
-                  <li>Listing moderation guidelines (what gets flagged/removed)</li>
-                  <li>Escalation workflow (what happens when something goes wrong)</li>
-                  <li>Support handoff (who owns tickets post-launch)</li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <h2>KPI tracker (launch success)</h2>
-                <ul>
-                  <li><b>Activation rate:</b> verified → active</li>
-                  <li><b>Time-to-first-listing:</b> setup friction indicator</li>
-                  <li><b>WAU:</b> engagement / retention signal</li>
-                  <li><b>Funnel basics:</b> browse → message → transaction intent</li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <h2>Artifacts I can share (sanitized)</h2>
-                <ul>
-                  <li>Milestone workback plan template</li>
-                  <li>RAID log template</li>
-                  <li>UAT test plan template</li>
-                  <li>Go-live checklist template</li>
-                  <li>KPI tracker template</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="sectionTitle">Optional upgrade</div>
-            <div class="card">
-              <p style="margin:0">
-                If you have a prototype link (Figma or live demo), I’ll add it as a top button and we can embed
-                2–3 screenshots here (e.g., <b>numarket-1.png</b>, <b>numarket-2.png</b>).
-              </p>
-            </div>
-
-            <div class="foot">© <span id="y"></span> Aman Lokhande</div>
-          </div>
-        </main>
+  <!-- SAME TOP NAV AS INDEX -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        <div class="name">Aman Lokhande</div>
+        <div class="role">Implementation • Customer Onboarding • Professional Services</div>
       </div>
     </div>
-  </div>
+
+    <nav class="nav">
+      <a href="./about.html">About</a>
+      <a href="./resumes.html">Resume</a>
+      <a href="./projects.html">Case Studies</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="backRow">
+      <a class="backLink" href="./projects.html">← Back to Case Studies</a>
+      <a class="backLink" href="./index.html">🏠 Home</a>
+    </div>
+
+    <section class="hero">
+      <div class="box">
+        <h1>NUMarket Yard — Campus Marketplace MVP (Implementation Plan)</h1>
+        <p>
+          I built an end-to-end <b>implementation-style delivery package</b> for a Northeastern-only marketplace MVP:
+          defined scope, created a milestone workback plan, documented roles/ownership, planned UAT and go-live readiness,
+          and designed rollout operations + success metrics.
+        </p>
+
+        <div class="meta">
+          <div class="item">
+            <div class="k">My role</div>
+            <div class="v">Implementation / Delivery (planning + readiness)</div>
+          </div>
+          <div class="item">
+            <div class="k">Deliverables</div>
+            <div class="v">Plan • RAID • UAT • Rollout ops • KPIs</div>
+          </div>
+          <div class="item">
+            <div class="k">Tools</div>
+            <div class="v">Jira, Confluence-style docs, Excel/Sheets</div>
+          </div>
+          <div class="item">
+            <div class="k">Focus</div>
+            <div class="v">Stakeholders • risks • launch readiness</div>
+          </div>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Scope + acceptance criteria</span>
+          <span class="chip">Milestones + workback plan</span>
+          <span class="chip">RACI + comms cadence</span>
+          <span class="chip">RAID log</span>
+          <span class="chip">UAT + issue tracking</span>
+          <span class="chip">Go-live checklist</span>
+          <span class="chip">Launch KPIs</span>
+        </div>
+
+        <div class="btnRow">
+          <a class="btn primary" href="./projects.html">Back to Case Studies</a>
+          <a class="btn" href="./contact.html">Contact</a>
+        </div>
+
+        <div class="sectionLabel">Outcome</div>
+        <p style="margin-bottom:0">
+          Produced a complete <b>“MVP-to-launch” readiness pack</b>: delivery plan, ownership model, risk tracking,
+          UAT approach, rollout operations, and KPI tracker — the same structure used in implementation / onboarding teams.
+        </p>
+      </div>
+
+      <div class="box">
+        <div class="sectionLabel" style="margin-top:0">What I delivered (recruiter view)</div>
+        <ul>
+          <li><b>Scope &amp; clarity:</b> user stories + acceptance criteria to prevent scope creep</li>
+          <li><b>Delivery plan:</b> WBS + milestone workback plan + stakeholder cadence</li>
+          <li><b>Ownership:</b> RACI + handoffs (build → test → launch → support)</li>
+          <li><b>Risk control:</b> RAID log (risks, assumptions, issues, dependencies)</li>
+          <li><b>Quality:</b> UAT plan + issue tracking approach (Jira)</li>
+          <li><b>Rollout ops:</b> verification, moderation, escalation, support handoff</li>
+          <li><b>Success metrics:</b> activation + time-to-first-listing + WAU &amp; funnel basics</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid2">
+      <div class="box">
+        <h2>Context</h2>
+        <p>
+          Campus marketplaces fail when trust and operational ownership aren’t defined. This case focuses on
+          making the MVP <b>launch-ready</b>: clear scope, predictable delivery steps, and operational workflows
+          for verification, moderation, and support.
+        </p>
+      </div>
+
+      <div class="box">
+        <h2>Problem</h2>
+        <p>
+          Students needed a trusted, campus-specific way to buy/sell items. Generic marketplaces create friction
+          around verification, safety, moderation, and support — which leads to low adoption and poor retention.
+        </p>
+      </div>
+
+      <div class="box">
+        <h2>Approach (Implementation mindset)</h2>
+        <ul>
+          <li>Define tight MVP scope with acceptance criteria</li>
+          <li>Turn scope into a delivery plan (milestones + owners)</li>
+          <li>Plan UAT and go-live readiness (checklists + issues)</li>
+          <li>Design rollout operations (support + escalation)</li>
+          <li>Track success with simple KPIs and a tracker</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>Delivery artifacts</h2>
+        <ul>
+          <li><b>Charter:</b> goals, scope, constraints, assumptions</li>
+          <li><b>Workback plan:</b> WBS + 10 milestone schedule</li>
+          <li><b>RACI:</b> ownership and handoffs</li>
+          <li><b>RAID:</b> risk and dependency tracking</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>UAT &amp; go-live readiness</h2>
+        <ul>
+          <li>UAT sessions: scripts, scenarios, expected outcomes</li>
+          <li>Issue capture + triage approach (severity/priority)</li>
+          <li>Go-live checklist: access, verification rules, support readiness</li>
+          <li>Release notes / FAQ outline for onboarding</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>Rollout operations</h2>
+        <ul>
+          <li>Student verification rules (who can list + buy)</li>
+          <li>Listing moderation guidelines (what gets flagged/removed)</li>
+          <li>Escalation workflow (what happens when something goes wrong)</li>
+          <li>Support handoff (who owns tickets post-launch)</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>KPI tracker (launch success)</h2>
+        <ul>
+          <li><b>Activation rate:</b> verified → active</li>
+          <li><b>Time-to-first-listing:</b> setup friction indicator</li>
+          <li><b>WAU:</b> engagement / retention signal</li>
+          <li><b>Funnel basics:</b> browse → message → transaction intent</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>Artifacts I can share (sanitized)</h2>
+        <ul>
+          <li>Milestone workback plan template</li>
+          <li>RAID log template</li>
+          <li>UAT test plan template</li>
+          <li>Go-live checklist template</li>
+          <li>KPI tracker template</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer">© <span id="y"></span> Aman Lokhande</div>
+  </main>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
-
-    // Optional: upload profile.jpg to repo root to replace avatar
-    const img = new Image();
-    img.onload = () => {
-      const av = document.querySelector(".avatar");
-      av.textContent = "";
-      av.style.background = "none";
-      av.style.border = "1px solid var(--line)";
-      av.style.overflow = "hidden";
-      av.appendChild(img);
-      img.style.width = "100%";
-      img.style.height = "100%";
-      img.style.objectFit = "cover";
-    };
-    img.src = "profile.jpg";
   </script>
 </body>
 </html>

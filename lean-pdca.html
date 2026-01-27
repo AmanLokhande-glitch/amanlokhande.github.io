@@ -5,228 +5,90 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Lean PDCA Pilot (Checkout Delays) | Aman Lokhande</title>
   <meta name="description" content="Lean time study and PDCA pilot to reduce checkout delays." />
-
-  <!-- Shared site-wide CSS (your WIX-style file) -->
   <link rel="stylesheet" href="./style.css" />
-
-  <!-- Page-only styles (WIX-style compatible; no dark vars) -->
-  <style>
-    .page{
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 18px 56px 80px;
-    }
-    @media (max-width: 900px){
-      .page{ padding: 12px 20px 60px; }
-    }
-
-    .backRow{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      margin: 10px 0 18px;
-      flex-wrap:wrap;
-    }
-    .backLink{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size: 13px;
-      opacity: .8;
-      border: 1px solid rgba(0,0,0,.18);
-      padding: 10px 14px;
-      border-radius: 999px;
-    }
-    .backLink:hover{ opacity: 1; border-color: rgba(0,0,0,.35); }
-
-    .box{
-      background: #f6f1ec;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.08);
-      border-radius: 10px;
-      padding: 22px 22px;
-    }
-
-    .hero{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 18px;
-      align-items:start;
-      margin-top: 14px;
-    }
-    @media (max-width: 900px){
-      .hero{ grid-template-columns: 1fr; }
-    }
-
-    h1{ margin:0 0 10px; font-size:32px; line-height:1.12; }
-    h2{ margin:0 0 8px; font-size:16px; }
-    p{ margin:0 0 12px; line-height:1.7; font-size:14px; opacity:.9; }
-
-    .sectionLabel{
-      margin-top: 14px;
-      margin-bottom: 10px;
-      font-weight: 800;
-      font-size: 12px;
-      letter-spacing: .12em;
-      opacity: .75;
-      text-transform: uppercase;
-    }
-
-    ul{
-      margin: 0;
-      padding-left: 18px;
-      line-height: 1.75;
-      font-size: 14px;
-      opacity: .9;
-    }
-    li{ margin: 6px 0; }
-
-    .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top: 10px;
-    }
-    .chip{
-      border: 1px solid rgba(0,0,0,.18);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      opacity: .9;
-      background: rgba(255,255,255,.35);
-    }
-
-    .grid2{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 18px;
-      align-items:start;
-      margin-top: 18px;
-    }
-    @media (max-width: 900px){
-      .grid2{ grid-template-columns: 1fr; }
-    }
-
-    .btnRow{
-      display:flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      border: 1px solid rgba(0,0,0,.18);
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 800;
-      opacity: .9;
-      background: rgba(255,255,255,.35);
-      text-decoration:none;
-      color: inherit;
-    }
-    .btn:hover{ opacity: 1; border-color: rgba(0,0,0,.35); }
-    .btn.primary{
-      background:#1f4fff;
-      border-color: transparent;
-      color:#fff;
-      opacity: 1;
-    }
-    .btn.primary:hover{ filter: brightness(.95); }
-
-    .footer{
-      margin-top: 22px;
-      font-size: 12px;
-      opacity: .7;
-    }
-  </style>
 </head>
 
 <body>
-  <!-- SAME TOP NAV AS INDEX -->
   <header class="topbar">
     <div class="brand">
       <span class="dot"></span>
       <div>
         <div class="name">Aman Lokhande</div>
-        <div class="role">Implementation • Customer Onboarding • Professional Services</div>
+        <div class="role">Case Study • Lean • PDCA</div>
       </div>
     </div>
 
     <nav class="nav">
+      <a href="./index.html">Home</a>
       <a href="./about.html">About</a>
-      <a href="./resumes.html">Resume</a>
+      <a href="./experience.html">Experience</a>
       <a href="./projects.html">Case Studies</a>
+      <a href="./skills.html">Skills</a>
+      <a href="./resumes.html">Resume</a>
       <a href="./contact.html">Contact</a>
     </nav>
   </header>
 
-  <main class="page">
-    <div class="backRow">
-      <a class="backLink" href="./projects.html">← Back to Case Studies</a>
-      <a class="backLink" href="./index.html">🏠 Home</a>
+  <main class="wrap">
+    <div class="links" style="margin-top:0">
+      <a class="link" href="./projects.html">← Back to Case Studies</a>
+      <a class="link" href="./index.html">🏠 Home</a>
     </div>
 
-    <section class="hero">
-      <div class="box">
-        <h1>Lean PDCA Pilot — Checkout Delays</h1>
-        <p>
-          Ran a Lean time study of a campus convenience store checkout process, identified the primary bottleneck,
-          and executed a PDCA pilot with practical countermeasures to reduce overrides and waiting time.
-        </p>
+    <h1>Lean PDCA Pilot — Checkout Delays</h1>
+    <p class="body" style="max-width:none">
+      Ran a Lean time study of a campus convenience store checkout process, identified the primary bottleneck,
+      and executed a PDCA pilot with practical countermeasures to reduce overrides and waiting time.
+    </p>
 
-        <div class="chips">
-          <span class="chip">Time study</span>
-          <span class="chip">Bottleneck analysis</span>
-          <span class="chip">PDCA</span>
-          <span class="chip">Standard work</span>
-          <span class="chip">6S</span>
-          <span class="chip">Error-proofing</span>
-        </div>
+    <div class="chips">
+      <span class="chip">Time study</span>
+      <span class="chip">Bottleneck analysis</span>
+      <span class="chip">PDCA</span>
+      <span class="chip">Standard work</span>
+      <span class="chip">6S</span>
+      <span class="chip">Error-proofing</span>
+    </div>
 
-        <div class="sectionLabel">Pilot results</div>
-        <ul>
+    <div class="grid2" style="margin-top:14px">
+      <div class="card">
+        <div class="sectionTitle" style="margin-top:0">Pilot results</div>
+        <ul style="margin:0; padding-left:18px">
           <li>Overrides dropped from <b>12% → 8%</b> (33% reduction)</li>
           <li>Payment cycle time improved from <b>0.6 → 0.5 min</b></li>
           <li>Average lead time improved from <b>5.5 → 5.1 min</b></li>
         </ul>
 
-        <div class="btnRow">
+        <div class="links">
           <a class="btn primary" href="./projects.html">Back to Case Studies</a>
           <a class="btn" href="./contact.html">Contact</a>
         </div>
       </div>
 
-      <div class="box">
-        <div class="sectionLabel" style="margin-top:0;">Study setup</div>
-        <ul>
+      <div class="card">
+        <div class="sectionTitle" style="margin-top:0">Study setup</div>
+        <ul style="margin:0; padding-left:18px">
           <li>Two sessions of ~<b>35–40 min</b> during rush hours</li>
           <li><b>60 customers</b> observed, <b>2 registers</b></li>
           <li>Captured queue length, override types, approvals, cycle time</li>
         </ul>
 
-        <div class="sectionLabel">Primary bottleneck</div>
-        <ul>
+        <div class="sectionTitle">Primary bottleneck</div>
+        <ul style="margin:0; padding-left:18px">
           <li><b>Payment step</b> driven by overrides/mismatches and rework</li>
         </ul>
       </div>
-    </section>
+    </div>
 
-    <section class="grid2">
-      <div class="box">
+    <div class="grid" style="margin-top:14px">
+      <div class="card">
         <h2>Problem</h2>
-        <p>
-          Checkout delays during peak times created long queues and inconsistent throughput, primarily due to
-          payment overrides and rework.
-        </p>
+        <p class="body" style="max-width:none">Checkout delays during peak times created long queues and inconsistent throughput, primarily due to overrides and rework.</p>
       </div>
 
-      <div class="box">
+      <div class="card">
         <h2>What I measured</h2>
-        <ul>
+        <ul style="margin:0; padding-left:18px">
           <li>Lead time per customer</li>
           <li>Override types + frequency</li>
           <li>Manager approval waits</li>
@@ -234,9 +96,9 @@
         </ul>
       </div>
 
-      <div class="box">
+      <div class="card">
         <h2>Countermeasures (PDCA pilot)</h2>
-        <ul>
+        <ul style="margin:0; padding-left:18px">
           <li><b>Standard work:</b> “Scan, Bag, Pay”</li>
           <li><b>6S:</b> improved cash-wrap layout</li>
           <li><b>Express lane:</b> 5-item lane during peak</li>
@@ -244,9 +106,9 @@
         </ul>
       </div>
 
-      <div class="box">
+      <div class="card">
         <h2>Lean wastes addressed</h2>
-        <ul>
+        <ul style="margin:0; padding-left:18px">
           <li><b>Waiting:</b> approvals/overrides</li>
           <li><b>Motion:</b> layout inefficiencies</li>
           <li><b>Rework:</b> mismatch correction</li>
@@ -254,26 +116,26 @@
         </ul>
       </div>
 
-      <div class="box">
+      <div class="card">
         <h2>How I’d scale it</h2>
-        <ul>
+        <ul style="margin:0; padding-left:18px">
           <li>Expand pilot duration and add more time windows</li>
           <li>Track weekly override rate + lead time dashboard</li>
           <li>Train new staff with a short standard-work guide</li>
         </ul>
       </div>
 
-      <div class="box">
+      <div class="card">
         <h2>Why it matters</h2>
-        <ul>
+        <ul style="margin:0; padding-left:18px">
           <li>Clear example of measurable process improvement</li>
           <li>Shows execution: observe → diagnose → pilot → report results</li>
           <li>Reusable approach for ops/CS workflows</li>
         </ul>
       </div>
-    </section>
+    </div>
 
-    <div class="footer">© <span id="y"></span> Aman Lokhande</div>
+    <div class="foot">© <span id="y"></span> Aman Lokhande</div>
   </main>
 
   <script>

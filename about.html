@@ -6,183 +6,218 @@
   <title>About | Aman Lokhande</title>
   <meta name="description" content="About Aman Lokhande — implementation, delivery, and customer onboarding." />
 
-  <!-- ✅ Shared site-wide CSS -->
-  <link rel="stylesheet" href="./style.css">
+  <!-- Shared site-wide CSS (your WIX-style file) -->
+  <link rel="stylesheet" href="./style.css" />
 
-  <!-- ✅ Page-only styles (small) -->
+  <!-- Page-only styles (kept small + compatible with your style.css) -->
   <style>
-    .hero{display:grid; grid-template-columns:1.15fr .85fr; gap:12px}
-    @media (max-width:920px){.hero{grid-template-columns:1fr}}
-    h2{margin:0 0 8px; font-size:14px}
-    ul{margin:0; padding-left:16px; color:var(--muted); line-height:1.7; font-size:13px}
-    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
-    .chip{padding:7px 10px; border-radius:999px; border:1px solid var(--line); background:rgba(17,26,51,.35); color:var(--muted); font-size:12px}
+    .page{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 56px 80px;
+    }
+    @media (max-width: 900px){
+      .page{ padding: 12px 20px 60px; }
+    }
+
+    .backRow{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin: 10px 0 18px;
+      flex-wrap:wrap;
+    }
+
+    .backLink{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size: 13px;
+      opacity: .8;
+      border: 1px solid rgba(0,0,0,.18);
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
+    .backLink:hover{ opacity: 1; border-color: rgba(0,0,0,.35); }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items:start;
+    }
+    @media (max-width: 900px){
+      .grid2{ grid-template-columns: 1fr; }
+    }
+
+    .box{
+      background: #f6f1ec;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+      border-radius: 10px;
+      padding: 22px 22px;
+    }
+
+    h1{ margin: 0 0 10px; font-size: 34px; line-height: 1.1; }
+    h2{ margin: 0 0 10px; font-size: 16px; }
+
+    p{ margin: 0 0 12px; line-height: 1.7; font-size: 14px; opacity:.9; }
+
+    ul{
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.8;
+      font-size: 14px;
+      opacity: .9;
+    }
+
+    .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
+    .chip{
+      border: 1px solid rgba(0,0,0,.18);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      opacity: .85;
+      background: rgba(255,255,255,.45);
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top: 14px;
+    }
+    .btn2{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border: 1px solid rgba(0,0,0,.18);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      opacity: .9;
+    }
+    .btn2:hover{ opacity: 1; border-color: rgba(0,0,0,.35); }
+    .btn2.primary{
+      border-color: transparent;
+      background: #1f4fff;
+      color: #fff;
+      opacity: 1;
+    }
+    .btn2.primary:hover{ filter: brightness(0.95); }
+
+    .footer{
+      margin-top: 22px;
+      font-size: 12px;
+      opacity: .7;
+    }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="app">
-      <div class="topbar">
-        <div class="brand">
-          <div class="avatar">AL</div>
-          <div>
-            <b>About</b>
-            <span>Implementation • Customer Onboarding • Delivery</span>
-          </div>
-        </div>
-        <div class="q">
-          <a class="qbtn" href="mailto:amanlokhande247@gmail.com"><span class="dot"></span>Email</a>
-          <a class="qbtn" href="https://www.linkedin.com/in/aman-lokhande" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="qbtn" href="resumes.html">Resume</a>
-        </div>
-      </div>
-
-      <div class="main">
-        <aside class="sidebar">
-          <div class="nav">
-            <a class="tab" href="index.html">
-              <div class="left"><div class="ico">🏠</div><div class="name"><b>Home</b><span>Landing page</span></div></div>
-              <div class="badge">Start</div>
-            </a>
-            <a class="tab active" href="about.html">
-              <div class="left"><div class="ico">👤</div><div class="name"><b>About</b><span>Who I am</span></div></div>
-              <div class="badge">Now</div>
-            </a>
-            <a class="tab" href="experience.html">
-              <div class="left"><div class="ico">💼</div><div class="name"><b>Experience</b><span>Customer + delivery</span></div></div>
-              <div class="badge">2</div>
-            </a>
-            <a class="tab" href="projects.html">
-              <div class="left"><div class="ico">🧩</div><div class="name"><b>Case Studies</b><span>Selected work</span></div></div>
-              <div class="badge">5</div>
-            </a>
-            <a class="tab" href="skills.html">
-              <div class="left"><div class="ico">🛠️</div><div class="name"><b>Skills</b><span>Tools + strengths</span></div></div>
-              <div class="badge">Map</div>
-            </a>
-            <a class="tab" href="resumes.html">
-              <div class="left"><div class="ico">📄</div><div class="name"><b>Resume</b><span>Download PDF</span></div></div>
-              <div class="badge">1</div>
-            </a>
-            <a class="tab" href="contact.html">
-              <div class="left"><div class="ico">📫</div><div class="name"><b>Contact</b><span>Let’s talk</span></div></div>
-              <div class="badge">Soon</div>
-            </a>
-          </div>
-          <div class="foot">About page</div>
-        </aside>
-
-        <main class="content">
-          <div class="panel">
-            <div class="hero">
-              <div class="card">
-                <h1>Hi — I’m Aman.</h1>
-                <p>
-                  I’m a Master’s in Engineering Management candidate focused on <b>customer onboarding and implementation</b>.
-                  My background includes a Product Management co-op supporting B2B SaaS implementations and earlier experience as a
-                  Project Engineer, where I built strong fundamentals in execution, coordination, and delivery reliability.
-                </p>
-                <p style="margin-top:10px">
-                  I do my best work when I’m translating requirements into <b>clear plans</b>, coordinating stakeholders through
-                  <b>UAT and go-live readiness</b>, and creating documentation/training so customers adopt smoothly.
-                </p>
-
-                <div class="chips">
-                  <span class="chip">Requirements workshops</span>
-                  <span class="chip">Setup &amp; CSV data mapping</span>
-                  <span class="chip">UAT coordination</span>
-                  <span class="chip">Go-live readiness</span>
-                  <span class="chip">Docs + training</span>
-                  <span class="chip">SQL/Excel KPIs</span>
-                </div>
-
-                <div class="actions">
-                  <a class="btn primary" href="resumes.html">Download Resume</a>
-                  <a class="btn" href="projects.html">View Case Studies</a>
-                  <a class="btn" href="contact.html">Contact</a>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="sectionTitle" style="margin-top:0">What I’m targeting</div>
-                <p>
-                  Entry-level roles in <b>Implementation / Customer Onboarding / Delivery</b> (B2B/SaaS).
-                  I’m especially interested in teams that value clear documentation, structured execution,
-                  and strong customer communication.
-                </p>
-
-                <div class="sectionTitle">How I work</div>
-                <ul>
-                  <li><b>Clarity first:</b> clean requirements, acceptance criteria, and checklists</li>
-                  <li><b>Execution:</b> milestones, owners, RAID logs, and a simple status cadence</li>
-                  <li><b>Bridge role:</b> customer ↔ engineering during setup, UAT, and go-live</li>
-                  <li><b>Enablement:</b> runbooks, FAQs, release notes, and trainings</li>
-                  <li><b>Measurement:</b> basic KPIs to spot bottlenecks and improve handoffs</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="grid">
-              <div class="card">
-                <h2>Strengths (recruiter view)</h2>
-                <ul>
-                  <li>Requirements gathering + implementation-ready documentation</li>
-                  <li>Customer onboarding support, training, and enablement content</li>
-                  <li>UAT coordination and issue triage (Jira-style workflow)</li>
-                  <li>Cross-functional follow-ups and unblock escalation</li>
-                  <li>Metrics tracking with SQL + Excel/Sheets</li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <h2>What I like working on</h2>
-                <ul>
-                  <li>Onboarding workflows that need structure and clarity</li>
-                  <li>Reducing setup friction with templates, checklists, and FAQs</li>
-                  <li>Go-live readiness: UAT plans, triage, and sign-off</li>
-                  <li>Simple dashboards/reporting that make decisions easier</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="sectionTitle">Quick links</div>
-            <div class="card">
-              <div class="actions" style="margin-top:0">
-                <a class="btn primary" href="projects.html">Case Studies</a>
-                <a class="btn" href="resumes.html">Resume</a>
-                <a class="btn" href="experience.html">Experience</a>
-                <a class="btn" href="https://www.linkedin.com/in/aman-lokhande" target="_blank" rel="noreferrer">LinkedIn</a>
-              </div>
-              <p style="margin:10px 0 0">
-                Optional: upload <b>profile.jpg</b> to your repo root and your avatar will auto-switch to your photo.
-              </p>
-            </div>
-
-            <div class="foot">© <span id="y"></span> Aman Lokhande</div>
-          </div>
-        </main>
+  <!-- SAME TOP NAV AS INDEX -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        <div class="name">Aman Lokhande</div>
+        <div class="role">Implementation • Customer Onboarding • Professional Services</div>
       </div>
     </div>
-  </div>
+
+    <nav class="nav">
+      <a href="./about.html" style="opacity:1; font-weight:700;">About</a>
+      <a href="./resumes.html">Resume</a>
+      <a href="./projects.html">Case Studies</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <!-- BACK BUTTON ROW -->
+    <div class="backRow">
+      <a class="backLink" href="./index.html">← Back to Home</a>
+      <div style="font-size:13px; opacity:.75;">
+        Email: <a href="mailto:amanlokhande247@gmail.com" style="text-decoration:underline;">amanlokhande247@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <section class="box">
+        <h1>Hi — I’m Aman.</h1>
+        <p>
+          I’m a Master’s in Engineering Management candidate focused on <b>customer onboarding and implementation</b>.
+          My background includes a Product Management co-op supporting B2B SaaS implementations and earlier experience as a
+          Project Engineer, where I built strong fundamentals in execution, coordination, and delivery reliability.
+        </p>
+        <p>
+          I do my best work when I’m translating requirements into <b>clear plans</b>, coordinating stakeholders through
+          <b>UAT and go-live readiness</b>, and creating documentation/training so customers adopt smoothly.
+        </p>
+
+        <div class="chips">
+          <span class="chip">Requirements workshops</span>
+          <span class="chip">Setup &amp; CSV data mapping</span>
+          <span class="chip">UAT coordination</span>
+          <span class="chip">Go-live readiness</span>
+          <span class="chip">Docs + training</span>
+          <span class="chip">SQL/Excel KPIs</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn2 primary" href="./resumes.html">Download Resume</a>
+          <a class="btn2" href="./projects.html">View Case Studies</a>
+          <a class="btn2" href="./contact.html">Contact</a>
+        </div>
+      </section>
+
+      <aside class="box">
+        <h2>What I’m targeting</h2>
+        <p>
+          Entry-level roles in <b>Implementation / Customer Onboarding / Delivery</b> (B2B/SaaS).
+          I’m especially interested in teams that value clear documentation, structured execution,
+          and strong customer communication.
+        </p>
+
+        <h2 style="margin-top:18px;">How I work</h2>
+        <ul>
+          <li><b>Clarity first:</b> clean requirements, acceptance criteria, and checklists</li>
+          <li><b>Execution:</b> milestones, owners, and a simple status cadence</li>
+          <li><b>Bridge role:</b> customer ↔ engineering during setup, UAT, and go-live</li>
+          <li><b>Enablement:</b> runbooks, FAQs, release notes, trainings</li>
+          <li><b>Measurement:</b> basic KPIs to spot bottlenecks and improve handoffs</li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="grid2" style="margin-top:18px;">
+      <section class="box">
+        <h2>Strengths (recruiter view)</h2>
+        <ul>
+          <li>Requirements gathering + implementation-ready documentation</li>
+          <li>Customer onboarding support, training, and enablement content</li>
+          <li>UAT coordination and issue triage (Jira-style workflow)</li>
+          <li>Cross-functional follow-ups and unblock escalation</li>
+          <li>Metrics tracking with SQL + Excel/Sheets</li>
+        </ul>
+      </section>
+
+      <section class="box">
+        <h2>What I like working on</h2>
+        <ul>
+          <li>Onboarding workflows that need structure and clarity</li>
+          <li>Reducing setup friction with templates, checklists, and FAQs</li>
+          <li>Go-live readiness: UAT plans, triage, and sign-off</li>
+          <li>Simple dashboards/reporting that make decisions easier</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer">© <span id="y"></span> Aman Lokhande</div>
+  </main>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
-
-    // Optional: upload profile.jpg to repo root to replace avatar
-    const img = new Image();
-    img.onload = () => {
-      const av = document.querySelector(".avatar");
-      av.textContent = "";
-      av.style.background = "none";
-      av.style.border = "1px solid var(--line)";
-      av.style.overflow = "hidden";
-      av.appendChild(img);
-      img.style.width = "100%";
-      img.style.height = "100%";
-      img.style.objectFit = "cover";
-    };
-    img.src = "profile.jpg";
   </script>
 </body>
 </html>

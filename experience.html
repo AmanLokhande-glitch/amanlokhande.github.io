@@ -42,7 +42,7 @@
 
     <div class="timeline">
 
-      <!-- Experience Snapshot -->
+      <!-- Experience Snapshot (hiring team skim section) -->
       <div class="tItem">
         <div class="tDot"></div>
         <div class="card">
@@ -127,7 +127,7 @@
             <b>Typical deliverables I created/maintained:</b> kickoff agenda • requirements worksheet • CSV mapping template • RAID log • UAT checklist • go-live checklist • training deck • runbook/FAQ
           </p>
 
-          <!-- Proofs -->
+          <!-- ✅ Proofs (correct paths: images are in repo root) -->
           <div style="margin-top:14px">
             <div class="muted">Work samples (process + templates)</div>
             <p class="muted" style="margin:6px 0 10px">
@@ -137,43 +137,34 @@
             <div class="grid2">
               <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08)">
                 <div class="muted">1) SaaS Implementation Playbook (one-pager)</div>
-                <a class="proofLink" data-proof="implementation-playbook.png"
-                   href="#" target="_blank" rel="noreferrer"
+                <a href="./implementation-playbook.png" target="_blank" rel="noreferrer"
                    style="display:block; margin-top:10px; text-decoration:none;">
-                  <img class="proofImg"
-                       data-proof="implementation-playbook.png"
-                       alt="SaaS implementation playbook one-pager."
-                       loading="lazy"
-                       style="width:100%; height:auto; border-radius:10px; border:1px solid rgba(0,0,0,.08)" />
+                  <img
+                    src="./implementation-playbook.png"
+                    alt="B2B SaaS Implementation Playbook one-pager"
+                    loading="lazy"
+                    style="width:100%; height:auto; border-radius:10px; border:1px solid rgba(0,0,0,.08)"
+                  />
                   <div class="muted" style="margin-top:8px">Open full-size →</div>
                 </a>
-                <div class="muted proofErr" style="display:none; margin-top:10px">
-                  Image not found. Verify the file exists at <code>assets/work-samples/implementation-playbook.png</code>.
-                </div>
               </div>
 
               <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08)">
                 <div class="muted">2) Work Samples (templates)</div>
-                <a class="proofLink" data-proof="implementation-work-samples.png"
-                   href="#" target="_blank" rel="noreferrer"
+                <a href="./implementation-work-samples.png" target="_blank" rel="noreferrer"
                    style="display:block; margin-top:10px; text-decoration:none;">
-                  <img class="proofImg"
-                       data-proof="implementation-work-samples.png"
-                       alt="Implementation templates: weekly status, RAID, UAT tracker, CSV mapping."
-                       loading="lazy"
-                       style="width:100%; height:auto; border-radius:10px; border:1px solid rgba(0,0,0,.08)" />
+                  <img
+                    src="./implementation-work-samples.png"
+                    alt="Implementation Work Samples: weekly status, RAID, UAT tracker, CSV mapping"
+                    loading="lazy"
+                    style="width:100%; height:auto; border-radius:10px; border:1px solid rgba(0,0,0,.08)"
+                  />
                   <div class="muted" style="margin-top:8px">Open full-size →</div>
                 </a>
-                <div class="muted proofErr" style="display:none; margin-top:10px">
-                  Image not found. Verify the file exists at <code>assets/work-samples/implementation-work-samples.png</code>.
-                </div>
               </div>
             </div>
-
-            <p class="muted" style="margin-top:10px">
-              Tip: GitHub Pages is case-sensitive. Folder must be exactly <code>assets/work-samples</code>.
-            </p>
           </div>
+          <!-- ✅ End proofs -->
         </div>
       </div>
 
@@ -247,39 +238,7 @@
   </main>
 
   <script>
-    // Footer year
     document.getElementById("y").textContent = new Date().getFullYear();
-
-    // Base-aware image/link paths for GitHub Pages user site OR project site.
-    // If served at /repo-name/, base becomes "/repo-name". If served at root, base is "".
-    (function () {
-      const path = window.location.pathname;
-      const parts = path.split("/").filter(Boolean);
-
-      // If we are on a GitHub Pages project site, URL usually looks like /REPO/file.html
-      // If root (user site), it looks like /file.html
-      const base = (parts.length >= 2) ? ("/" + parts[0]) : "";
-
-      function buildUrl(filename) {
-        return base + "/assets/work-samples/" + filename;
-      }
-
-      document.querySelectorAll(".proofImg").forEach(img => {
-        const fn = img.getAttribute("data-proof");
-        img.src = buildUrl(fn);
-        img.onerror = () => {
-          img.style.display = "none";
-          const card = img.closest(".card");
-          const err = card ? card.querySelector(".proofErr") : null;
-          if (err) err.style.display = "block";
-        };
-      });
-
-      document.querySelectorAll(".proofLink").forEach(a => {
-        const fn = a.getAttribute("data-proof");
-        a.href = buildUrl(fn);
-      });
-    })();
   </script>
 </body>
 </html>

@@ -351,3 +351,28 @@ img.avatar{
   .heroText h1{font-size:44px}
   .grid, .grid2{grid-template-columns:1fr}
 }
+
+/* =====================================
+   ICONS (safe add-on)
+   Use inside .btn links/buttons
+===================================== */
+.icon{
+  width:16px;
+  height:16px;
+  display:inline-block;
+  flex:0 0 16px;
+}
+
+/* Make SVG icons inherit text color */
+.icon svg{
+  width:100%;
+  height:100%;
+  display:block;
+  fill:currentColor;
+}
+
+/* Slightly larger icons on primary for readability */
+.btn.primary .icon{
+  width:17px;
+  height:17px;
+}
